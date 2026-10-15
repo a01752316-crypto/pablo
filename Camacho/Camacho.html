@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alejandro Camacho | Perfil de Ingeniería Mecatrónica</title>
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,21 +33,24 @@
     </script>
 
     <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Chart.js para el Gráfico de Radar -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="min-h-screen flex flex-col justify-between antialiased">
 
     <!-- Header / Barra Superior con Botón de Retorno -->
     <header class="w-full border-b border-brand-border/60 bg-brand-bg/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <!-- Botón para volver al equipo general -->
-            <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-textMuted hover:text-brand-accent transition-colors py-2 px-3 rounded-xl hover:bg-brand-card">
+            <a href="../index.html"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-brand-textMuted hover:text-brand-accent transition-colors py-2 px-3 rounded-xl hover:bg-brand-card">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Volver al equipo</span>
             </a>
@@ -64,14 +68,17 @@
         <section id="biografia">
             <div class="bg-brand-card rounded-3xl p-6 sm:p-10 border border-brand-border glow-card">
                 <div class="flex flex-col md:flex-row items-center gap-8">
-                    
+
                     <!-- Fotografía de Perfil Circular con Borde Brillante -->
                     <div class="relative flex-shrink-0">
-                        <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-brand-accent/60 p-1 bg-brand-bg shadow-2xl relative">
+                        <div
+                            class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-brand-accent/60 p-1 bg-brand-bg shadow-2xl relative">
                             <!-- Fotografía personal -->
-                            <img src="Fotoyo.jpeg" alt="Fotografía de Alejandro Camacho" class="w-full h-full object-cover rounded-full">
+                            <img src="Fotoyo.jpeg" alt="Fotografía de Alejandro Camacho"
+                                class="w-full h-full object-cover rounded-full">
                         </div>
-                        <div class="absolute bottom-2 right-2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5 border-2 border-brand-card">
+                        <div
+                            class="absolute bottom-2 right-2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5 border-2 border-brand-card">
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Activo
                         </div>
                     </div>
@@ -79,7 +86,8 @@
                     <!-- Datos Personales y Biografía -->
                     <div class="flex-1 text-center md:text-left space-y-3">
                         <div>
-                            <span class="bg-brand-accent/15 text-brand-accent text-xs font-bold px-3 py-1 rounded-full border border-brand-accent/30 inline-block mb-2">
+                            <span
+                                class="bg-brand-accent/15 text-brand-accent text-xs font-bold px-3 py-1 rounded-full border border-brand-accent/30 inline-block mb-2">
                                 Integrante del equipo
                             </span>
                             <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Alejandro Camacho</h1>
@@ -87,21 +95,34 @@
                                 Estudiante de Ingeniería Mecatrónica | Concentración Industria 4.0
                             </p>
                         </div>
-                        
+
                         <p class="text-brand-textMuted text-sm sm:text-base leading-relaxed">
-                            Soy Alejandro Camacho, estudiante de Ingeniería Mecatrónica en el Tecnológico de Monterrey. Disfruto del tenis, la música, la filosofía y ponerme retos constantemente que me saquen de mi zona de confort. Cuento con experiencia práctica trabajando en proyectos con empresas líderes como General Motors Toluca, John Deere Monterrey y actualmente con Gureak (CINIA Puebla) dentro de la concentración en Industria 4.0.
+                            Soy Alejandro Camacho, estudiante de Ingeniería Mecatrónica en el Tecnológico de Monterrey.
+                            Disfruto del tenis, la música, la filosofía y ponerme retos constantemente que me saquen de
+                            mi zona de confort. Cuento con experiencia práctica trabajando en proyectos con empresas
+                            líderes como General Motors Toluca, John Deere Monterrey y actualmente con Gureak (CINIA
+                            Puebla) dentro de la concentración en Industria 4.0.
                         </p>
 
                         <!-- Intereses Profesionales -->
                         <div class="pt-2">
-                            <p class="text-xs font-bold text-white uppercase tracking-wider mb-2">Intereses Profesionales:</p>
+                            <p class="text-xs font-bold text-white uppercase tracking-wider mb-2">Intereses
+                                Profesionales:</p>
                             <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-                                <span class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Robótica</span>
-                                <span class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Inteligencia Artificial</span>
-                                <span class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Automatización</span>
-                                <span class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">IoT</span>
-                                <span class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Industria 4.0</span>
-                                <span class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Control</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Robótica</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Inteligencia
+                                    Artificial</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Automatización</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">IoT</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Industria
+                                    4.0</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Control</span>
                             </div>
                         </div>
                     </div>
@@ -119,51 +140,66 @@
 
             <!-- Grilla de Insignias / Badges -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
-                
-                <div class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
                     <i class="fa-solid fa-cube text-3xl text-red-500 group-hover:scale-110 transition-transform"></i>
                     <span class="text-sm font-semibold text-white">SolidWorks</span>
                     <span class="text-[10px] text-brand-textMuted font-medium">Intermedio-Avanzado</span>
                 </div>
 
-                <div class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i class="fa-solid fa-industry text-3xl text-blue-400 group-hover:scale-110 transition-transform"></i>
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-industry text-3xl text-blue-400 group-hover:scale-110 transition-transform"></i>
                     <span class="text-sm font-semibold text-white">Plant Simulate</span>
                     <span class="text-[10px] text-brand-textMuted font-medium">Intermedio</span>
                 </div>
 
-                <div class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i class="fa-solid fa-robot text-3xl text-yellow-500 group-hover:scale-110 transition-transform"></i>
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-robot text-3xl text-yellow-500 group-hover:scale-110 transition-transform"></i>
                     <span class="text-sm font-semibold text-white">RoboDK</span>
                     <span class="text-[10px] text-brand-textMuted font-medium">Intermedio</span>
                 </div>
 
-                <div class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i class="fa-solid fa-chart-line text-3xl text-green-500 group-hover:scale-110 transition-transform"></i>
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-chart-line text-3xl text-green-500 group-hover:scale-110 transition-transform"></i>
                     <span class="text-sm font-semibold text-white">Minitab</span>
                     <span class="text-[10px] text-brand-textMuted font-medium">Intermedio</span>
                 </div>
 
-                <div class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i class="fa-solid fa-diagram-project text-3xl text-red-400 group-hover:scale-110 transition-transform"></i>
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-diagram-project text-3xl text-red-400 group-hover:scale-110 transition-transform"></i>
                     <span class="text-sm font-semibold text-white">Node-RED</span>
                     <span class="text-[10px] text-brand-textMuted font-medium">En desarrollo</span>
                 </div>
 
-                <div class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i class="fa-brands fa-github text-3xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-brands fa-github text-3xl text-purple-400 group-hover:scale-110 transition-transform"></i>
                     <span class="text-sm font-semibold text-white">GitHub</span>
                     <span class="text-[10px] text-brand-textMuted font-medium">En desarrollo</span>
                 </div>
 
-                <div class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i class="fa-solid fa-chart-pie text-3xl text-orange-400 group-hover:scale-110 transition-transform"></i>
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-chart-pie text-3xl text-orange-400 group-hover:scale-110 transition-transform"></i>
                     <span class="text-sm font-semibold text-white">Grafana</span>
                     <span class="text-[10px] text-brand-textMuted font-medium">En desarrollo</span>
                 </div>
 
-                <div class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i class="fa-solid fa-file-excel text-3xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-file-excel text-3xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
                     <span class="text-sm font-semibold text-white">MS Office</span>
                     <span class="text-[10px] text-brand-textMuted font-medium">Intermedio-Avanzado</span>
                 </div>
@@ -175,16 +211,18 @@
         <section id="habilidades-blandas">
             <div class="bg-brand-card rounded-3xl p-6 sm:p-8 border border-brand-border glow-card">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
+
                     <!-- Explicación y Sliders de Ajuste Rápido -->
                     <div class="lg:col-span-5 space-y-4">
                         <div>
-                            <span class="text-xs font-bold text-brand-accent uppercase tracking-wider">Evaluación Homogénea</span>
+                            <span class="text-xs font-bold text-brand-accent uppercase tracking-wider">Evaluación
+                                Homogénea</span>
                             <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Habilidades Blandas</h2>
                         </div>
-                        
+
                         <p class="text-brand-textMuted text-sm leading-relaxed">
-                            Métrica comparativa que evalúa el perfil interpersonal y operativo del integrante bajo los estándares definidos para todo el equipo.
+                            Métrica comparativa que evalúa el perfil interpersonal y operativo del integrante bajo los
+                            estándares definidos para todo el equipo.
                         </p>
 
                         <!-- Controles deslizantes para ajustar los niveles en la plantilla fácilmente -->
@@ -193,14 +231,15 @@
                                 <span class="text-xs font-bold text-white">Ajustar Niveles</span>
                                 <span class="text-[10px] text-brand-accent">Personalizable</span>
                             </div>
-                            
+
                             <div class="space-y-2 text-xs">
                                 <div>
                                     <div class="flex justify-between text-brand-textMuted mb-0.5">
                                         <span>Comunicación Efectiva</span>
                                         <span id="val1" class="text-white font-semibold">85%</span>
                                     </div>
-                                    <input type="range" id="skill1" min="20" max="100" value="85" class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                    <input type="range" id="skill1" min="20" max="100" value="85"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
                                 </div>
 
                                 <div>
@@ -208,7 +247,8 @@
                                         <span>Trabajo en Equipo</span>
                                         <span id="val2" class="text-white font-semibold">90%</span>
                                     </div>
-                                    <input type="range" id="skill2" min="20" max="100" value="90" class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                    <input type="range" id="skill2" min="20" max="100" value="90"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
                                 </div>
 
                                 <div>
@@ -216,7 +256,8 @@
                                         <span>Resolución de Problemas</span>
                                         <span id="val3" class="text-white font-semibold">95%</span>
                                     </div>
-                                    <input type="range" id="skill3" min="20" max="100" value="95" class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                    <input type="range" id="skill3" min="20" max="100" value="95"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
                                 </div>
 
                                 <div>
@@ -224,7 +265,8 @@
                                         <span>Liderazgo y Autonomía</span>
                                         <span id="val4" class="text-white font-semibold">90%</span>
                                     </div>
-                                    <input type="range" id="skill4" min="20" max="100" value="90" class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                    <input type="range" id="skill4" min="20" max="100" value="90"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
                                 </div>
 
                                 <div>
@@ -232,7 +274,8 @@
                                         <span>Adaptabilidad</span>
                                         <span id="val5" class="text-white font-semibold">95%</span>
                                     </div>
-                                    <input type="range" id="skill5" min="20" max="100" value="95" class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                    <input type="range" id="skill5" min="20" max="100" value="95"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
                                 </div>
 
                                 <div>
@@ -240,14 +283,16 @@
                                         <span>Gestión del Tiempo</span>
                                         <span id="val6" class="text-white font-semibold">70%</span>
                                     </div>
-                                    <input type="range" id="skill6" min="20" max="100" value="70" class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                    <input type="range" id="skill6" min="20" max="100" value="70"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Contenedor del Canvas para el Gráfico -->
-                    <div class="lg:col-span-7 flex justify-center items-center p-3 sm:p-5 bg-brand-bg/60 rounded-2xl border border-brand-border/50">
+                    <div
+                        class="lg:col-span-7 flex justify-center items-center p-3 sm:p-5 bg-brand-bg/60 rounded-2xl border border-brand-border/50">
                         <div class="w-full max-w-md aspect-square relative">
                             <canvas id="softSkillsChart"></canvas>
                         </div>
@@ -265,73 +310,94 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
+
                 <!-- Proyecto 1: General Motors -->
-                <div class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden hover:border-brand-accent/60 transition duration-300 flex flex-col justify-between group">
+                <div
+                    class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden hover:border-brand-accent/60 transition duration-300 flex flex-col justify-between group">
                     <div>
                         <!-- Captura / Imagen de Proyecto -->
                         <div class="h-48 w-full bg-brand-bg relative overflow-hidden">
-                            <img src="gemelo.jpeg" alt="Proyecto Gemelos Digitales General Motors" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                            <img src="gemelo.jpeg" alt="Proyecto Gemelos Digitales General Motors"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent">
+                            </div>
                         </div>
-                        
+
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition">Gemelos Digitales de Fabricación</h3>
-                                <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-semibold">Completado</span>
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition">
+                                    Gemelos Digitales de Fabricación</h3>
+                                <span
+                                    class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-semibold">Completado</span>
                             </div>
                             <p class="text-brand-textMuted text-sm leading-relaxed mb-4">
-                                Desarrollo de un gemelo digital para subprocesos de fabricación automatizada con robots colaborativos (cobots), redes industriales y simulación de plantas para optimizar la disposición y funcionamiento del sistema.
+                                Desarrollo de un gemelo digital para subprocesos de fabricación automatizada con robots
+                                colaborativos (cobots), redes industriales y simulación de plantas para optimizar la
+                                disposición y funcionamiento del sistema.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">RoboDK</span>
-                                <span class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">SolidWorks</span>
-                                <span class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Plant Simulate</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">RoboDK</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">SolidWorks</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Plant
+                                    Simulate</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6 pt-0 flex gap-3">
-                        <a href="gemelo.jpeg" target="_blank" class="flex-1 py-2.5 px-3 bg-brand-accent hover:bg-brand-accentHover text-white text-xs font-semibold rounded-xl text-center transition flex items-center justify-center gap-2 shadow-md shadow-blue-500/20">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Detalles
-                        </a>
-                        <a href="#" class="py-2.5 px-4 bg-brand-bg hover:bg-brand-border text-white text-xs font-semibold rounded-xl text-center border border-brand-border transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-github text-sm"></i> Código
+                    <div class="p-6 pt-0">
+                        <a href="#"
+                            class="w-full py-2.5 px-4 bg-brand-bg hover:bg-brand-border text-white text-xs font-semibold rounded-xl text-center border border-brand-border transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-github text-sm"></i> Ver Código
                         </a>
                     </div>
                 </div>
 
                 <!-- Proyecto 2: CESVI -->
-                <div class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden hover:border-brand-accent/60 transition duration-300 flex flex-col justify-between group">
+                <div
+                    class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden hover:border-brand-accent/60 transition duration-300 flex flex-col justify-between group">
                     <div>
                         <!-- Captura / Imagen de Proyecto -->
                         <div class="h-48 w-full bg-brand-bg relative overflow-hidden">
-                            <img src="CESVI.jpg" alt="Proyecto Robot Móvil ADAS CESVI" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                            <img src="CESVI.jpg" alt="Proyecto Robot Móvil ADAS CESVI"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent">
+                            </div>
                         </div>
-                        
+
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition">Robot Móvil ADAS</h3>
-                                <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-semibold">Completado</span>
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition">Robot
+                                    Móvil ADAS</h3>
+                                <span
+                                    class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-semibold">Completado</span>
                             </div>
                             <p class="text-brand-textMuted text-sm leading-relaxed mb-4">
-                                Diseño y construcción de una plataforma robótica móvil a distancia para validación controlada de sistemas avanzados de asistencia al conductor (ADAS), integrando sistemas mecánicos, electrónicos y de control.
+                                Diseño y construcción de una plataforma robótica móvil a distancia para validación
+                                controlada de sistemas avanzados de asistencia al conductor (ADAS), integrando sistemas
+                                mecánicos, electrónicos y de control.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Raspberry Pi</span>
-                                <span class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Sistemas de Control</span>
-                                <span class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Mecatrónica</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Raspberry
+                                    Pi</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Sistemas
+                                    de Control</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Mecatrónica</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6 pt-0 flex gap-3">
-                        <a href="CESVI.jpg" target="_blank" class="flex-1 py-2.5 px-3 bg-brand-accent hover:bg-brand-accentHover text-white text-xs font-semibold rounded-xl text-center transition flex items-center justify-center gap-2 shadow-md shadow-blue-500/20">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Detalles
-                        </a>
-                        <a href="#" class="py-2.5 px-4 bg-brand-bg hover:bg-brand-border text-white text-xs font-semibold rounded-xl text-center border border-brand-border transition flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-github text-sm"></i> Código
+                    <div class="p-6 pt-0">
+                        <a href="#"
+                            class="w-full py-2.5 px-4 bg-brand-bg hover:bg-brand-border text-white text-xs font-semibold rounded-xl text-center border border-brand-border transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-github text-sm"></i> Ver Código
                         </a>
                     </div>
                 </div>
@@ -341,8 +407,9 @@
 
         <!-- 5. REDES Y CONTACTO -->
         <section id="contacto">
-            <div class="bg-gradient-to-r from-brand-card via-brand-cardHover to-brand-card rounded-3xl p-8 sm:p-10 border border-brand-border text-center glow-card">
-                
+            <div
+                class="bg-gradient-to-r from-brand-card via-brand-cardHover to-brand-card rounded-3xl p-8 sm:p-10 border border-brand-border text-center glow-card">
+
                 <div class="max-w-xl mx-auto space-y-4">
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Canales de Contacto</h2>
                     <p class="text-brand-textMuted text-sm">
@@ -351,20 +418,25 @@
 
                     <!-- Enlaces de Redes y Contacto Estilizados -->
                     <div class="flex flex-wrap items-center justify-center gap-3 pt-3">
-                        
-                        <a href="mailto:A01773078@tec.mx" class="py-2.5 px-5 bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg shadow-blue-500/25">
+
+                        <a href="mailto:A01773078@tec.mx"
+                            class="py-2.5 px-5 bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg shadow-blue-500/25">
                             <i class="fa-solid fa-envelope text-base"></i> Correo Electrónico
                         </a>
 
-                        <a href="https://www.linkedin.com/in/josé-alejandro-camacho-arriaga-a501071ba" target="_blank" rel="noopener" class="py-2.5 px-5 bg-[#0a66c2] hover:bg-[#084e96] text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg">
+                        <a href="https://www.linkedin.com/in/josé-alejandro-camacho-arriaga-a501071ba" target="_blank"
+                            rel="noopener"
+                            class="py-2.5 px-5 bg-[#0a66c2] hover:bg-[#084e96] text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg">
                             <i class="fa-brands fa-linkedin text-base"></i> LinkedIn
                         </a>
 
-                        <a href="#" target="_blank" rel="noopener" class="py-2.5 px-5 bg-brand-bg hover:bg-brand-border text-white font-semibold text-xs sm:text-sm rounded-xl border border-brand-border transition duration-200 flex items-center gap-2">
+                        <a href="#" target="_blank" rel="noopener"
+                            class="py-2.5 px-5 bg-brand-bg hover:bg-brand-border text-white font-semibold text-xs sm:text-sm rounded-xl border border-brand-border transition duration-200 flex items-center gap-2">
                             <i class="fa-brands fa-github text-base"></i> GitHub
                         </a>
 
-                        <a href="#" target="_blank" rel="noopener" class="py-2.5 px-5 bg-brand-bg hover:bg-brand-border text-white font-semibold text-xs sm:text-sm rounded-xl border border-brand-border transition duration-200 flex items-center gap-2">
+                        <a href="#" target="_blank" rel="noopener"
+                            class="py-2.5 px-5 bg-brand-bg hover:bg-brand-border text-white font-semibold text-xs sm:text-sm rounded-xl border border-brand-border transition duration-200 flex items-center gap-2">
                             <i class="fa-solid fa-globe text-base"></i> Portafolio
                         </a>
 
@@ -391,7 +463,7 @@
 
         function initChart() {
             const ctx = document.getElementById('softSkillsChart').getContext('2d');
-            
+
             // Obtener valores de los sliders
             const dataValues = [
                 document.getElementById('skill1').value,
@@ -433,7 +505,7 @@
                         legend: { display: false },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     return context.label + ': ' + context.raw + '%';
                                 }
                             }
@@ -482,9 +554,10 @@
             }
         }
 
-        window.onload = function() {
+        window.onload = function () {
             initChart();
         };
     </script>
 </body>
+
 </html>
