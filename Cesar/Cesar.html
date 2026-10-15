@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>César Omar Oliver Villalobos | Perfil de Integrante</title>
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,9 +33,10 @@
     </script>
 
     <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Chart.js para el Gráfico de Radar -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -51,7 +53,7 @@
             border: 1px solid #2e3d5c;
             transition: all 0.3s ease;
         }
-        
+
         .glow-card:hover {
             border-color: #3b82f6;
             box-shadow: 0 0 30px -2px rgba(59, 130, 246, 0.25);
@@ -61,26 +63,30 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #0b1120;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #2e3d5c;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #3b82f6;
         }
-
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col justify-between antialiased">
 
     <!-- Header / Barra Superior con Botón de Retorno -->
     <header class="w-full border-b border-brand-border/60 bg-brand-bg/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <!-- Botón para volver al equipo general -->
-            <a href="../../index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-textMuted hover:text-brand-accent transition-colors py-2 px-3 rounded-xl hover:bg-brand-card">
+            <a href="../../index.html"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-brand-textMuted hover:text-brand-accent transition-colors py-2 px-3 rounded-xl hover:bg-brand-card">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Volver al equipo</span>
             </a>
@@ -94,6 +100,74 @@
     <!-- Contenido Principal del Perfil Individual -->
     <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 space-y-12">
 
+        <!-- 1. ENCABEZADO / BIOGRAFÍA Y PRESENTACIÓN -->
+        <section id="biografia">
+            <div class="bg-brand-card rounded-3xl p-6 sm:p-10 border border-brand-border glow-card">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+
+                    <!-- Fotografía de Perfil Circular con Borde Brillante -->
+                    <div class="relative flex-shrink-0">
+                        <div
+                            class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-brand-accent/60 p-1 bg-brand-bg shadow-2xl relative">
+                            <!-- Sustituir este enlace con la foto personal -->
+                            <img src="https://placehold.co/400x400/131c31/3b82f6?text=Foto+Perfil"
+                                alt="Fotografía de perfil" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div
+                            class="absolute bottom-2 right-2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5 border-2 border-brand-card">
+                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Activo
+                        </div>
+                    </div>
+
+                    <!-- Datos Personales y Biografía -->
+                    <div class="flex-1 text-center md:text-left space-y-3">
+                        <div>
+                            <span
+                                class="bg-brand-accent/15 text-brand-accent text-xs font-bold px-3 py-1 rounded-full border border-brand-accent/30 inline-block mb-2">
+                                Integrante 01
+                            </span>
+                            <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">César Omar Oliver
+                                Villalobos</h1>
+                            <p class="text-brand-accent font-semibold text-base sm:text-lg mt-0.5">
+                                Estudiante de Ingeniería Mecánica · Concentración Industria 4.0
+                            </p>
+                        </div>
+
+                        <p class="text-brand-textMuted text-sm sm:text-base leading-relaxed">
+                            Estudiante de 7º semestre de Ingeniería Mecánica en el Tecnológico de Monterrey, Campus
+                            Puebla, con certificación Six Sigma Green Belt y CSWA. He aplicado simulación térmica en
+                            Ansys y diseño en SolidWorks en proyectos con empresas, logrando reducir la temperatura de
+                            un espacio de producción en un 12% y optimizar líneas de producción. Actualmente me formo en
+                            Industria 4.0 y busco realizar mis prácticas profesionales (enero–diciembre 2027).
+                        </p>
+
+                        <!-- Intereses Profesionales -->
+                        <div class="pt-2">
+                            <p class="text-xs font-bold text-white uppercase tracking-wider mb-2">Intereses
+                                Profesionales:</p>
+                            <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Manufactura</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Mejora
+                                    Continua</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Diseño
+                                    Mecánico</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Simulación
+                                    y Modelación</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Industria
+                                    4.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -106,4 +180,5 @@
     </footer>
 
 </body>
+
 </html>
