@@ -1,0 +1,44 @@
+body {
+    background-color: #0b1120;
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Efectos de resplandor para tarjetas */
+.glow-card {
+    box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.08);
+    border: 1px solid #2e3d5c;
+    transition: all 0.3s ease;
+}
+
+.glow-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 0 30px -2px rgba(59, 130, 246, 0.25);
+}
+
+/* Barra de desplazamiento personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2e3d5c;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
+
+/* Animación de elevación suave para tarjetas de proyectos */
+.card-hover-effect {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-4px);
+}
