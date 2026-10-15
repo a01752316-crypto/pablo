@@ -1,463 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil - Alison Stringer Ríos</title>
-
+    
+    <!-- Fuentes externas y librerías -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <style>
-        :root {
-            --bg-color: #0b1329;
-            --card-bg: #131f37;
-            --card-border: #1e2d4a;
-            --text-primary: #ffffff;
-            --text-secondary: #94a3b8;
-            --accent-blue: #4f75e8;
-            --accent-hover: #3b5ccc;
-            --tag-bg: #1a2a47;
-            --badge-bg: #1a2a47;
-            --badge-border: #2a3e66;
-            --badge-hover: #23375c;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-            min-height: 100vh;
-        }
-
-        .profile-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            max-width: 850px;
-            width: 100%;
-        }
-
-        .card-section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-            width: 100%;
-        }
-
-        /* 1. Biografía y presentación */
-        .profile-header {
-            display: flex;
-            flex-direction: row;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .profile-photo {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--accent-blue);
-            background-color: #1e293b;
-            flex-shrink: 0;
-        }
-
-        .profile-info {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            min-width: 0;
-        }
-
-        .profile-name {
-            font-size: 2.1rem;
-            font-weight: 700;
-        }
-
-        .profile-title {
-            font-size: 1.05rem;
-            color: var(--accent-blue);
-            font-weight: 600;
-            margin-top: -5px;
-        }
-
-        .profile-bio {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .interests-section {
-            margin-top: 8px;
-        }
-
-        .interests-title,
-        .group-title {
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .interests-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .interest-item {
-            background-color: var(--tag-bg);
-            border: 1px solid var(--card-border);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.83rem;
-            font-weight: 500;
-        }
-
-        /* Títulos de las secciones */
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 22px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-title::before {
-            content: '';
-            display: inline-block;
-            width: 4px;
-            height: 22px;
-            background-color: var(--accent-blue);
-            border-radius: 2px;
-            flex-shrink: 0;
-        }
-
-        /* 2. Habilidades técnicas */
-        .skill-group {
-            margin-bottom: 20px;
-        }
-
-        .skill-group:last-child {
-            margin-bottom: 0;
-        }
-
-        .badges-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .badge {
-            background-color: var(--badge-bg);
-            border: 1px solid var(--badge-border);
-            color: var(--text-primary);
-            padding: 8px 16px;
-            border-radius: 12px;
-            font-size: 0.88rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .badge:hover {
-            background-color: var(--badge-hover);
-            border-color: var(--accent-blue);
-            transform: translateY(-2px);
-        }
-
-        .badge.certified {
-            border-color: var(--accent-blue);
-            background: linear-gradient(135deg,
-                    rgba(79, 117, 232, 0.15) 0%,
-                    var(--badge-bg) 100%);
-        }
-
-        .badge-icon {
-            color: var(--accent-blue);
-        }
-
-        /* 3. Habilidades blandas */
-        .section-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .radar-layout {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .chart-container {
-            position: relative;
-            max-width: 480px;
-            width: 100%;
-            height: 350px;
-        }
-
-        .sliders-container {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px 25px;
-            background-color: rgba(11, 19, 41, 0.5);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid var(--card-border);
-        }
-
-        .slider-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .slider-label {
-            display: flex;
-            justify-content: space-between;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .slider-label span {
-            color: var(--accent-blue);
-            font-weight: 700;
-        }
-
-        .skill-slider {
-            width: 100%;
-            accent-color: var(--accent-blue);
-            cursor: pointer;
-        }
-
-        /* 4. Logros y proyectos */
-        .projects-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .project-card {
-            background-color: rgba(11, 19, 41, 0.6);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .project-card:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-3px);
-        }
-
-        .project-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.8rem;
-            color: var(--accent-blue);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .project-period {
-            color: var(--text-secondary);
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .project-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 5px;
-        }
-
-        .project-tag {
-            background-color: var(--tag-bg);
-            border: 1px solid var(--card-border);
-            color: var(--text-primary);
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-        }
-
-        /* 5. Redes y contacto */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .contact-card {
-            background-color: rgba(11, 19, 41, 0.6);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 20px 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.2s ease;
-            min-width: 0;
-        }
-
-        .contact-card:hover {
-            border-color: var(--accent-blue);
-            background-color: var(--tag-bg);
-            transform: translateY(-2px);
-        }
-
-        .contact-icon {
-            width: 45px;
-            height: 45px;
-            background-color: var(--badge-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-blue);
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            overflow: hidden;
-            min-width: 0;
-        }
-
-        .contact-label {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-secondary);
-            font-weight: 600;
-        }
-
-        .contact-value {
-            font-size: 0.92rem;
-            font-weight: 600;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Adaptación a dispositivos móviles */
-        @media (max-width: 680px) {
-            body {
-                padding: 20px 12px;
-            }
-
-            .card-section {
-                padding: 22px;
-            }
-
-            .profile-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-name {
-                font-size: 1.8rem;
-            }
-
-            .interests-list {
-                justify-content: center;
-            }
-
-            .sliders-container {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .chart-container {
-                height: 280px;
-            }
-
-            .project-meta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-            }
-        }
-    </style>
+    
+    <!-- Enlace a tu nuevo archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+
     <div class="profile-container">
 
         <!-- RUBRO 1: BIOGRAFÍA Y PRESENTACIÓN -->
         <section class="card-section">
             <div class="profile-header">
-
-                <img src="../FotoAlison.jpeg" alt="Fotografía de Alison Stringer Ríos" class="profile-photo">
-
+                <img src="FotoAlison.jpeg" alt="Fotografía de Alison Stringer Ríos" class="profile-photo">
                 <div class="profile-info">
                     <h1 class="profile-name">Alison Stringer Ríos</h1>
                     <p class="profile-title">Estudiante de Ingeniería Mecánica</p>
-
+                    
                     <p class="profile-bio">
-                        Estudiante del Tecnológico de Monterrey con enfoque en
-                        desarrollo de ingeniería sustentable, simulación
-                        termodinámica y automatización industrial. He liderado
-                        proyectos con socios formadores como Cementos Cruz Azul
-                        (gemelos digitales), Grupo Modelo y Autoplastek.
-                        Fundadora y Presidenta de ASME Campus Puebla y
-                        apasionada por la integración estudiantil y la música.
+                        Estudiante del Tecnológico de Monterrey con enfoque en desarrollo de ingeniería sustentable, simulación termodinámica y automatización industrial[cite: 3, 4]. He liderado proyectos con socios formadores como Cementos Cruz Azul (gemelos digitales), Grupo Modelo y Autoplastek[cite: 3]. Fundadora y Presidenta de ASME Campus Puebla y apasionada por la integración estudiantil y la música[cite: 4].
                     </p>
 
                     <div class="interests-section">
                         <h2 class="interests-title">Intereses Profesionales</h2>
-
                         <ul class="interests-list">
                             <li class="interest-item">Sustentabilidad e Ingeniería Verde</li>
                             <li class="interest-item">Gemelos Digitales y Simulación</li>
@@ -475,15 +47,9 @@
             <h2 class="section-title">Habilidades Técnicas</h2>
 
             <div class="skill-group">
-                <h3 class="group-title">
-                    Diseño, Simulación & Manufactura (CAD/CAE/CAM)
-                </h3>
-
+                <h3 class="group-title">Diseño, Simulación & Manufactura (CAD/CAE/CAM)</h3>
                 <div class="badges-grid">
-                    <div class="badge certified">
-                        <span class="badge-icon">★</span>
-                        SOLIDWORKS (CSWA Simulation)
-                    </div>
+                    <div class="badge certified"><span class="badge-icon">★</span> SOLIDWORKS (CSWA Simulation)</div>
                     <div class="badge">Hypermesh (Altair)</div>
                     <div class="badge">Mastercam</div>
                     <div class="badge">Diseño de Mecanismos & Engranes</div>
@@ -492,25 +58,16 @@
             </div>
 
             <div class="skill-group">
-                <h3 class="group-title">
-                    Software de Computación & Programación
-                </h3>
-
+                <h3 class="group-title">Software de Computación & Programación</h3>
                 <div class="badges-grid">
-                    <div class="badge certified">
-                        <span class="badge-icon">⚡</span>
-                        MATLAB (Onramp)
-                    </div>
+                    <div class="badge certified"><span class="badge-icon">⚡</span> MATLAB (Onramp)</div>
                     <div class="badge">EES (Engineering Equation Solver)</div>
                     <div class="badge">Wolfram Language</div>
                 </div>
             </div>
 
             <div class="skill-group">
-                <h3 class="group-title">
-                    Ingeniería Aplicada & Automatización
-                </h3>
-
+                <h3 class="group-title">Ingeniería Aplicada & Automatización</h3>
                 <div class="badges-grid">
                     <div class="badge">Gemelos Digitales (Digital Twins)</div>
                     <div class="badge">Análisis Termodinámico & Transferencia de Calor</div>
@@ -521,24 +78,18 @@
 
             <div class="skill-group">
                 <h3 class="group-title">Metodologías & Certificaciones</h3>
-
                 <div class="badges-grid">
-                    <div class="badge certified">
-                        <span class="badge-icon">✓</span>
-                        Six Sigma White Belt
-                    </div>
+                    <div class="badge certified"><span class="badge-icon">✓</span> Six Sigma White Belt</div>
                     <div class="badge">Map the System (Oxford University)</div>
                 </div>
             </div>
         </section>
 
-        <!-- RUBRO 3: HABILIDADES BLANDAS -->
+        <!-- RUBRO 3: HABILIDADES BLANDAS CON SLIDERS INTERACTIVOS -->
         <section class="card-section">
             <h2 class="section-title">Habilidades Blandas</h2>
-
             <p class="section-subtitle">
-                Ajusta los deslizadores para actualizar los niveles en tiempo
-                real en el gráfico de radar.
+                Ajusta los deslizadores para actualizar los niveles en tiempo real en el gráfico de radar.
             </p>
 
             <div class="radar-layout">
@@ -548,57 +99,28 @@
 
                 <div class="sliders-container">
                     <div class="slider-group">
-                        <div class="slider-label">
-                            Liderazgo y Gestión
-                            <span id="val-0">95%</span>
-                        </div>
-                        <input type="range" class="skill-slider" min="0" max="100" value="95"
-                            oninput="updateSkill(0, this.value)">
+                        <div class="slider-label">Liderazgo y Gestión <span id="val-0">95%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="95" oninput="updateSkill(0, this.value)">
                     </div>
-
                     <div class="slider-group">
-                        <div class="slider-label">
-                            Comunicación Eficiente
-                            <span id="val-1">90%</span>
-                        </div>
-                        <input type="range" class="skill-slider" min="0" max="100" value="90"
-                            oninput="updateSkill(1, this.value)">
+                        <div class="slider-label">Comunicación Eficiente <span id="val-1">90%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="90" oninput="updateSkill(1, this.value)">
                     </div>
-
                     <div class="slider-group">
-                        <div class="slider-label">
-                            Trabajo en Equipo
-                            <span id="val-2">95%</span>
-                        </div>
-                        <input type="range" class="skill-slider" min="0" max="100" value="95"
-                            oninput="updateSkill(2, this.value)">
+                        <div class="slider-label">Trabajo en Equipo <span id="val-2">95%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="95" oninput="updateSkill(2, this.value)">
                     </div>
-
                     <div class="slider-group">
-                        <div class="slider-label">
-                            Resolución de Problemas
-                            <span id="val-3">90%</span>
-                        </div>
-                        <input type="range" class="skill-slider" min="0" max="100" value="90"
-                            oninput="updateSkill(3, this.value)">
+                        <div class="slider-label">Resolución de Problemas <span id="val-3">90%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="90" oninput="updateSkill(3, this.value)">
                     </div>
-
                     <div class="slider-group">
-                        <div class="slider-label">
-                            Organización y Logística
-                            <span id="val-4">88%</span>
-                        </div>
-                        <input type="range" class="skill-slider" min="0" max="100" value="88"
-                            oninput="updateSkill(4, this.value)">
+                        <div class="slider-label">Organización y Logística <span id="val-4">88%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="88" oninput="updateSkill(4, this.value)">
                     </div>
-
                     <div class="slider-group">
-                        <div class="slider-label">
-                            Adaptabilidad
-                            <span id="val-5">92%</span>
-                        </div>
-                        <input type="range" class="skill-slider" min="0" max="100" value="92"
-                            oninput="updateSkill(5, this.value)">
+                        <div class="slider-label">Adaptabilidad <span id="val-5">92%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="92" oninput="updateSkill(5, this.value)">
                     </div>
                 </div>
             </div>
@@ -609,24 +131,15 @@
             <h2 class="section-title">Logros y Proyectos Destacados</h2>
 
             <div class="projects-grid">
-
-                <!-- Proyecto 1 -->
                 <div class="project-card">
                     <div class="project-meta">
                         <span>Socio Formador: Cementos Cruz Azul</span>
                         <span class="project-period">Mayo 2026 - Junio 2026</span>
                     </div>
-
-                    <h3 class="project-title">
-                        Sistema de Prevención de Fallas mediante Gemelos Digitales
-                    </h3>
-
+                    <h3 class="project-title">Sistema de Prevención de Fallas mediante Gemelos Digitales</h3>
                     <p class="project-desc">
-                        Desarrollo de propuesta para un sistema preventivo de
-                        fallas enfocado en hornos industriales mediante
-                        tecnología de gemelos digitales para monitoreo predictivo.
+                        Desarrollo de propuesta para un sistema preventivo de fallas enfocado en hornos industriales mediante tecnología de gemelos digitales para monitoreo predictivo[cite: 3].
                     </p>
-
                     <div class="project-tags">
                         <span class="project-tag">Gemelos Digitales</span>
                         <span class="project-tag">Mantenimiento Predictivo</span>
@@ -634,24 +147,15 @@
                     </div>
                 </div>
 
-                <!-- Proyecto 2 -->
                 <div class="project-card">
                     <div class="project-meta">
                         <span>Proyecto DUAL</span>
                         <span class="project-period">Feb 2026 - Mayo 2026</span>
                     </div>
-
-                    <h3 class="project-title">
-                        Diseño de Caja Reductora para Turbogenerador Industrial
-                    </h3>
-
+                    <h3 class="project-title">Diseño de Caja Reductora para Turbogenerador Industrial</h3>
                     <p class="project-desc">
-                        Diseño y optimización de caja reductora de engranes doble
-                        helicoidales. Selección de geometría mediante MATLAB,
-                        análisis de fatiga y flexión, selección de material
-                        AISI 4140 y simulación en Mastercam.
+                        Diseño y optimización de caja reductora de engranes doble helicoidales[cite: 3]. Selección de geometría mediante MATLAB, análisis de fatiga/flexión, selección de material AISI 4140 y simulación en Mastercam[cite: 3].
                     </p>
-
                     <div class="project-tags">
                         <span class="project-tag">MATLAB</span>
                         <span class="project-tag">Mastercam</span>
@@ -660,31 +164,21 @@
                     </div>
                 </div>
 
-                <!-- Proyecto 3 -->
                 <div class="project-card">
                     <div class="project-meta">
                         <span>Socio Formador: Grupo Modelo</span>
                         <span class="project-period">Feb 2026 - Mayo 2026</span>
                     </div>
-
-                    <h3 class="project-title">
-                        Monitoreo Termodinámico de Pasteurización en Túnel
-                    </h3>
-
+                    <h3 class="project-title">Monitoreo Termodinámico de Pasteurización en Túnel</h3>
                     <p class="project-desc">
-                        Análisis termodinámico y modelado de planta en EES para
-                        evaluar la generación de vapor en calderas pirotubulares
-                        e intercambiadores de calor, asegurando el control
-                        tiempo-temperatura.
+                        Análisis termodinámico y modelado de planta en EES para evaluar la generación de vapor en calderas pirotubulares e intercambiadores de calor, asegurando el control tiempo-temperatura[cite: 3].
                     </p>
-
                     <div class="project-tags">
                         <span class="project-tag">EES</span>
                         <span class="project-tag">Termodinámica</span>
                         <span class="project-tag">Intercambiadores</span>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -693,42 +187,32 @@
             <h2 class="section-title">Redes y Contacto</h2>
 
             <div class="contact-grid">
-
-                <!-- Correo electrónico -->
                 <a href="mailto:A01737999@tec.mx" class="contact-card">
                     <div class="contact-icon">✉</div>
-
                     <div class="contact-info">
                         <span class="contact-label">Correo Electrónico</span>
                         <span class="contact-value">A01737999@tec.mx</span>
                     </div>
                 </a>
 
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/alison-stringer-rios292005" target="_blank"
-                    rel="noopener noreferrer" class="contact-card">
+                <a href="https://www.linkedin.com/in/alison-stringer-rios292005" target="_blank" rel="noopener noreferrer" class="contact-card">
                     <div class="contact-icon">in</div>
-
                     <div class="contact-info">
                         <span class="contact-label">LinkedIn</span>
                         <span class="contact-value">alison-stringer-rios292005</span>
                     </div>
                 </a>
-
             </div>
         </section>
 
     </div>
 
-    <!-- GRÁFICO DE RADAR Y CONTROL DE DESLIZADORES -->
+    <!-- SCRIPT INTERACTIVO -->
     <script>
-        const ctx = document
-            .getElementById('softSkillsChart')
-            .getContext('2d');
-
+        const ctx = document.getElementById('softSkillsChart').getContext('2d');
+        
         const softSkillsChart = new Chart(ctx, {
             type: 'radar',
-
             data: {
                 labels: [
                     'Liderazgo y Gestión',
@@ -738,7 +222,6 @@
                     'Organización y Logística',
                     'Adaptabilidad'
                 ],
-
                 datasets: [{
                     label: 'Alison Stringer Ríos',
                     data: [95, 90, 95, 90, 88, 92],
@@ -750,43 +233,19 @@
                     pointRadius: 4
                 }]
             },
-
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-
+                plugins: { legend: { display: false } },
                 scales: {
                     r: {
-                        angleLines: {
-                            color: '#1e2d4a'
-                        },
-
-                        grid: {
-                            color: '#1e2d4a'
-                        },
-
+                        angleLines: { color: '#1e2d4a' },
+                        grid: { color: '#1e2d4a' },
                         pointLabels: {
                             color: '#94a3b8',
-                            font: {
-                                family: "'Inter', sans-serif",
-                                size: 11,
-                                weight: '600'
-                            }
+                            font: { family: "'Inter', sans-serif", size: 11, weight: '600' }
                         },
-
-                        ticks: {
-                            display: false,
-                            min: 0,
-                            max: 100,
-                            stepSize: 20
-                        },
-
+                        ticks: { display: false, min: 0, max: 100, stepSize: 20 },
                         suggestedMin: 0,
                         suggestedMax: 100
                     }
@@ -797,11 +256,9 @@
         function updateSkill(index, value) {
             softSkillsChart.data.datasets[0].data[index] = Number(value);
             softSkillsChart.update();
-
             document.getElementById(`val-${index}`).innerText = value + '%';
         }
     </script>
 
 </body>
-
 </html>
