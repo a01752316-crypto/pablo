@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,40 +16,47 @@
     <!-- Chart.js para el gráfico de radar -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Estilos del botón para regresar al inicio -->
+    <!-- Estilos del enlace para regresar al inicio -->
     <style>
         .back-home-container {
             display: flex;
-            justify-content: center;
-            margin: 30px 0 10px;
+            justify-content: flex-end;
+            margin: 15px 25px 10px;
         }
 
         .back-home-button {
             display: inline-block;
             text-decoration: none;
-            background: #456be1;
-            color: white;
-            padding: 13px 25px;
-            border-radius: 9px;
-            font-weight: 600;
+            color: #456be1;
             font-family: 'Inter', sans-serif;
-            transition: 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 5px 0;
+            border: none;
+            background: transparent;
+            transition: color 0.2s ease;
         }
 
         .back-home-button:hover {
-            background: #6387ff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px #0005;
+            color: #6387ff;
+            text-decoration: underline;
         }
 
         .back-home-button:focus-visible {
             outline: 2px solid #a9c0ff;
-            outline-offset: 4px;
+            outline-offset: 3px;
         }
     </style>
 </head>
 
 <body>
+
+    <!-- ENLACE PARA REGRESAR AL INICIO -->
+    <div class="back-home-container">
+        <a href="../index.html" class="back-home-button">
+            ← Regresar al inicio
+        </a>
+    </div>
 
     <!-- CONTENEDOR PRINCIPAL -->
     <div class="profile-container">
@@ -490,13 +497,6 @@
 
             </div>
         </section>
-
-        <!-- BOTÓN PARA REGRESAR A LA PÁGINA DE INICIO -->
-        <div class="back-home-container">
-            <a href="../index.html" class="back-home-button">
-                ← Regresar a la página de inicio
-            </a>
-        </div>
 
     </div>
 
