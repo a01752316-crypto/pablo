@@ -33,3 +33,12 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #3b82f6;
 }
+
+/* Animación de elevación suave para tarjetas de proyectos */
+.card-hover-effect {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-4px);
+}
