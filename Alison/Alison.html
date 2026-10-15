@@ -6,8 +6,8 @@
     <title>Perfil - Alison Stringer Ríos</title>
     <!-- Fuente Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Archivo de estilos CSS externo -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Archivo de estilos CSS externo (corregido a styles.css) -->
+    <link rel="stylesheet" href="styles.css">
     <!-- Chart.js para el gráfico de radar -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -19,13 +19,13 @@
         <!-- RUBRO 1: BIOGRAFÍA Y PRESENTACIÓN -->
         <section class="card-section">
             <div class="profile-header">
-                <img src="..\FotoAlison.jpeg" alt="Fotografía de Alison Stringer Ríos" class="profile-photo">
+                <img src="FotoAlison.jpeg" alt="Fotografía de Alison Stringer Ríos" class="profile-photo">
                 <div class="profile-info">
                     <h1 class="profile-name">Alison Stringer Ríos</h1>
                     <p class="profile-title">Estudiante de Ingeniería Mecánica</p>
                     
                     <p class="profile-bio">
-                        Estudiante del Tecnológico de Monterrey en ingeniería mecánica, apasionada por la innovación tecnológica y la sostenibilidad. Con experiencia en diseño, simulación y manufactura, busco aplicar mis habilidades para desarrollar soluciones eficientes y sostenibles en el ámbito industrial. Involucrada en proyectos estudiantiles, como grupos estudiantiles con enfoque ingenieril y sustentable, así como artísiticos fuera del área de ingeniería.
+                        Estudiante del Tecnológico de Monterrey en ingeniería mecánica, apasionada por la innovación tecnológica y la sostenibilidad. Con experiencia en diseño, simulación y manufactura, busco aplicar mis habilidades para desarrollar soluciones eficientes y sostenibles en el ámbito industrial. Involucrada en proyectos estudiantiles, como grupos estudiantiles con enfoque ingenieril y sustentable, así como artísticos fuera del área de ingeniería.
                     </p>
 
                     <div class="interests-section">
@@ -130,53 +130,117 @@
         <section class="card-section">
             <h2 class="section-title">Logros y Proyectos Destacados</h2>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-meta">
-                        <span>Socio Formador: Cementos Cruz Azul</span>
-                        <span class="project-period">Mayo 2026 - Junio 2026</span>
+            <!-- Subsección 1: Proyectos Destacados -->
+            <div class="skill-group">
+                <h3 class="group-title">Proyectos Destacados</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-meta">
+                            <span>Socio Formador: Cementos Cruz Azul</span>
+                            <span class="project-period">Mayo 2026 - Junio 2026</span>
+                        </div>
+                        <h3 class="project-title">Sistema de Prevención de Fallas mediante Gemelos Digitales</h3>
+                        <p class="project-desc">
+                            Desarrollo de propuesta para un sistema preventivo de fallas enfocado en hornos industriales mediante tecnología de gemelos digitales para monitoreo predictivo[cite: 3].
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Gemelos Digitales</span>
+                            <span class="project-tag">Mantenimiento Predictivo</span>
+                            <span class="project-tag">Simulación</span>
+                        </div>
                     </div>
-                    <h3 class="project-title">Sistema de Prevención de Fallas mediante Gemelos Digitales</h3>
-                    <p class="project-desc">
-                        Desarrollo de propuesta para un sistema preventivo de fallas enfocado en hornos industriales mediante tecnología de gemelos digitales para monitoreo predictivo[cite: 3].
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">Gemelos Digitales</span>
-                        <span class="project-tag">Mantenimiento Predictivo</span>
-                        <span class="project-tag">Simulación</span>
+
+                    <div class="project-card">
+                        <div class="project-meta">
+                            <span>Proyecto DUAL</span>
+                            <span class="project-period">Feb 2026 - Mayo 2026</span>
+                        </div>
+                        <h3 class="project-title">Diseño de Caja Reductora para Turbogenerador Industrial</h3>
+                        <p class="project-desc">
+                            Diseño y optimización de caja reductora de engranes doble helicoidales[cite: 3]. Selección de geometría mediante MATLAB, análisis de fatiga/flexión, selección de material AISI 4140 y simulación en Mastercam[cite: 3].
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">MATLAB</span>
+                            <span class="project-tag">Mastercam</span>
+                            <span class="project-tag">AISI 4140</span>
+                            <span class="project-tag">Análisis de Fatiga</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-meta">
+                            <span>Socio Formador: Grupo Modelo</span>
+                            <span class="project-period">Feb 2026 - Mayo 2026</span>
+                        </div>
+                        <h3 class="project-title">Monitoreo Termodinámico de Pasteurización en Túnel</h3>
+                        <p class="project-desc">
+                            Análisis termodinámico y modelado de planta en EES para evaluar la generación de vapor en calderas pirotubulares e intercambiadores de calor, asegurando el control tiempo-temperatura[cite: 3].
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">EES</span>
+                            <span class="project-tag">Termodinámica</span>
+                            <span class="project-tag">Intercambiadores</span>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-meta">
-                        <span>Proyecto DUAL</span>
-                        <span class="project-period">Feb 2026 - Mayo 2026</span>
+            <!-- Subsección 2: Certificaciones y Reconocimientos -->
+            <div class="skill-group" style="margin-top: 30px;">
+                <h3 class="group-title">Certificaciones y Reconocimientos</h3>
+                <div class="certifications-subgrid">
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">🏆</div>
+                        <div class="cert-details">
+                            <span class="cert-name">Ganadora Expo Ingenierías EIII</span>
+                            <span class="cert-issuer">ITESM Campus Puebla</span>
+                            <span class="cert-date">Junio 2026</span>
+                        </div>
                     </div>
-                    <h3 class="project-title">Diseño de Caja Reductora para Turbogenerador Industrial</h3>
-                    <p class="project-desc">
-                        Diseño y optimización de caja reductora de engranes doble helicoidales[cite: 3]. Selección de geometría mediante MATLAB, análisis de fatiga/flexión, selección de material AISI 4140 y simulación en Mastercam[cite: 3].
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">MATLAB</span>
-                        <span class="project-tag">Mastercam</span>
-                        <span class="project-tag">AISI 4140</span>
-                        <span class="project-tag">Análisis de Fatiga</span>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-meta">
-                        <span>Socio Formador: Grupo Modelo</span>
-                        <span class="project-period">Feb 2026 - Mayo 2026</span>
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">📜</div>
+                        <div class="cert-details">
+                            <span class="cert-name">Certified SOLIDWORKS Simulation Associate</span>
+                            <span class="cert-issuer">Dassault Systèmes</span>
+                            <span class="cert-date">Abril 2026</span>
+                        </div>
                     </div>
-                    <h3 class="project-title">Monitoreo Termodinámico de Pasteurización en Túnel</h3>
-                    <p class="project-desc">
-                        Análisis termodinámico y modelado de planta en EES para evaluar la generación de vapor en calderas pirotubulares e intercambiadores de calor, asegurando el control tiempo-temperatura[cite: 3].
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">EES</span>
-                        <span class="project-tag">Termodinámica</span>
-                        <span class="project-tag">Intercambiadores</span>
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">🎓</div>
+                        <div class="cert-details">
+                            <span class="cert-name">Map the System Learning Programme</span>
+                            <span class="cert-issuer">Saïd Business School, Oxford University</span>
+                            <span class="cert-date">Junio 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">⚡</div>
+                        <div class="cert-details">
+                            <span class="cert-name">MATLAB Onramp</span>
+                            <span class="cert-issuer">MathWorks Training Services</span>
+                            <span class="cert-date">Mayo 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">🔬</div>
+                        <div class="cert-details">
+                            <span class="cert-name">Elementary Induction to Wolfram Language</span>
+                            <span class="cert-issuer">Wolfram U</span>
+                            <span class="cert-date">Julio 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">⚙️</div>
+                        <div class="cert-details">
+                            <span class="cert-name">Six Sigma White Belt</span>
+                            <span class="cert-issuer">Tecnológico de Monterrey</span>
+                            <span class="cert-date">Marzo 2023</span>
+                        </div>
                     </div>
                 </div>
             </div>
