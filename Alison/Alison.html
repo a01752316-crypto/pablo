@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Alison Stringer Ríos</title>
+    <!-- Importación de la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Paleta de colores inspirada en la interfaz oscura */
+        :root {
+            --bg-color: #0b1329;       /* Fondo principal azul oscuro */
+            --card-bg: #131f37;        /* Fondo de tarjeta */
+            --card-border: #1e2d4a;    /* Borde de tarjeta */
+            --text-primary: #ffffff;   /* Texto blanco */
+            --text-secondary: #94a3b8; /* Texto gris claro */
+            --accent-blue: #4f75e8;    /* Azul brillante */
+            --tag-bg: #1a2a47;         /* Fondo para etiquetas */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Tarjeta principal de presentación */
+        .profile-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 850px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            display: flex;
+            flex-direction: row;
+            gap: 35px;
+            align-items: center;
+        }
+
+        /* Contenedor de la fotografía de perfil */
+        .profile-photo-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-photo {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-blue);
+            background-color: #1e293b;
+            display: block;
+        }
+
+        /* Información de la biografía */
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .profile-name {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .profile-title {
+            font-size: 1.05rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-top: -4px;
+        }
+
+        .profile-bio {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Sección de intereses profesionales */
+        .interests-section {
+            margin-top: 8px;
+        }
+
+        .interests-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .interest-item {
+            background-color: var(--tag-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--card-border);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.83rem;
+            font-weight: 500;
+        }
+
+        /* Adaptación para pantallas pequeñas */
+        @media (max-width: 680px) {
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .interests-list {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TARJETA DE BIOGRAFÍA Y PRESENTACIÓN -->
+    <section class="profile-card">
+        <!-- Fotografía de perfil -->
+        <div class="profile-photo-container">
+            <!-- Puedes reemplazar el atributo src con la ruta de tu imagen, ej: "Alison/foto.jpg" -->
+            <img src="https://via.placeholder.com/170" alt="Fotografía de Alison Stringer Ríos" class="profile-photo">
+        </div>
+
+        <!-- Información personal -->
+        <div class="profile-info">
+            <h1 class="profile-name">Alison Stringer Ríos</h1>
+            <p class="profile-title">Estudiante de Ingeniería Mecánica</p>
+            
+            <!-- Breve Trayectoria -->
+            <p class="profile-bio">
+                Estudiante del Tecnológico de Monterrey con enfoque en desarrollo de ingeniería sustentable, simulación termodinámica y automatización industrial[cite: 3, 4]. He liderado proyectos con socios formadores como Cementos Cruz Azul (gemelos digitales), Grupo Modelo y Autoplastek[cite: 3]. Fundadora y Presidenta de ASME Campus Puebla y apasionada por la integración estudiantil y la música[cite: 4].
+            </p>
+
+            <!-- Intereses Profesionales -->
+            <div class="interests-section">
+                <h2 class="interests-title">Intereses Profesionales</h2>
+                <ul class="interests-list">
+                    <li class="interest-item">Sustentabilidad e Ingeniería Verde</li>
+                    <li class="interest-item">Gemelos Digitales y Simulación</li>
+                    <li class="interest-item">Turbomaquinaria y Termodinámica</li>
+                    <li class="interest-item">Liderazgo Estudiantil y Gestión</li>
+                    <li class="interest-item">Manufactura y Automatización</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
