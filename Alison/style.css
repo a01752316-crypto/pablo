@@ -1,6 +1,4 @@
-/* ==========================================================================
-   PALETA DE COLORES Y VARIABLES
-   ========================================================================== */
+/* Variables de color de la paleta */
 :root {
     --bg-color: #0b1329;       /* Fondo principal azul oscuro */
     --card-bg: #131f37;        /* Fondo de tarjetas */
@@ -15,9 +13,6 @@
     --badge-hover: #23375c;    
 }
 
-/* ==========================================================================
-   RESETS Y ESTILOS GLOBALES
-   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -34,7 +29,7 @@ body {
     min-height: 100vh;
 }
 
-/* Contenedor principal: Apila las secciones verticalmente */
+/* CONTENEDOR PRINCIPAL: Apila todas las secciones verticalmente */
 .profile-container {
     display: flex;
     flex-direction: column;
@@ -43,7 +38,7 @@ body {
     width: 100%;
 }
 
-/* Estilo base para cada tarjeta */
+/* Estilo base para cada tarjeta/sección */
 .card-section {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -53,7 +48,7 @@ body {
     width: 100%;
 }
 
-/* Títulos de sección con barra azul */
+/* Títulos de las secciones con la barra azul distintiva */
 .section-title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -79,9 +74,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* ==========================================================================
-   RUBRO 1: BIOGRAFÍA Y PRESENTACIÓN
-   ========================================================================== */
+/* --- RUBRO 1: BIOGRAFÍA Y PRESENTACIÓN --- */
 .profile-header {
     display: flex;
     flex-direction: row;
@@ -152,9 +145,7 @@ body {
     font-weight: 500;
 }
 
-/* ==========================================================================
-   RUBRO 2: HABILIDADES TÉCNICAS
-   ========================================================================== */
+/* --- RUBRO 2: HABILIDADES TÉCNICAS --- */
 .skill-group {
     margin-bottom: 20px;
 }
@@ -198,9 +189,7 @@ body {
     color: var(--accent-blue);
 }
 
-/* ==========================================================================
-   RUBRO 3: HABILIDADES BLANDAS (RADAR CHART & SLIDERS)
-   ========================================================================== */
+/* --- RUBRO 3: HABILIDADES BLANDAS CON SLIDERS --- */
 .radar-layout {
     display: flex;
     flex-direction: column;
@@ -251,9 +240,7 @@ body {
     cursor: pointer;
 }
 
-/* ==========================================================================
-   RUBRO 4: LOGROS Y PROYECTOS DESTACADOS
-   ========================================================================== */
+/* --- RUBRO 4: LOGROS Y PROYECTOS DESTACADOS --- */
 .projects-grid {
     display: flex;
     flex-direction: column;
@@ -319,9 +306,7 @@ body {
     font-size: 0.8rem;
 }
 
-/* ==========================================================================
-   RUBRO 5: REDES Y CONTACTO
-   ========================================================================== */
+/* --- RUBRO 5: REDES Y CONTACTO --- */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -384,9 +369,7 @@ body {
     text-overflow: ellipsis;
 }
 
-/* ==========================================================================
-   RESPONSIVIDAD (PANTALLAS PEQUEÑAS)
-   ========================================================================== */
+/* Adaptación a dispositivos móviles */
 @media (max-width: 680px) {
     .profile-header {
         flex-direction: column;
