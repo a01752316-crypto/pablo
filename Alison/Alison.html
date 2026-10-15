@@ -385,3 +385,205 @@
                     <span class="badge-icon">✓</span> Six Sigma White Belt
                 </div>
                 <div class="badge">Map the System
+
+                    <!DOCTYPE html>
+                    <html lang="es">
+
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Habilidades Blandas - Alison Stringer Ríos</title>
+                        <!-- Importación de la fuente Inter -->
+                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+                            rel="stylesheet">
+                        <!-- Chart.js CDN para el gráfico de radar -->
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                        <style>
+                            :root {
+                                --bg-color: #0b1329;
+                                /* Fondo principal azul oscuro */
+                                --card-bg: #131f37;
+                                /* Fondo de tarjetas */
+                                --card-border: #1e2d4a;
+                                /* Borde de tarjetas */
+                                --text-primary: #ffffff;
+                                /* Texto principal */
+                                --text-secondary: #94a3b8;
+                                /* Texto secundario */
+                                --accent-blue: #4f75e8;
+                                /* Azul brillante */
+                            }
+
+                            * {
+                                box-sizing: border-box;
+                                margin: 0;
+                                padding: 0;
+                                font-family: 'Inter', sans-serif;
+                            }
+
+                            body {
+                                background-color: var(--bg-color);
+                                color: var(--text-primary);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                min-height: 100vh;
+                                padding: 20px;
+                            }
+
+                            /* Contenedor principal de la sección */
+                            .soft-skills-card {
+                                background-color: var(--card-bg);
+                                border: 1px solid var(--card-border);
+                                border-radius: 20px;
+                                padding: 35px;
+                                max-width: 850px;
+                                width: 100%;
+                                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+                            }
+
+                            .section-title {
+                                font-size: 1.5rem;
+                                font-weight: 700;
+                                color: var(--text-primary);
+                                margin-bottom: 20px;
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+                            }
+
+                            .section-title::before {
+                                content: '';
+                                display: inline-block;
+                                width: 4px;
+                                height: 22px;
+                                background-color: var(--accent-blue);
+                                border-radius: 2px;
+                            }
+
+                            .section-subtitle {
+                                font-size: 0.9rem;
+                                color: var(--text-secondary);
+                                margin-bottom: 25px;
+                                line-height: 1.5;
+                            }
+
+                            /* Contenedor del gráfico de radar */
+                            .chart-container {
+                                position: relative;
+                                max-width: 550px;
+                                width: 100%;
+                                margin: 0 auto;
+                                height: 380px;
+                            }
+
+                            @media (max-width: 600px) {
+                                .soft-skills-card {
+                                    padding: 25px 15px;
+                                }
+
+                                .chart-container {
+                                    height: 300px;
+                                }
+                            }
+                        </style>
+                    </head>
+
+                    <body>
+
+                        <!-- SECCIÓN DE HABILIDADES BLANDAS -->
+                        <section class="soft-skills-card">
+                            <h2 class="section-title">Habilidades Blandas</h2>
+                            <p class="section-subtitle">
+                                Representación del nivel relativo en competencias interpersonales, de liderazgo y
+                                gestión de proyectos.
+                            </p>
+
+                            <!-- Canvas para el gráfico de radar -->
+                            <div class="chart-container">
+                                <canvas id="softSkillsChart"></canvas>
+                            </div>
+                        </section>
+
+                        <script>
+                            // Configuración del gráfico de radar con Chart.js
+                            const ctx = document.getElementById('softSkillsChart').getContext('2d');
+
+                            const softSkillsChart = new Chart(ctx, {
+                                type: 'radar',
+                                data: {
+                                    labels: [
+                                        'Liderazgo y Gestión',
+                                        'Comunicación Eficiente',
+                                        'Trabajo en Equipo',
+                                        'Resolución de Problemas',
+                                        'Organización y Logística',
+                                        'Adaptabilidad'
+                                    ],
+                                    datasets: [{
+                                        label: 'Alison Stringer Ríos',
+                                        data: [95, 90, 95, 90, 88, 92], // Valores ponderados de 0 a 100
+                                        backgroundColor: 'rgba(79, 117, 232, 0.25)',
+                                        borderColor: '#4f75e8',
+                                        borderWidth: 2,
+                                        pointBackgroundColor: '#4f75e8',
+                                        pointBorderColor: '#ffffff',
+                                        pointHoverBackgroundColor: '#ffffff',
+                                        pointHoverBorderColor: '#4f75e8',
+                                        pointRadius: 4
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    plugins: {
+                                        legend: {
+                                            display: false // Ocultamos la leyenda para mantenerlo limpio
+                                        },
+                                        tooltip: {
+                                            backgroundColor: '#1e2d4a',
+                                            titleColor: '#ffffff',
+                                            bodyColor: '#94a3b8',
+                                            borderColor: '#4f75e8',
+                                            borderWidth: 1,
+                                            callbacks: {
+                                                label: function (context) {
+                                                    return context.label + ': ' + context.raw + '%';
+                                                }
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        r: {
+                                            angleLines: {
+                                                color: '#1e2d4a' // Color de líneas radiales
+                                            },
+                                            grid: {
+                                                color: '#1e2d4a' // Color de círculos concéntricos
+                                            },
+                                            pointLabels: {
+                                                color: '#94a3b8', // Color del texto de las etiquetas
+                                                font: {
+                                                    family: "'Inter', sans-serif",
+                                                    size: 11,
+                                                    weight: '600'
+                                                }
+                                            },
+                                            ticks: {
+                                                display: false, // Ocultar números de escala internamente
+                                                min: 0,
+                                                max: 100,
+                                                stepSize: 20
+                                            },
+                                            suggestedMin: 0,
+                                            suggestedMax: 100
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+
+                    </body>
+
+                    </html>
