@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abel Ruiz | Portafolio</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Librería para el gráfico de radar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <nav class="menu">
+            <a href="../../index.html" class="regresar">
+                ← Equipo PABLO
+            </a>
+
+            <div class="enlaces-menu">
+                <a href="#biografia">Biografía</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#blandas">Soft Skills</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+
+        <div class="presentacion">
+            <div class="foto-contenedor">
+                <!-- EDITAR AQUÍ: fotografía -->
+                <img src="imagen.jpeg" alt="Fotografía de Abel">
+            </div>
+
+            <div class="presentacion-texto">
+                <span class="etiqueta">
+                    INGENIERÍA QUÍMICA
+                </span>
+
+                <h1>Abel Ruíz</h1>
+
+                <p>
+                    Estudiante de Ingeniería Química
+                    en el Tecnológico de Monterrey, Campus Puebla.
+                    Entusiasta de la programación y Machine Learning para predicción de eventos, además, conocedor en ámbitos de higiene y seguridad en planta.
+                </p>
+
+                <a href="#contacto" class="boton">
+                    Contactarme →
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 1. BIOGRAFÍA -->
+        <section id="biografia" class="seccion">
+            <h2>Sobre mí</h2>
+            <div class="linea"></div>
+
+            <p>
+                Lo primero que deberían de saber de mi es el hecho que mi interes por la química comenzó desde secundaria, hasta convertirse en un sueño confuso, pero que hasta el día de hoy estoy consiguiendo.
+            </p>
+
+            <p>
+                Durante secundaria me llamó la atención muchísimo las ciencias naturales y sobre todo la química, incluso mencionandole a mis padres que sería científico cuando creciera, sin embargo no fue hasta preparatoria que me enteré que estudiar química realmente no produce tanto dinero como su hermano mayor: La Ingeniería Química.
+            </p>
+
+            <p>
+                Mi objetivo principal al estudiar Ing. Química es el generar mucho dinero para mis padres y para mi familia en un futuro (de ser posible), y a pesar de que suene como si fuese mi única razón para estudiar, realmente me gusta mucho lo que he aprendido y las maneras en que puede ser utilizado todo este conocimiento.
+            </p>
+
+            <p>
+                Por otra parte, el hecho de estudiar Ingeniería Química no me ha detenido para explorar otras áreas de interés como la programación de interfases, programación de páginas web y el análisis de datos; mientras que por el lado artístico y más espiritual, soy muy apegado a la pintura y la música lo cual, considero (personalmente) que me mantiene distraido y me abre puertas consciente o inconscientemente.
+            </p>
+        </section>
+
+        <!-- 2. HABILIDADES TÉCNICAS -->
+        <section id="habilidades" class="seccion">
+            <h2>Habilidades técnicas</h2>
+            <div class="linea"></div>
+
+            <h3>Procesos Químicos</h3>
+            <div class="badges">
+                <span>Identificación y análisis de KPI's</span>
+                <span>Balances de materia y energía</span>
+                <span>Operaciones Unitarias</span>
+                <span>Análisis y creación de DIT</span>
+                <span>Dimensionamiento y evaluación de equipos</span>
+            </div>
+
+            <h3>Seguridad de procesos químicos</h3>
+            <div class="badges">
+                <span>Idntificación de riesgos químicos</span>
+                <span>Manejor y almacenamiento de sustancias</span>
+                <span>Interpretación de hojas de seguridad</span>
+                <span>Análisis HAZOP</span>
+                <span>Prevención de incendios, explosiones y fugas peligrosas</span>
+            </div>
+
+            <h3>Diseño y simulación</h3>
+            <div class="badges">
+                <span>SolidWorks</span>
+                <span>AspenONE</span>
+                <span>SuperPro Designer</span>
+                <span>Ansys Fluent</span>
+            </div>
+
+            <h3>Herramientas de análisis y gestión</h3>
+            <div class="badges">
+                <span>Excel</span>
+                <span>Python</span>
+                <span>Microsoft Office</span>
+                <span>Google Workspace</span>
+            </div>
+        </section>
+
+        <!-- 3. HABILIDADES BLANDAS -->
+        <section id="blandas" class="seccion">
+            <h2>Habilidades blandas</h2>
+            <div class="linea"></div>
+
+            <p>
+                Considero fundamentales la colaboración,
+                el pensamiento analítico y la capacidad
+                para adaptarse a nuevos retos.
+            </p>
+
+            <div class="radar-contenedor">
+                <canvas id="radarHabilidades"></canvas>
+            </div>
+
+            <p class="nota">
+                Autoevaluación orientativa en escala
+                de 0 a 10, con intervalos de 2.
+            </p>
+        </section>
+
+        <!-- 4. PROYECTOS -->
+        <section id="proyectos" class="seccion">
+            <h2>Proyectos destacados</h2>
+            <div class="linea"></div>
+
+            <div class="proyectos-grid">
+
+                <!-- PROYECTO 1 -->
+                <article class="proyecto">
+
+                    <div class="proyecto-info">
+                        <h3 style="text-align: center;">UI para Dimensionamiento de Intercambiadores de Calor</h3>
+                        <p style="text-align: justify;">
+                            Desarrollo de una aplicación interactiva para agilizar el cálculo y dimensionamiento de intercambiadores de calor de tubo y coraza. Implementación de la lógica interna y la interfaz de usuario mediante Python para su aplicación en entornos profesionales.
+                        </p>
+                        <div class="badges">
+                            <span>Python</span>
+                            <span>PyQt5</span>
+                            <span>Pandas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYECTO 2 -->
+                <article class="proyecto">
+
+                    <div class="proyecto-info">
+                        <h3 style="text-align: center;">Planta de Producción de Biogás</h3>
+                        <p style="text-align: justify;">
+                            Diseño de un proceso industrial para la revalorización de residuos orgánicos en biogás. Simulación completa en Aspen Plus V14, integrando etapas de biodigestión, purificación, compresión y dimensionamiento de torres de separación.
+                        </p>
+                        <div class="badges">
+                            <span>Aspen Plus</span>
+                            <span>Mecánica de Fluidos</span>
+                            <span>Diseño de Procesos</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYECTO 3 -->
+                <article class="proyecto">
+
+                    <div class="proyecto-info">
+                        <h3 style="text-align: center;">Planta de Hidrógeno verde</h3>
+                        <p style="text-align: justify;">
+                            Diseño integral y evaluación de viabilidad económica de una planta de hidrógeno verde. Dimensionamiento de compresores, parque eólico, sistemas de almacenamiento y red de tuberías mediante diagramas P&ID y SuperPro Designer.
+                        </p>
+                        <div class="badges">
+                            <span>SuperPro Designer</span>
+                            <span>Ingeniería Económica</span>
+                            <span>Diseño de DIT</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- 5. CONTACTO -->
+        <section id="contacto" class="seccion contacto">
+            <h2>Redes y contacto</h2>
+            <div class="linea"></div>
+
+            <p>
+                Mi principal interés es el diseño de plantas industriales de cualquier tipo, pero proyectos de análisis y menipulación de datos son igual de recibidos. 
+            </p>
+
+            <div class="contacto-botones">
+                <a class="boton" href="http://www.linkedin.com/in/abel-ruíz-62346b336" target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn ↗
+                </a>
+
+                <a class="boton boton-secundario" href="mailto:a01174578@tec.mx">
+                    Correo electrónico
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Abel Rubén Ruíz García | Proyecto PABLO</p>
+
+        <nav class="navegacion-final">
+            <a href="../Aaron/Aaron.html">
+                ← Anterior
+            </a>
+            <a href="../index.html">
+                Inicio
+            </a>
+            <a href="../Camacho/index.html">
+                Siguiente →
+            </a>
+        </nav>
+    </footer>
+
+    <!-- GRÁFICO DE RADAR -->
+    <script>
+        const contexto = document.getElementById(
+            'radarHabilidades'
+        );
+
+        // VALORES DE LAS HABILIDADES BLANDAS
+        // Puedes cambiarlos de 0 a 10.
+
+        new Chart(contexto, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Comunicación',
+                    'Trabajo en equipo',
+                    'Liderazgo',
+                    'Resolución de problemas',
+                    'Adaptabilidad',
+                    'Organización'
+                ],
+                datasets: [{
+                    label: 'Mis habilidades',
+                    data: [8, 8, 6.5, 9, 10, 7],
+                    backgroundColor:
+                        'rgba(99, 135, 255, 0.25)',
+                    borderColor: '#7395ff',
+                    pointBackgroundColor: '#a9bcff',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 4,
+                    borderWidth: 2
+                }]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                scales: {
+                    r: {
+                        // ESCALA DE 0 A 10
+                        min: 0,
+                        max: 10,
+                        beginAtZero: true,
+
+                        // INTERVALOS DE 2 EN 2
+                        ticks: {
+                            stepSize: 2,
+                            precision: 0,
+                            color: '#aab7ce',
+                            backdropColor: 'transparent',
+                            showLabelBackdrop: false
+                        },
+
+                        pointLabels: {
+                            color: '#ffffff',
+                            font: {
+                                size: 12
+                            }
+                        },
+
+                        grid: {
+                            color: '#40516d'
+                        },
+
+                        angleLines: {
+                            color: '#40516d'
+                        }
+                    }
+                },
+
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff'
+                        }
+                    },
+
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return context.label + ': ' +
+                                    context.raw + '/10';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
