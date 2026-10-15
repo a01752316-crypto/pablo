@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aaron Gutiérrez | Portafolio</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Librería para el gráfico de radar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <nav class="menu">
+            <a href="../../index.html" class="regresar">
+                ← Equipo PABLO
+            </a>
+
+            <div class="enlaces-menu">
+                <a href="#biografia">Biografía</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#blandas">Soft Skills</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+
+        <div class="presentacion">
+            <div class="foto-contenedor">
+                <!-- EDITAR AQUÍ: fotografía -->
+                <img src="img/perfil.jpg" alt="Fotografía de Aaron Gutiérrez">
+            </div>
+
+            <div class="presentacion-texto">
+                <span class="etiqueta">
+                    INGENIERÍA MECATRÓNICA
+                </span>
+
+                <h1>Aaron Gutiérrez</h1>
+
+                <p>
+                    Estudiante de Ingeniería Mecatrónica
+                    en el Tecnológico de Monterrey.
+                    Apasionado por la automatización,
+                    la robótica y el control industrial.
+                </p>
+
+                <a href="#contacto" class="boton">
+                    Contactarme →
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 1. BIOGRAFÍA -->
+        <section id="biografia" class="seccion">
+            <h2>Sobre mí</h2>
+            <div class="linea"></div>
+
+            <p>
+                Mi formación académica comenzó en
+                PrepaTec, donde desarrollé un interés
+                por la tecnología, las matemáticas
+                y la resolución de problemas.
+            </p>
+
+            <p>
+                Posteriormente, continué mis estudios
+                en Ingeniería Mecatrónica en el
+                Tecnológico de Monterrey, adquiriendo
+                conocimientos en electrónica,
+                programación, diseño mecánico,
+                automatización y sistemas de control.
+            </p>
+
+            <p>
+                Mi objetivo profesional es desarrollarme
+                en el sector industrial, particularmente
+                en automatización y control de procesos,
+                participando en proyectos que mejoren
+                la productividad, eficiencia e integración
+                de nuevas tecnologías en las empresas.
+            </p>
+        </section>
+
+        <!-- 2. HABILIDADES TÉCNICAS -->
+        <section id="habilidades" class="seccion">
+            <h2>Habilidades técnicas</h2>
+            <div class="linea"></div>
+
+            <h3>Automatización y control</h3>
+            <div class="badges">
+                <span>PLC Siemens</span>
+                <span>TIA Portal</span>
+                <span>Node-RED</span>
+                <span>Control PID</span>
+                <span>MATLAB / Simulink</span>
+                <span>Sensores y actuadores</span>
+            </div>
+
+            <h3>Programación y electrónica</h3>
+            <div class="badges">
+                <span>Python</span>
+                <span>C / C++</span>
+                <span>Arduino</span>
+                <span>ESP32</span>
+                <span>Raspberry Pi</span>
+                <span>PostgreSQL</span>
+                <span>Git / GitHub</span>
+                <span>IoT</span>
+            </div>
+
+            <h3>Diseño y simulación</h3>
+            <div class="badges">
+                <span>SolidWorks</span>
+                <span>Fusion 360</span>
+                <span>Solid Edge</span>
+                <span>Proteus</span>
+                <span>Diseño CAD 2D / 3D</span>
+                <span>Prototipado</span>
+            </div>
+
+            <h3>Herramientas de análisis y gestión</h3>
+            <div class="badges">
+                <span>Excel</span>
+                <span>Power BI</span>
+                <span>Microsoft Office</span>
+                <span>Google Workspace</span>
+            </div>
+        </section>
+
+        <!-- 3. HABILIDADES BLANDAS -->
+        <section id="blandas" class="seccion">
+            <h2>Habilidades blandas</h2>
+            <div class="linea"></div>
+
+            <p>
+                Considero fundamentales la colaboración,
+                el pensamiento analítico y la capacidad
+                para adaptarse a nuevos retos.
+            </p>
+
+            <div class="radar-contenedor">
+                <canvas id="radarHabilidades"></canvas>
+            </div>
+
+            <p class="nota">
+                Autoevaluación orientativa en escala
+                de 0 a 10, con intervalos de 2.
+            </p>
+        </section>
+
+        <!-- 4. PROYECTOS -->
+        <section id="proyectos" class="seccion">
+            <h2>Proyectos destacados</h2>
+            <div class="linea"></div>
+
+            <div class="proyectos-grid">
+
+                <!-- PROYECTO 1 -->
+                <article class="proyecto">
+                    <img src="img/dashboard.jpg" alt="Dashboard de producción">
+
+                    <div class="proyecto-info">
+                        <h3>Dashboard industrial</h3>
+                        <p>
+                            Desarrollo de una solución
+                            de monitoreo de producción
+                            por hora mediante Raspberry Pi,
+                            Node-RED y PostgreSQL.
+                            Integración de señales
+                            industriales y visualización
+                            de indicadores de producción.
+                        </p>
+                        <div class="badges">
+                            <span>Node-RED</span>
+                            <span>Raspberry Pi</span>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYECTO 2 -->
+                <article class="proyecto">
+                    <img src="img/robot.jpg" alt="Robot paralelo">
+
+                    <div class="proyecto-info">
+                        <h3>Robot paralelo de 5 barras</h3>
+                        <p>
+                            Desarrollo de un mecanismo
+                            robótico paralelo utilizando
+                            ESP32, motores y encoders.
+                            Implementación de control PID
+                            y análisis de la respuesta
+                            del sistema.
+                        </p>
+                        <div class="badges">
+                            <span>ESP32</span>
+                            <span>PID</span>
+                            <span>Robótica</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYECTO 3 -->
+                <article class="proyecto">
+                    <img src="img/pendulo.jpg" alt="Péndulo invertido">
+
+                    <div class="proyecto-info">
+                        <h3>Péndulo invertido</h3>
+                        <p>
+                            Implementación de estrategias
+                            de control PID y LQR mediante
+                            Arduino, sensores y actuadores
+                            para estudiar la estabilidad
+                            y respuesta dinámica.
+                        </p>
+                        <div class="badges">
+                            <span>Arduino</span>
+                            <span>PID / LQR</span>
+                            <span>Control</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- EDITAR AQUÍ:
+                     Duplica un article para
+                     agregar más proyectos. -->
+
+            </div>
+        </section>
+
+        <!-- 5. CONTACTO -->
+        <section id="contacto" class="seccion contacto">
+            <h2>Redes y contacto</h2>
+            <div class="linea"></div>
+
+            <p>
+                Estoy interesado en oportunidades
+                de aprendizaje, colaboración y
+                desarrollo profesional en
+                automatización industrial.
+            </p>
+
+            <div class="contacto-botones">
+                <a class="boton" href="https://www.linkedin.com/in/aarongutierrezh" target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn ↗
+                </a>
+
+                <a class="boton boton-secundario" href="mailto:a01752316@tec.mx">
+                    Correo electrónico
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Aaron Gutiérrez | Proyecto PABLO</p>
+
+        <nav class="navegacion-final">
+            <a href="../mayari/index.html">
+                ← Anterior
+            </a>
+            <a href="../../index.html">
+                Inicio
+            </a>
+            <a href="../abel/index.html">
+                Siguiente →
+            </a>
+        </nav>
+    </footer>
+
+    <!-- GRÁFICO DE RADAR -->
+    <script>
+        const contexto = document.getElementById(
+            'radarHabilidades'
+        );
+
+        // VALORES DE LAS HABILIDADES BLANDAS
+        // Puedes cambiarlos de 0 a 10.
+
+        new Chart(contexto, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Comunicación',
+                    'Trabajo en equipo',
+                    'Liderazgo',
+                    'Resolución de problemas',
+                    'Adaptabilidad',
+                    'Organización'
+                ],
+                datasets: [{
+                    label: 'Mis habilidades',
+                    data: [8, 9, 8, 9, 9, 8],
+                    backgroundColor:
+                        'rgba(99, 135, 255, 0.25)',
+                    borderColor: '#7395ff',
+                    pointBackgroundColor: '#a9bcff',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 4,
+                    borderWidth: 2
+                }]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                scales: {
+                    r: {
+                        // ESCALA DE 0 A 10
+                        min: 0,
+                        max: 10,
+                        beginAtZero: true,
+
+                        // INTERVALOS DE 2 EN 2
+                        ticks: {
+                            stepSize: 2,
+                            precision: 0,
+                            color: '#aab7ce',
+                            backdropColor: 'transparent',
+                            showLabelBackdrop: false
+                        },
+
+                        pointLabels: {
+                            color: '#ffffff',
+                            font: {
+                                size: 12
+                            }
+                        },
+
+                        grid: {
+                            color: '#40516d'
+                        },
+
+                        angleLines: {
+                            color: '#40516d'
+                        }
+                    }
+                },
+
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff'
+                        }
+                    },
+
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return context.label + ': ' +
+                                    context.raw + '/10';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
