@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil - Alison Stringer Ríos</title>
-    <!-- Importación de la fuente Inter -->
+    <!-- Fuente Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    <!-- Chart.js para el gráfico de radar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <style>
-        /* Paleta de colores inspirada en la interfaz oscura */
         :root {
-            --bg-color: #0b1329;
-            /* Fondo principal azul oscuro */
-            --card-bg: #131f37;
-            /* Fondo de tarjeta */
-            --card-border: #1e2d4a;
-            /* Borde de tarjeta */
-            --text-primary: #ffffff;
-            /* Texto blanco */
-            --text-secondary: #94a3b8;
-            /* Texto gris claro */
-            --accent-blue: #4f75e8;
-            /* Azul brillante */
-            --tag-bg: #1a2a47;
-            /* Fondo para etiquetas */
+            --bg-color: #0b1329;       /* Fondo principal azul oscuro */
+            --card-bg: #131f37;        /* Fondo de tarjetas */
+            --card-border: #1e2d4a;    /* Borde de tarjetas */
+            --text-primary: #ffffff;   /* Texto principal */
+            --text-secondary: #94a3b8; /* Texto secundario */
+            --accent-blue: #4f75e8;    /* Azul brillante */
+            --tag-bg: #1a2a47;         /* Fondo para etiquetas */
+            --badge-bg: #1a2a47;       
+            --badge-border: #2a3e66;   
+            --badge-hover: #23375c;    
         }
 
         * {
@@ -39,61 +35,63 @@
             color: var(--text-primary);
             display: flex;
             justify-content: center;
-            align-items: center;
+            padding: 40px 20px;
             min-height: 100vh;
-            padding: 20px;
         }
 
-        /* Tarjeta principal de presentación */
-        .profile-card {
+        /* CONTENEDOR PRINCIPAL: Apila todas las secciones verticalmente */
+        .profile-container {
+            display: flex;
+            flex-direction: column; /* Alinea cada bloque uno debajo del otro */
+            gap: 30px;              /* Espacio vertical uniforme entre secciones */
+            max-width: 850px;
+            width: 100%;
+        }
+
+        /* Estilo base para cada tarjeta/sección */
+        .card-section {
             background-color: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 20px;
-            padding: 40px;
-            max-width: 850px;
-            width: 100%;
+            padding: 35px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            width: 100%;
+        }
+
+        /* --- 1. BIOGRAFÍA Y PRESENTACIÓN --- */
+        .profile-header {
             display: flex;
             flex-direction: row;
-            gap: 35px;
+            gap: 30px;
             align-items: center;
         }
 
-        /* Contenedor de la fotografía de perfil */
-        .profile-photo-container {
-            position: relative;
-            flex-shrink: 0;
-        }
-
         .profile-photo {
-            width: 170px;
-            height: 170px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent-blue);
             background-color: #1e293b;
-            display: block;
+            flex-shrink: 0;
         }
 
-        /* Información de la biografía */
         .profile-info {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .profile-name {
             font-size: 2.1rem;
             font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.2;
         }
 
         .profile-title {
             font-size: 1.05rem;
             color: var(--accent-blue);
             font-weight: 600;
-            margin-top: -4px;
+            margin-top: -5px;
         }
 
         .profile-bio {
@@ -102,12 +100,11 @@
             line-height: 1.6;
         }
 
-        /* Sección de intereses profesionales */
         .interests-section {
             margin-top: 8px;
         }
 
-        .interests-title {
+        .interests-title, .group-title {
             font-size: 0.82rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -125,7 +122,6 @@
 
         .interest-item {
             background-color: var(--tag-bg);
-            color: var(--text-primary);
             border: 1px solid var(--card-border);
             padding: 6px 14px;
             border-radius: 20px;
@@ -133,127 +129,12 @@
             font-weight: 500;
         }
 
-        /* Adaptación para pantallas pequeñas */
-        @media (max-width: 680px) {
-            .profile-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-            }
-
-            .interests-list {
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- TARJETA DE BIOGRAFÍA Y PRESENTACIÓN -->
-    <section class="profile-card">
-        <!-- Fotografía de perfil -->
-        <div class="profile-photo-container">
-            <!-- Puedes reemplazar el atributo src con la ruta de tu imagen, ej: "Alison/foto.jpg" -->
-            <img src="https://via.placeholder.com/170" alt="Fotografía de Alison Stringer Ríos" class="profile-photo">
-        </div>
-
-        <!-- Información personal -->
-        <div class="profile-info">
-            <h1 class="profile-name">Alison Stringer Ríos</h1>
-            <p class="profile-title">Estudiante de Ingeniería Mecánica</p>
-
-            <!-- Breve Trayectoria -->
-            <p class="profile-bio">
-                Estudiante del Tecnológico de Monterrey con enfoque en desarrollo de ingeniería sustentable, simulación
-                termodinámica y automatización industrial[cite: 3, 4]. He liderado proyectos con socios formadores como
-                Cementos Cruz Azul (gemelos digitales), Grupo Modelo y Autoplastek[cite: 3]. Fundadora y Presidenta de
-                ASME Campus Puebla y apasionada por la integración estudiantil y la música[cite: 4].
-            </p>
-
-            <!-- Intereses Profesionales -->
-            <div class="interests-section">
-                <h2 class="interests-title">Intereses Profesionales</h2>
-                <ul class="interests-list">
-                    <li class="interest-item">Sustentabilidad e Ingeniería Verde</li>
-                    <li class="interest-item">Gemelos Digitales y Simulación</li>
-                    <li class="interest-item">Turbomaquinaria y Termodinámica</li>
-                    <li class="interest-item">Liderazgo Estudiantil y Gestión</li>
-                    <li class="interest-item">Manufactura y Automatización</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-</body>
-
-</html>
-
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habilidades Técnicas - Alison Stringer Ríos</title>
-    <!-- Importación de la fuente Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-color: #0b1329;
-            /* Fondo principal azul oscuro */
-            --card-bg: #131f37;
-            /* Fondo de tarjetas */
-            --card-border: #1e2d4a;
-            /* Borde de tarjetas */
-            --text-primary: #ffffff;
-            /* Texto principal */
-            --text-secondary: #94a3b8;
-            /* Texto secundario */
-            --accent-blue: #4f75e8;
-            /* Azul brillante para acentos */
-            --badge-bg: #1a2a47;
-            /* Fondo de las insignias */
-            --badge-border: #2a3e66;
-            /* Borde de insignias */
-            --badge-hover: #23375c;
-            /* Hover para insignias */
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        /* Contenedor principal de la sección */
-        .skills-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 35px;
-            max-width: 850px;
-            width: 100%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        }
-
+        /* Títulos de las secciones con la barra azul distintiva */
         .section-title {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -268,32 +149,21 @@
             border-radius: 2px;
         }
 
-        /* Agrupación de categorías de habilidades */
+        /* --- 2. HABILIDADES TÉCNICAS --- */
         .skill-group {
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .skill-group:last-child {
             margin-bottom: 0;
         }
 
-        .group-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        /* Rejilla de insignias (badges) */
         .badges-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        /* Estilo individual de badge */
         .badge {
             background-color: var(--badge-bg);
             border: 1px solid var(--badge-border);
@@ -305,8 +175,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.2s ease-in-out;
-            cursor: default;
+            transition: all 0.2s ease;
         }
 
         .badge:hover {
@@ -315,7 +184,6 @@
             transform: translateY(-2px);
         }
 
-        /* Insignia destacada para certificaciones principales */
         .badge.certified {
             border-color: var(--accent-blue);
             background: linear-gradient(135deg, rgba(79, 117, 232, 0.15) 0%, var(--badge-bg) 100%);
@@ -323,267 +191,173 @@
 
         .badge-icon {
             color: var(--accent-blue);
-            font-size: 0.95rem;
         }
 
-        @media (max-width: 600px) {
-            .skills-card {
-                padding: 25px 20px;
+        /* --- 3. HABILIDADES BLANDAS --- */
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            position: relative;
+            max-width: 520px;
+            width: 100%;
+            margin: 0 auto;
+            height: 380px;
+        }
+
+        /* Adaptación a dispositivos móviles */
+        @media (max-width: 680px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .interests-list {
+                justify-content: center;
+            }
+
+            .chart-container {
+                height: 300px;
             }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- SECCIÓN DE HABILIDADES TÉCNICAS -->
-    <section class="skills-card">
-        <h2 class="section-title">Habilidades Técnicas</h2>
+    <!-- CONTENEDOR PRINCIPAL QUE APILA TODO EN VERTICAL -->
+    <div class="profile-container">
 
-        <!-- CAD, CAE & Diseño de Ingeniería -->
-        <div class="skill-group">
-            <h3 class="group-title">Diseño, Simulación & Manufactura (CAD/CAE/CAM)</h3>
-            <div class="badges-grid">
-                <div class="badge certified">
-                    <span class="badge-icon">★</span> SOLIDWORKS (CSWA Simulation)
+        <!-- RUBRO 1: BIOGRAFÍA Y PRESENTACIÓN -->
+        <section class="card-section">
+            <div class="profile-header">
+                <img src="https://via.placeholder.com/160" alt="Fotografía de Alison Stringer Ríos" class="profile-photo">
+                <div class="profile-info">
+                    <h1 class="profile-name">Alison Stringer Ríos</h1>
+                    <p class="profile-title">Estudiante de Ingeniería Mecánica</p>
+                    
+                    <p class="profile-bio">
+                        Estudiante del Tecnológico de Monterrey con enfoque en desarrollo de ingeniería sustentable, simulación termodinámica y automatización industrial[cite: 3, 4]. He liderado proyectos con socios formadores como Cementos Cruz Azul (gemelos digitales), Grupo Modelo y Autoplastek[cite: 3]. Fundadora y Presidenta de ASME Campus Puebla y apasionada por la integración estudiantil y la música[cite: 4].
+                    </p>
+
+                    <div class="interests-section">
+                        <h2 class="interests-title">Intereses Profesionales</h2>
+                        <ul class="interests-list">
+                            <li class="interest-item">Sustentabilidad e Ingeniería Verde</li>
+                            <li class="interest-item">Gemelos Digitales y Simulación</li>
+                            <li class="interest-item">Turbomaquinaria y Termodinámica</li>
+                            <li class="interest-item">Liderazgo Estudiantil y Gestión</li>
+                            <li class="interest-item">Manufactura y Automatización</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="badge">Hypermesh (Altair)</div>
-                <div class="badge">Mastercam</div>
-                <div class="badge">Diseño de Mecanismos & Engranes</div>
-                <div class="badge">Análisis de Fatiga y Flexión</div>
             </div>
-        </div>
+        </section>
 
-        <!-- Software de Cálculo y Programación -->
-        <div class="skill-group">
-            <h3 class="group-title">Software de Computación & Programación</h3>
-            <div class="badges-grid">
-                <div class="badge certified">
-                    <span class="badge-icon">⚡</span> MATLAB (Onramp)
+        <!-- RUBRO 2: HABILIDADES TÉCNICAS -->
+        <section class="card-section">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+
+            <div class="skill-group">
+                <h3 class="group-title">Diseño, Simulación & Manufactura (CAD/CAE/CAM)</h3>
+                <div class="badges-grid">
+                    <div class="badge certified"><span class="badge-icon">★</span> SOLIDWORKS (CSWA Simulation)</div>
+                    <div class="badge">Hypermesh (Altair)</div>
+                    <div class="badge">Mastercam</div>
+                    <div class="badge">Diseño de Mecanismos & Engranes</div>
+                    <div class="badge">Análisis de Fatiga y Flexión</div>
                 </div>
-                <div class="badge">EES (Engineering Equation Solver)</div>
-                <div class="badge">Wolfram Language</div>
             </div>
-        </div>
 
-        <!-- Termodinámica y Automatización -->
-        <div class="skill-group">
-            <h3 class="group-title">Ingeniería Aplicada & Automatización</h3>
-            <div class="badges-grid">
-                <div class="badge">Gemelos Digitales (Digital Twins)</div>
-                <div class="badge">Análisis Termodinámico & Transferencia de Calor</div>
-                <div class="badge">Bandas Transportadoras & Automatización</div>
-                <div class="badge">Corte por Plasma (3 DoF)</div>
-            </div>
-        </div>
-
-        <!-- Metodologías & Certificaciones -->
-        <div class="skill-group">
-            <h3 class="group-title">Metodologías & Certificaciones</h3>
-            <div class="badges-grid">
-                <div class="badge certified">
-                    <span class="badge-icon">✓</span> Six Sigma White Belt
+            <div class="skill-group">
+                <h3 class="group-title">Software de Computación & Programación</h3>
+                <div class="badges-grid">
+                    <div class="badge certified"><span class="badge-icon">⚡</span> MATLAB (Onramp)</div>
+                    <div class="badge">EES (Engineering Equation Solver)</div>
+                    <div class="badge">Wolfram Language</div>
                 </div>
-                <div class="badge">Map the System
+            </div>
 
-                    <!DOCTYPE html>
-                    <html lang="es">
+            <div class="skill-group">
+                <h3 class="group-title">Ingeniería Aplicada & Automatización</h3>
+                <div class="badges-grid">
+                    <div class="badge">Gemelos Digitales (Digital Twins)</div>
+                    <div class="badge">Análisis Termodinámico & Transferencia de Calor</div>
+                    <div class="badge">Bandas Transportadoras & Automatización</div>
+                    <div class="badge">Corte por Plasma (3 DoF)</div>
+                </div>
+            </div>
 
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Habilidades Blandas - Alison Stringer Ríos</title>
-                        <!-- Importación de la fuente Inter -->
-                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-                            rel="stylesheet">
-                        <!-- Chart.js CDN para el gráfico de radar -->
-                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <div class="skill-group">
+                <h3 class="group-title">Metodologías & Certificaciones</h3>
+                <div class="badges-grid">
+                    <div class="badge certified"><span class="badge-icon">✓</span> Six Sigma White Belt</div>
+                    <div class="badge">Map the System (Oxford University)</div>
+                </div>
+            </div>
+        </section>
 
-                        <style>
-                            :root {
-                                --bg-color: #0b1329;
-                                /* Fondo principal azul oscuro */
-                                --card-bg: #131f37;
-                                /* Fondo de tarjetas */
-                                --card-border: #1e2d4a;
-                                /* Borde de tarjetas */
-                                --text-primary: #ffffff;
-                                /* Texto principal */
-                                --text-secondary: #94a3b8;
-                                /* Texto secundario */
-                                --accent-blue: #4f75e8;
-                                /* Azul brillante */
-                            }
+        <!-- RUBRO 3: HABILIDADES BLANDAS -->
+        <section class="card-section">
+            <h2 class="section-title">Habilidades Blandas</h2>
+            <p class="section-subtitle">
+                Representación del nivel relativo en competencias interpersonales, de liderazgo y gestión de proyectos.
+            </p>
 
-                            * {
-                                box-sizing: border-box;
-                                margin: 0;
-                                padding: 0;
-                                font-family: 'Inter', sans-serif;
-                            }
+            <div class="chart-container">
+                <canvas id="softSkillsChart"></canvas>
+            </div>
+        </section>
 
-                            body {
-                                background-color: var(--bg-color);
-                                color: var(--text-primary);
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                min-height: 100vh;
-                                padding: 20px;
-                            }
+    </div>
 
-                            /* Contenedor principal de la sección */
-                            .soft-skills-card {
-                                background-color: var(--card-bg);
-                                border: 1px solid var(--card-border);
-                                border-radius: 20px;
-                                padding: 35px;
-                                max-width: 850px;
-                                width: 100%;
-                                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-                            }
+    <!-- SCRIPT DEL GRÁFICO DE RADAR -->
+    <script>
+        const ctx = document.getElementById('softSkillsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Liderazgo y Gestión',
+                    'Comunicación Eficiente',
+                    'Trabajo en Equipo',
+                    'Resolución de Problemas',
+                    'Organización y Logística',
+                    'Adaptabilidad'
+                ],
+                datasets: [{
+                    label: 'Alison Stringer Ríos',
+                    data: [95, 90, 95, 90, 88, 92],
+                    backgroundColor: 'rgba(79, 117, 232, 0.25)',
+                    borderColor: '#4f75e8',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#4f75e8',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    r: {
+                        angleLines: { color: '#1e2d4a' },
+                        grid: { color: '#1e2d4a' },
+                        pointLabels: {
+                            color: '#94a3b8',
+                            font: { family: "'Inter', sans-serif", size: 11, weight: '600' }
+                        },
+                        ticks: { display: false, min: 0, max: 100, stepSize: 20 },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+    </script>
 
-                            .section-title {
-                                font-size: 1.5rem;
-                                font-weight: 700;
-                                color: var(--text-primary);
-                                margin-bottom: 20px;
-                                display: flex;
-                                align-items: center;
-                                gap: 10px;
-                            }
-
-                            .section-title::before {
-                                content: '';
-                                display: inline-block;
-                                width: 4px;
-                                height: 22px;
-                                background-color: var(--accent-blue);
-                                border-radius: 2px;
-                            }
-
-                            .section-subtitle {
-                                font-size: 0.9rem;
-                                color: var(--text-secondary);
-                                margin-bottom: 25px;
-                                line-height: 1.5;
-                            }
-
-                            /* Contenedor del gráfico de radar */
-                            .chart-container {
-                                position: relative;
-                                max-width: 550px;
-                                width: 100%;
-                                margin: 0 auto;
-                                height: 380px;
-                            }
-
-                            @media (max-width: 600px) {
-                                .soft-skills-card {
-                                    padding: 25px 15px;
-                                }
-
-                                .chart-container {
-                                    height: 300px;
-                                }
-                            }
-                        </style>
-                    </head>
-
-                    <body>
-
-                        <!-- SECCIÓN DE HABILIDADES BLANDAS -->
-                        <section class="soft-skills-card">
-                            <h2 class="section-title">Habilidades Blandas</h2>
-                            <p class="section-subtitle">
-                                Representación del nivel relativo en competencias interpersonales, de liderazgo y
-                                gestión de proyectos.
-                            </p>
-
-                            <!-- Canvas para el gráfico de radar -->
-                            <div class="chart-container">
-                                <canvas id="softSkillsChart"></canvas>
-                            </div>
-                        </section>
-
-                        <script>
-                            // Configuración del gráfico de radar con Chart.js
-                            const ctx = document.getElementById('softSkillsChart').getContext('2d');
-
-                            const softSkillsChart = new Chart(ctx, {
-                                type: 'radar',
-                                data: {
-                                    labels: [
-                                        'Liderazgo y Gestión',
-                                        'Comunicación Eficiente',
-                                        'Trabajo en Equipo',
-                                        'Resolución de Problemas',
-                                        'Organización y Logística',
-                                        'Adaptabilidad'
-                                    ],
-                                    datasets: [{
-                                        label: 'Alison Stringer Ríos',
-                                        data: [95, 90, 95, 90, 88, 92], // Valores ponderados de 0 a 100
-                                        backgroundColor: 'rgba(79, 117, 232, 0.25)',
-                                        borderColor: '#4f75e8',
-                                        borderWidth: 2,
-                                        pointBackgroundColor: '#4f75e8',
-                                        pointBorderColor: '#ffffff',
-                                        pointHoverBackgroundColor: '#ffffff',
-                                        pointHoverBorderColor: '#4f75e8',
-                                        pointRadius: 4
-                                    }]
-                                },
-                                options: {
-                                    responsive: true,
-                                    maintainAspectRatio: false,
-                                    plugins: {
-                                        legend: {
-                                            display: false // Ocultamos la leyenda para mantenerlo limpio
-                                        },
-                                        tooltip: {
-                                            backgroundColor: '#1e2d4a',
-                                            titleColor: '#ffffff',
-                                            bodyColor: '#94a3b8',
-                                            borderColor: '#4f75e8',
-                                            borderWidth: 1,
-                                            callbacks: {
-                                                label: function (context) {
-                                                    return context.label + ': ' + context.raw + '%';
-                                                }
-                                            }
-                                        }
-                                    },
-                                    scales: {
-                                        r: {
-                                            angleLines: {
-                                                color: '#1e2d4a' // Color de líneas radiales
-                                            },
-                                            grid: {
-                                                color: '#1e2d4a' // Color de círculos concéntricos
-                                            },
-                                            pointLabels: {
-                                                color: '#94a3b8', // Color del texto de las etiquetas
-                                                font: {
-                                                    family: "'Inter', sans-serif",
-                                                    size: 11,
-                                                    weight: '600'
-                                                }
-                                            },
-                                            ticks: {
-                                                display: false, // Ocultar números de escala internamente
-                                                min: 0,
-                                                max: 100,
-                                                stepSize: 20
-                                            },
-                                            suggestedMin: 0,
-                                            suggestedMax: 100
-                                        }
-                                    }
-                                }
-                            });
-                        </script>
-
-                    </body>
-
-                    </html>
+</body>
+</html>
