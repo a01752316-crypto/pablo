@@ -250,6 +250,72 @@
             cursor: pointer;
         }
 
+        /* --- 4. LOGROS Y PROYECTOS DESTACADOS (SIN IMÁGENES) --- */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: rgba(11, 19, 41, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-period {
+            color: var(--text-secondary);
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .project-tag {
+            background-color: var(--tag-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
         /* Adaptación a dispositivos móviles */
         @media (max-width: 680px) {
             .profile-header {
@@ -267,6 +333,12 @@
 
             .chart-container {
                 height: 280px;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
             }
         }
     </style>
@@ -353,12 +425,10 @@
             </p>
 
             <div class="radar-layout">
-                <!-- Gráfico Chart.js -->
                 <div class="chart-container">
                     <canvas id="softSkillsChart"></canvas>
                 </div>
 
-                <!-- Sliders para personalizar cada habilidad -->
                 <div class="sliders-container">
                     <div class="slider-group">
                         <div class="slider-label">Liderazgo y Gestión <span id="val-0">95%</span></div>
@@ -383,6 +453,65 @@
                     <div class="slider-group">
                         <div class="slider-label">Adaptabilidad <span id="val-5">92%</span></div>
                         <input type="range" class="skill-slider" min="0" max="100" value="92" oninput="updateSkill(5, this.value)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RUBRO 4: LOGROS Y PROYECTOS DESTACADOS (SIN IMÁGENES) -->
+        <section class="card-section">
+            <h2 class="section-title">Logros y Proyectos Destacados</h2>
+
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span>Socio Formador: Cementos Cruz Azul</span>
+                        <span class="project-period">Mayo 2026 - Junio 2026</span>
+                    </div>
+                    <h3 class="project-title">Sistema de Prevención de Fallas mediante Gemelos Digitales</h3>
+                    <p class="project-desc">
+                        Desarrollo de propuesta para un sistema preventivo de fallas enfocado en hornos industriales mediante tecnología de gemelos digitales para monitoreo predictivo[cite: 3].
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Gemelos Digitales</span>
+                        <span class="project-tag">Mantenimiento Predictivo</span>
+                        <span class="project-tag">Simulación</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span>Proyecto DUAL</span>
+                        <span class="project-period">Feb 2026 - Mayo 2026</span>
+                    </div>
+                    <h3 class="project-title">Diseño de Caja Reductora para Turbogenerador Industrial</h3>
+                    <p class="project-desc">
+                        Diseño y optimización de caja reductora de engranes doble helicoidales[cite: 3]. Selección de geometría mediante MATLAB, análisis de fatiga/flexión, selección de material AISI 4140 y simulación en Mastercam[cite: 3].
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">MATLAB</span>
+                        <span class="project-tag">Mastercam</span>
+                        <span class="project-tag">AISI 4140</span>
+                        <span class="project-tag">Análisis de Fatiga</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span>Socio Formador: Grupo Modelo</span>
+                        <span class="project-period">Feb 2026 - Mayo 2026</span>
+                    </div>
+                    <h3 class="project-title">Monitoreo Termodinámico de Pasteurización en Túnel</h3>
+                    <p class="project-desc">
+                        Análisis termodinámico y modelado de planta en EES para evaluar la generación de vapor en calderas pirotubulares e intercambiadores de calor, asegurando el control tiempo-temperatura[cite: 3].
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">EES</span>
+                        <span class="project-tag">Termodinámica</span>
+                        <span class="project-tag">Intercambiadores</span>
                     </div>
                 </div>
             </div>
@@ -436,7 +565,6 @@
             }
         });
 
-        // Función para actualizar en tiempo real el gráfico y el porcentaje
         function updateSkill(index, value) {
             softSkillsChart.data.datasets[0].data[index] = Number(value);
             softSkillsChart.update();
