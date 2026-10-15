@@ -1,0 +1,456 @@
+/* Paleta de colores de la interfaz azul oscura */
+:root {
+    --bg-color: #0b1329;       /* Fondo principal azul oscuro */
+    --card-bg: #131f37;        /* Fondo de tarjetas */
+    --card-border: #1e2d4a;    /* Borde de tarjetas */
+    --text-primary: #ffffff;   /* Texto principal blanco */
+    --text-secondary: #94a3b8; /* Texto secundario gris */
+    --accent-blue: #4f75e8;    /* Azul brillante para acentos */
+    --accent-hover: #3b5ccc;   /* Azul para hover */
+    --tag-bg: #1a2a47;         /* Fondo para etiquetas */
+    --badge-bg: #1a2a47;       
+    --badge-border: #2a3e66;   
+    --badge-hover: #23375c;    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-primary) !important;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* CONTENEDOR PRINCIPAL: Apila todas las secciones verticalmente */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 850px;
+    width: 100%;
+}
+
+/* Estilo base para cada tarjeta/sección */
+.card-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    width: 100%;
+}
+
+/* Títulos de las secciones con la barra azul */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 22px;
+    background-color: var(--accent-blue);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+/* --- RUBRO 1: BIOGRAFÍA Y PRESENTACIÓN --- */
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-blue);
+    background-color: #1e293b;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-name {
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+.profile-title {
+    font-size: 1.05rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-top: -5px;
+}
+
+.profile-bio {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.interests-section {
+    margin-top: 8px;
+}
+
+.interests-title, .group-title {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.interest-item {
+    background-color: var(--tag-bg);
+    border: 1px solid var(--card-border);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.83rem;
+    font-weight: 500;
+}
+
+/* --- RUBRO 2: HABILIDADES TÉCNICAS --- */
+.skill-group {
+    margin-bottom: 20px;
+}
+
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
+.badges-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    background-color: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.badge:hover {
+    background-color: var(--badge-hover);
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+.badge.certified {
+    border-color: var(--accent-blue);
+    background: linear-gradient(135deg, rgba(79, 117, 232, 0.15) 0%, var(--badge-bg) 100%);
+}
+
+.badge-icon {
+    color: var(--accent-blue);
+}
+
+/* --- RUBRO 3: HABILIDADES BLANDAS CON SLIDERS --- */
+.radar-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.chart-container {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    height: 350px;
+}
+
+.sliders-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 25px;
+    background-color: rgba(11, 19, 41, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid var(--card-border);
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.slider-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.slider-label span {
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+.skill-slider {
+    width: 100%;
+    accent-color: var(--accent-blue);
+    cursor: pointer;
+}
+
+/* --- RUBRO 4: LOGROS Y PROYECTOS DESTACADOS --- */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: rgba(11, 19, 41, 0.6);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-3px);
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-period {
+    color: var(--text-secondary);
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.project-tag {
+    background-color: var(--tag-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+
+/* Subsección de Certificaciones */
+.certifications-subgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.cert-card {
+    background-color: rgba(26, 42, 71, 0.4);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cert-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+.cert-badge-icon {
+    font-size: 1.4rem;
+    color: var(--accent-blue);
+    background-color: rgba(79, 117, 232, 0.15);
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cert-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.cert-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.cert-issuer {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.cert-date {
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+/* --- RUBRO 5: REDES Y CONTACTO --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.contact-card {
+    background-color: rgba(11, 19, 41, 0.6);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.contact-card:hover {
+    border-color: var(--accent-blue);
+    background-color: var(--tag-bg);
+    transform: translateY(-2px);
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    background-color: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-blue);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.contact-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.contact-value {
+    font-size: 0.92rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsivo */
+@media (max-width: 680px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .interests-list {
+        justify-content: center;
+    }
+
+    .sliders-container, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        height: 280px;
+    }
+
+    .project-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}

@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PABLO | Nuestro Equipo</title>
+    <title>PABLO | Proyecto y Nuestro Equipo</title>
 
     <style>
         * {
@@ -17,7 +18,10 @@
             background: linear-gradient(135deg, #0b1020, #172849);
             color: white;
             min-height: 100vh;
+            line-height: 1.6;
         }
+
+        /* ENCABEZADOS */
 
         header {
             text-align: center;
@@ -32,27 +36,308 @@
         }
 
         header h1 {
-            font-size: 55px;
+            font-size: 42px;
             margin: 12px 0;
-            letter-spacing: 5px;
+            letter-spacing: 2px;
+            line-height: 1.25;
         }
 
         header p {
             color: #aab7ce;
             font-size: 17px;
+            max-width: 750px;
+            margin: 0 auto;
         }
+
+        /* CONTENEDOR GENERAL */
 
         .contenedor {
             max-width: 1100px;
             margin: 25px auto 70px;
             padding: 0 25px;
+        }
+
+        /* TARJETAS GENERALES */
+
+        .tarjeta {
+            background: #1b2943;
+            border: 1px solid #334360;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: 0.3s ease;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-4px);
+            border-color: #7395ff;
+            box-shadow: 0 12px 30px #0005;
+        }
+
+        .tarjeta h2 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+            color: #dce6ff;
+        }
+
+        .tarjeta p {
+            color: #a6b4cb;
+            font-size: 15px;
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        .tarjeta p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* INTRODUCCIÓN */
+
+        .introduccion {
             display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: 100px 1fr;
+            align-items: start;
             gap: 25px;
         }
 
-        .tarjeta {
+        .icono-grande {
+            width: 90px;
+            height: 90px;
+            border-radius: 16px;
+            background: #304a80;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 42px;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background: #263c65;
+            color: #a9c0ff;
+            border: 1px solid #3c5685;
+            border-radius: 8px;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* OBJETIVO */
+
+        .objetivo,
+        .cierre {
+            display: grid;
+            grid-template-columns: 65px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .objetivo-icono,
+        .cierre-icono {
+            width: 60px;
+            height: 60px;
+            background: #304a80;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        /* ENCABEZADOS DE SECCIÓN */
+
+        .seccion-encabezado {
+            margin-bottom: 25px;
+        }
+
+        .seccion-encabezado h2 {
+            margin-bottom: 5px;
+        }
+
+        .seccion-encabezado p {
+            color: #a6b4cb;
+            margin-bottom: 0;
+        }
+
+        .seccion-icono {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: #304a80;
+            border-radius: 11px;
+            margin-right: 10px;
+            font-size: 21px;
+            vertical-align: middle;
+        }
+
+        /* TECNOLOGÍAS */
+
+        .tecnologias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .tecnologia-card {
+            background: #22324f;
+            border: 1px solid #334360;
+            border-radius: 14px;
+            padding: 25px 20px;
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .tecnologia-card:hover {
+            transform: translateY(-6px);
+            border-color: #7395ff;
+            box-shadow: 0 12px 30px #0005;
+        }
+
+        .tecnologia-icono {
+            width: 55px;
+            height: 55px;
+            background: #304a80;
+            color: #c5d5ff;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        .tecnologia-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .tecnologia-card p {
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+
+        .tecnologia-tipo {
+            display: inline-block;
+            background: #263c65;
+            border: 1px solid #3c5685;
+            color: #a9c0ff;
+            border-radius: 8px;
+            padding: 6px 10px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* FLUJO DEL SISTEMA */
+
+        .flujo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .flujo-paso {
+            background: #22324f;
+            border: 1px solid #334360;
+            border-radius: 14px;
+            padding: 22px 18px;
+            transition: 0.3s ease;
+        }
+
+        .flujo-paso:hover {
+            transform: translateY(-5px);
+            border-color: #7395ff;
+        }
+
+        .flujo-numero {
+            color: #8baaff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .flujo-emoji {
+            font-size: 29px;
+            margin-bottom: 10px;
+        }
+
+        .flujo-paso h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .flujo-paso p {
+            font-size: 13px;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .flujo-nota {
+            color: #8998b2 !important;
+            font-size: 12px !important;
+            margin-top: 20px;
+            text-align: left !important;
+        }
+
+        /* CIERRE DEL PROYECTO */
+
+        .cierre {
+            background: linear-gradient(135deg, #1b2943, #24385d);
+            border-color: #405780;
+        }
+
+        /* SECCIÓN DEL EQUIPO */
+
+        .equipo-seccion {
+            padding-top: 35px;
+            margin-top: 45px;
+            border-top: 1px solid #334360;
+        }
+
+        .equipo-encabezado {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .equipo-encabezado .subtitulo {
+            color: #8baaff;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .equipo-encabezado h2 {
+            font-size: 36px;
+            margin: 12px 0;
+            letter-spacing: 2px;
+        }
+
+        .equipo-encabezado p {
+            color: #aab7ce;
+            font-size: 16px;
+        }
+
+        .equipo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .integrante {
             background: #1b2943;
             border: 1px solid #334360;
             border-radius: 16px;
@@ -61,7 +346,7 @@
             transition: 0.3s ease;
         }
 
-        .tarjeta:hover {
+        .integrante:hover {
             transform: translateY(-8px);
             border-color: #7395ff;
             box-shadow: 0 12px 30px #0005;
@@ -81,12 +366,13 @@
             font-weight: bold;
         }
 
-        .tarjeta h2 {
+        .integrante h3 {
             font-size: 21px;
             margin-bottom: 8px;
+            color: white;
         }
 
-        .tarjeta p {
+        .integrante p {
             color: #a6b4cb;
             font-size: 14px;
             margin-bottom: 24px;
@@ -107,104 +393,454 @@
             background: #6387ff;
         }
 
+        /* PIE DE PÁGINA */
+
         footer {
             text-align: center;
             color: #8998b2;
             padding: 25px;
             font-size: 13px;
+            border-top: 1px solid #263750;
+        }
+
+        /* DISEÑO RESPONSIVO */
+
+        @media (max-width: 600px) {
+            header {
+                padding: 45px 20px 25px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            .contenedor {
+                padding: 0 15px;
+                margin-top: 15px;
+            }
+
+            .tarjeta {
+                padding: 22px 18px;
+            }
+
+            .introduccion,
+            .objetivo,
+            .cierre {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .tecnologias-grid,
+            .flujo-grid,
+            .equipo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .equipo-encabezado h2 {
+                font-size: 29px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- ENCABEZADO PRINCIPAL -->
+
     <header>
-        <div class="subtitulo">PROYECTO COLABORATIVO</div>
-        <h1>PABLO</h1>
-        <p>Conoce a los integrantes de nuestro equipo</p>
+        <div class="subtitulo">
+            SISTEMAS Y TECNOLOGÍAS 4.0 · CAMPUS PUEBLA
+        </div>
+
+        <h1>Digitalización y monitoreo<br>de líneas de producción</h1>
+
+        <p>
+            Un proyecto de innovación industrial desarrollado
+            en colaboración con GUREAK CINIA.
+        </p>
     </header>
 
     <main class="contenedor">
 
-        <div class="tarjeta">
-            <div class="avatar">A</div>
-            <h2>Abel</h2>
-            <p>Integrante 1</p>
-            <a class="boton" href="Abel/Abel.html">
-                Ver página →
-            </a>
-        </div>
+        <!-- DESCRIPCIÓN GENERAL -->
 
-        <div class="tarjeta">
-            <div class="avatar">A</div>
-            <h2>Alejandro</h2>
-            <p>Integrante 2</p>
-            <a class="boton" href="Camacho/Camacho.html">
-                Ver página →
-            </a>
-        </div>
+        <section class="tarjeta">
+            <div class="introduccion">
 
-        <div class="tarjeta">
-            <div class="avatar">A</div>
-            <h2>Alison</h2>
-            <p>Integrante 3</p>
-            <a class="boton" href="Alison/Alison.html">
-                Ver página →
-            </a>
-        </div>
+                <div class="icono-grande">🏭</div>
 
-        <div class="tarjeta">
-            <div class="avatar">C</div>
-            <h2>Cesar</h2>
-            <p>Integrante 4</p>
-            <a class="boton" href="Cesar/Cesar.html">
-                Ver página →
-            </a>
-        </div>
+                <div>
+                    <span class="etiqueta">PROYECTO COLABORATIVO</span>
 
-        <div class="tarjeta">
-            <div class="avatar">E</div>
-            <h2>Elliott</h2>
-            <p>Integrante 5</p>
-            <a class="boton" href="Elliot/Elliott.html">
-                Ver página →
-            </a>
-        </div>
+                    <h2>¿En qué consiste el proyecto?</h2>
 
-        <div class="tarjeta">
-            <div class="avatar">J</div>
-            <h2>Joaquin</h2>
-            <p>Integrante 6</p>
-            <a class="boton" href="Joaquin/Joaquin.html">
-                Ver página →
-            </a>
-        </div>
+                    <p>
+                        Como parte de la concentración de
+                        <strong>Sistemas y Tecnologías 4.0</strong>
+                        en el Tecnológico de Monterrey, campus Puebla,
+                        los ocho integrantes estamos desarrollando e
+                        implementando un sistema para visualizar en
+                        tiempo real el estado de las líneas de producción
+                        dedicadas al armado de arneses eléctricos de
+                        <strong>GUREAK CINIA</strong>.
+                    </p>
 
-        <div class="tarjeta">
-            <div class="avatar">M</div>
-            <h2>Mayari</h2>
-            <p>Integrante 7</p>
-            <a class="boton" href="Mayi/Mayari.html">
-                Ver página →
-            </a>
-        </div>
+                    <p>
+                        La solución integra dispositivos electrónicos,
+                        comunicación de datos, almacenamiento y
+                        visualización para facilitar el seguimiento
+                        de los estados de las piezas y ofrecer
+                        información útil sobre el proceso productivo.
+                    </p>
+                </div>
 
-        <div class="tarjeta">
-            <div class="avatar">A</div>
-            <h2>Aaron</h2>
-            <p>Integrante 8</p>
-            <a class="boton" href="Aaron/Aaron.html">
-                Ver página →
-            </a>
-        </div>
+            </div>
+        </section>
+
+        <!-- OBJETIVO -->
+
+        <section class="tarjeta">
+            <div class="objetivo">
+
+                <div class="objetivo-icono">🎯</div>
+
+                <div>
+                    <h2>Nuestro objetivo</h2>
+
+                    <p>
+                        Desarrollar una plataforma de monitoreo que
+                        permita consultar el estado de las líneas
+                        de producción en tiempo real, centralizando
+                        la información capturada y presentándola
+                        mediante tableros visuales claros y accesibles.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TECNOLOGÍAS -->
+
+        <section class="tarjeta">
+
+            <div class="seccion-encabezado">
+                <h2>
+                    <span class="seccion-icono">⚙️</span>
+                    Tecnologías utilizadas
+                </h2>
+
+                <p>
+                    Herramientas que conectan el entorno físico
+                    con la información digital.
+                </p>
+            </div>
+
+            <div class="tecnologias-grid">
+
+                <article class="tecnologia-card">
+                    <div class="tecnologia-icono">🔀</div>
+                    <h3>Node-RED</h3>
+
+                    <p>
+                        Desarrollo de flujos mediante programación
+                        visual para procesar señales, integrar
+                        dispositivos y gestionar el intercambio
+                        de información.
+                    </p>
+
+                    <span class="tecnologia-tipo">
+                        Integración y procesamiento
+                    </span>
+                </article>
+
+                <article class="tecnologia-card">
+                    <div class="tecnologia-icono">🗄️</div>
+                    <h3>PostgreSQL</h3>
+
+                    <p>
+                        Base de datos relacional para almacenar
+                        y organizar los registros de los estados
+                        de las piezas y la información del proceso.
+                    </p>
+
+                    <span class="tecnologia-tipo">
+                        Almacenamiento de datos
+                    </span>
+                </article>
+
+                <article class="tecnologia-card">
+                    <div class="tecnologia-icono">📊</div>
+                    <h3>Grafana</h3>
+
+                    <p>
+                        Creación de dashboards para representar
+                        visualmente los datos y facilitar el
+                        monitoreo del estado de la producción.
+                    </p>
+
+                    <span class="tecnologia-tipo">
+                        Visualización y monitoreo
+                    </span>
+                </article>
+
+                <article class="tecnologia-card">
+                    <div class="tecnologia-icono">🍓</div>
+                    <h3>Raspberry Pi</h3>
+
+                    <p>
+                        Plataforma de computación utilizada
+                        para apoyar la integración de dispositivos
+                        y la comunicación de información
+                        dentro del sistema.
+                    </p>
+
+                    <span class="tecnologia-tipo">
+                        Integración electrónica
+                    </span>
+                </article>
+
+                <article class="tecnologia-card">
+                    <div class="tecnologia-icono">📡</div>
+                    <h3>ESP32</h3>
+
+                    <p>
+                        Microcontrolador empleado para capturar
+                        señales del proceso y transmitir datos
+                        hacia el sistema de monitoreo.
+                    </p>
+
+                    <span class="tecnologia-tipo">
+                        Captura y comunicación de señales
+                    </span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- FLUJO DEL SISTEMA -->
+
+        <section class="tarjeta">
+
+            <div class="seccion-encabezado">
+                <h2>
+                    <span class="seccion-icono">🔄</span>
+                    ¿Cómo funciona el sistema?
+                </h2>
+
+                <p>
+                    Del estado físico de la producción
+                    a la información visual.
+                </p>
+            </div>
+
+            <div class="flujo-grid">
+
+                <article class="flujo-paso">
+                    <div class="flujo-numero">PASO 01</div>
+                    <div class="flujo-emoji">📥</div>
+                    <h3>Captura</h3>
+
+                    <p>
+                        Los dispositivos electrónicos reciben
+                        las señales del proceso productivo.
+                    </p>
+                </article>
+
+                <article class="flujo-paso">
+                    <div class="flujo-numero">PASO 02</div>
+                    <div class="flujo-emoji">🔀</div>
+                    <h3>Procesamiento</h3>
+
+                    <p>
+                        Node-RED integra y gestiona los datos
+                        recibidos de los dispositivos.
+                    </p>
+                </article>
+
+                <article class="flujo-paso">
+                    <div class="flujo-numero">PASO 03</div>
+                    <div class="flujo-emoji">🗄️</div>
+                    <h3>Almacenamiento</h3>
+
+                    <p>
+                        PostgreSQL organiza los registros
+                        de los estados de las piezas.
+                    </p>
+                </article>
+
+                <article class="flujo-paso">
+                    <div class="flujo-numero">PASO 04</div>
+                    <div class="flujo-emoji">📈</div>
+                    <h3>Visualización</h3>
+
+                    <p>
+                        Grafana presenta los datos en dashboards
+                        para consultar el estado de producción.
+                    </p>
+                </article>
+
+            </div>
+
+            <p class="flujo-nota">
+                Esquema conceptual del flujo de información.
+                La integración específica depende de la
+                arquitectura implementada en el proyecto.
+            </p>
+
+        </section>
+
+        <!-- CIERRE DEL PROYECTO -->
+
+        <section class="tarjeta cierre">
+
+            <div class="cierre-icono">💡</div>
+
+            <div>
+                <h2>Ingeniería aplicada a la industria 4.0</h2>
+
+                <p>
+                    Este proyecto nos permite aplicar conocimientos
+                    de automatización, electrónica, programación,
+                    bases de datos y análisis visual para desarrollar
+                    una solución tecnológica orientada a las
+                    necesidades reales de un entorno industrial.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- EQUIPO PABLO: DEBAJO DE LA DESCRIPCIÓN -->
+
+        <section class="equipo-seccion" id="equipo">
+
+            <div class="equipo-encabezado">
+                <div class="subtitulo">PROYECTO COLABORATIVO</div>
+
+                <h2>NUESTRO EQUIPO</h2>
+
+                <p>
+                    Conoce a los ocho integrantes que forman parte
+                    del proyecto de digitalización y monitoreo.
+                </p>
+            </div>
+
+            <div class="equipo-grid">
+
+                <!-- INTEGRANTE 1 -->
+
+                <article class="integrante">
+                    <div class="avatar">A</div>
+                    <h3>Abel</h3>
+                    <p>Integrante 1</p>
+
+                    <a class="boton" href="Abel.html">
+                        Ver perfil →
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 2 -->
+
+                <article class="integrante">
+                    <div class="avatar">A</div>
+                    <h3>Alejandro</h3>
+                    <p>Integrante 2</p>
+
+                    <a class="boton" href="Alejandro.html">
+                        Ver perfil →
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 3 -->
+
+                <article class="integrante">
+                    <div class="avatar">A</div>
+                    <h3>Alison</h3>
+                    <p>Integrante 3</p>
+
+                    <a class="boton" href="Alison.html">
+                        Ver perfil →
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 4 -->
+
+                <article class="integrante">
+                    <div class="avatar">C</div>
+                    <h3>Cesar</h3>
+                    <p>Integrante 4</p>
+
+                    <a class="boton" href="Cesar.html">
+                        Ver perfil →
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 5 -->
+
+                <article class="integrante">
+                    <div class="avatar">E</div>
+                    <h3>Elliott</h3>
+                    <p>Integrante 5</p>
+
+                    <a class="boton" href="Elliott.html">
+                        Ver perfil →
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 6 -->
+
+                <article class="integrante">
+                    <div class="avatar">J</div>
+                    <h3>Joaquin</h3>
+                    <p>Integrante 6</p>
+
+                    <a class="boton" href="Joaquin.html">
+                        Ver perfil →
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 7 -->
+
+                <article class="integrante">
+                    <div class="avatar">M</div>
+                    <h3>Mayari</h3>
+                    <p>Integrante 7</p>
+
+                    <a class="boton" href="Mayari.html">
+                        Ver perfil →
+                    </a>
+                </article>
+
+                <!-- INTEGRANTE 8 -->
+
+                <article class="integrante">
+                    <div class="avatar">A</div>
+                    <h3>Aaron</h3>
+                    <p>Integrante 8</p>
+
+                    <a class="boton" href="Aaron.html">
+                        Ver perfil →
+                    </a>
+                </article>
+
+            </div>
+        </section>
 
     </main>
 
+    <!-- PIE DE PÁGINA -->
+
     <footer>
         Proyecto PABLO | Trabajo colaborativo
+        <br>
+        Sistemas y Tecnologías 4.0 · Tecnológico de Monterrey, Campus Puebla
+        <br>
+        Colaboración con GUREAK CINIA
     </footer>
 
 </body>
 </html>
-
-
+```

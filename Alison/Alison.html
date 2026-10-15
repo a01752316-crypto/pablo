@@ -1,0 +1,591 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Alison Stringer Ríos</title>
+
+    <!-- Fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Archivo de estilos CSS externo -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js para el gráfico de radar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Estilos del botón para regresar al inicio -->
+    <style>
+        .back-home-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 10px;
+        }
+
+        .back-home-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #456be1;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 9px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: 0.3s ease;
+        }
+
+        .back-home-button:hover {
+            background: #6387ff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px #0005;
+        }
+
+        .back-home-button:focus-visible {
+            outline: 2px solid #a9c0ff;
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="profile-container">
+
+        <!-- RUBRO 1: BIOGRAFÍA Y PRESENTACIÓN -->
+        <section class="card-section">
+            <div class="profile-header">
+
+                <img src="../FotoAlison.jpeg" alt="Fotografía de Alison Stringer Ríos" class="profile-photo">
+
+                <div class="profile-info">
+                    <h1 class="profile-name">Alison Stringer Ríos</h1>
+
+                    <p class="profile-title">
+                        Estudiante de Ingeniería Mecánica
+                    </p>
+
+                    <p class="profile-bio">
+                        Estudiante del Tecnológico de Monterrey en ingeniería
+                        mecánica, apasionada por la innovación tecnológica y
+                        la sostenibilidad. Con experiencia en diseño,
+                        simulación y manufactura, busco aplicar mis habilidades
+                        para desarrollar soluciones eficientes y sostenibles
+                        en el ámbito industrial. Involucrada en proyectos
+                        estudiantiles, como grupos estudiantiles con enfoque
+                        ingenieril y sustentable, así como artísticos fuera
+                        del área de ingeniería.
+                    </p>
+
+                    <div class="interests-section">
+                        <h2 class="interests-title">Intereses Profesionales</h2>
+
+                        <ul class="interests-list">
+                            <li class="interest-item">
+                                Sustentabilidad e Ingeniería Verde
+                            </li>
+
+                            <li class="interest-item">
+                                Turbomaquinaria y Termodinámica
+                            </li>
+
+                            <li class="interest-item">
+                                Liderazgo Estudiantil y Gestión
+                            </li>
+
+                            <li class="interest-item">
+                                Manufactura y Automatización
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RUBRO 2: HABILIDADES TÉCNICAS -->
+        <section class="card-section">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+
+            <div class="skill-group">
+                <h3 class="group-title">
+                    Diseño, Simulación & Manufactura (CAD/CAE/CAM)
+                </h3>
+
+                <div class="badges-grid">
+                    <div class="badge certified">
+                        <span class="badge-icon">★</span>
+                        SOLIDWORKS (CSWA Simulation)
+                    </div>
+
+                    <div class="badge">Hypermesh (Altair)</div>
+                    <div class="badge">Mastercam</div>
+                    <div class="badge">Diseño de Mecanismos & Engranes</div>
+                    <div class="badge">Análisis de Fatiga y Flexión</div>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h3 class="group-title">
+                    Software de Computación & Programación
+                </h3>
+
+                <div class="badges-grid">
+                    <div class="badge certified">
+                        <span class="badge-icon">⚡</span>
+                        MATLAB (Onramp)
+                    </div>
+
+                    <div class="badge">
+                        EES (Engineering Equation Solver)
+                    </div>
+
+                    <div class="badge">Wolfram Language</div>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h3 class="group-title">
+                    Ingeniería Aplicada & Automatización
+                </h3>
+
+                <div class="badges-grid">
+                    <div class="badge">
+                        Análisis Termodinámico & Transferencia de Calor
+                    </div>
+
+                    <div class="badge">
+                        Bandas Transportadoras & Automatización
+                    </div>
+
+                    <div class="badge">Corte por Plasma (3 DoF)</div>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h3 class="group-title">
+                    Metodologías & Certificaciones
+                </h3>
+
+                <div class="badges-grid">
+                    <div class="badge certified">
+                        <span class="badge-icon">✓</span>
+                        Six Sigma White Belt
+                    </div>
+
+                    <div class="badge">
+                        Map the System (Oxford University)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RUBRO 3: HABILIDADES BLANDAS -->
+        <section class="card-section">
+            <h2 class="section-title">Habilidades Blandas</h2>
+
+            <p class="section-subtitle">
+                Ajusta los deslizadores para actualizar los niveles
+                en tiempo real en el gráfico de radar.
+            </p>
+
+            <div class="radar-layout">
+                <div class="chart-container">
+                    <canvas id="softSkillsChart"></canvas>
+                </div>
+
+                <div class="sliders-container">
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            Liderazgo y Gestión
+                            <span id="val-0">95%</span>
+                        </div>
+
+                        <input type="range" class="skill-slider" min="0" max="100" value="95"
+                            oninput="updateSkill(0, this.value)">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            Comunicación Eficiente
+                            <span id="val-1">90%</span>
+                        </div>
+
+                        <input type="range" class="skill-slider" min="0" max="100" value="90"
+                            oninput="updateSkill(1, this.value)">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            Trabajo en Equipo
+                            <span id="val-2">95%</span>
+                        </div>
+
+                        <input type="range" class="skill-slider" min="0" max="100" value="95"
+                            oninput="updateSkill(2, this.value)">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            Resolución de Problemas
+                            <span id="val-3">90%</span>
+                        </div>
+
+                        <input type="range" class="skill-slider" min="0" max="100" value="90"
+                            oninput="updateSkill(3, this.value)">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            Organización y Logística
+                            <span id="val-4">88%</span>
+                        </div>
+
+                        <input type="range" class="skill-slider" min="0" max="100" value="88"
+                            oninput="updateSkill(4, this.value)">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            Adaptabilidad
+                            <span id="val-5">92%</span>
+                        </div>
+
+                        <input type="range" class="skill-slider" min="0" max="100" value="92"
+                            oninput="updateSkill(5, this.value)">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- RUBRO 4: LOGROS Y PROYECTOS DESTACADOS -->
+        <section class="card-section">
+            <h2 class="section-title">Logros y Proyectos Destacados</h2>
+
+            <!-- PROYECTOS DESTACADOS -->
+            <div class="skill-group">
+                <h3 class="group-title">Proyectos Destacados</h3>
+
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <div class="project-meta">
+                            <span>Socio Formador: Cementos Cruz Azul</span>
+                            <span class="project-period">
+                                Mayo 2026 - Junio 2026
+                            </span>
+                        </div>
+
+                        <h3 class="project-title">
+                            Sistema de Prevención de Fallas mediante Gemelos Digitales
+                        </h3>
+
+                        <p class="project-desc">
+                            Desarrollo de propuesta para un sistema preventivo
+                            de fallas enfocado en hornos industriales mediante
+                            tecnología de gemelos digitales para monitoreo
+                            predictivo.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">Gemelos Digitales</span>
+                            <span class="project-tag">Mantenimiento Predictivo</span>
+                            <span class="project-tag">Simulación</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-meta">
+                            <span>Proyecto DUAL</span>
+                            <span class="project-period">
+                                Feb 2026 - Mayo 2026
+                            </span>
+                        </div>
+
+                        <h3 class="project-title">
+                            Diseño de Caja Reductora para Turbogenerador Industrial
+                        </h3>
+
+                        <p class="project-desc">
+                            Diseño y optimización de caja reductora de engranes
+                            doble helicoidales. Selección de geometría mediante
+                            MATLAB, análisis de fatiga y flexión, selección de
+                            material AISI 4140 y simulación en Mastercam.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">MATLAB</span>
+                            <span class="project-tag">Mastercam</span>
+                            <span class="project-tag">AISI 4140</span>
+                            <span class="project-tag">Análisis de Fatiga</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-meta">
+                            <span>Socio Formador: Grupo Modelo</span>
+                            <span class="project-period">
+                                Feb 2026 - Mayo 2026
+                            </span>
+                        </div>
+
+                        <h3 class="project-title">
+                            Monitoreo Termodinámico de Pasteurización en Túnel
+                        </h3>
+
+                        <p class="project-desc">
+                            Análisis termodinámico y modelado de planta en EES
+                            para evaluar la generación de vapor en calderas
+                            pirotubulares e intercambiadores de calor,
+                            asegurando el control tiempo-temperatura.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">EES</span>
+                            <span class="project-tag">Termodinámica</span>
+                            <span class="project-tag">Intercambiadores</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CERTIFICACIONES Y RECONOCIMIENTOS -->
+            <div class="skill-group" style="margin-top: 30px;">
+                <h3 class="group-title">
+                    Certificaciones y Reconocimientos
+                </h3>
+
+                <div class="certifications-subgrid">
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">🏆</div>
+
+                        <div class="cert-details">
+                            <span class="cert-name">
+                                Ganadora Expo Ingenierías EIII
+                            </span>
+
+                            <span class="cert-issuer">
+                                ITESM Campus Puebla
+                            </span>
+
+                            <span class="cert-date">Junio 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">📜</div>
+
+                        <div class="cert-details">
+                            <span class="cert-name">
+                                Certified SOLIDWORKS Simulation Associate
+                            </span>
+
+                            <span class="cert-issuer">
+                                Dassault Systèmes
+                            </span>
+
+                            <span class="cert-date">Abril 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">🎓</div>
+
+                        <div class="cert-details">
+                            <span class="cert-name">
+                                Map the System Learning Programme
+                            </span>
+
+                            <span class="cert-issuer">
+                                Saïd Business School, Oxford University
+                            </span>
+
+                            <span class="cert-date">Junio 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">⚡</div>
+
+                        <div class="cert-details">
+                            <span class="cert-name">MATLAB Onramp</span>
+
+                            <span class="cert-issuer">
+                                MathWorks Training Services
+                            </span>
+
+                            <span class="cert-date">Mayo 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">🔬</div>
+
+                        <div class="cert-details">
+                            <span class="cert-name">
+                                Elementary Induction to Wolfram Language
+                            </span>
+
+                            <span class="cert-issuer">Wolfram U</span>
+
+                            <span class="cert-date">Julio 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-badge-icon">⚙️</div>
+
+                        <div class="cert-details">
+                            <span class="cert-name">Six Sigma White Belt</span>
+
+                            <span class="cert-issuer">
+                                Tecnológico de Monterrey
+                            </span>
+
+                            <span class="cert-date">Marzo 2023</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- RUBRO 5: REDES Y CONTACTO -->
+        <section class="card-section">
+            <h2 class="section-title">Redes y Contacto</h2>
+
+            <div class="contact-grid">
+
+                <a href="mailto:A01737999@tec.mx" class="contact-card">
+                    <div class="contact-icon">✉</div>
+
+                    <div class="contact-info">
+                        <span class="contact-label">
+                            Correo Electrónico
+                        </span>
+
+                        <span class="contact-value">
+                            A01737999@tec.mx
+                        </span>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/alison-stringer-rios292005" target="_blank"
+                    rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon">in</div>
+
+                    <div class="contact-info">
+                        <span class="contact-label">LinkedIn</span>
+
+                        <span class="contact-value">
+                            alison-stringer-rios292005
+                        </span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- BOTÓN PARA REGRESAR A LA PÁGINA DE INICIO -->
+        <div class="back-home-container">
+            <a href="../index.html" class="back-home-button">
+                ← Regresar a la página de inicio
+            </a>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT DEL GRÁFICO DE RADAR Y CONTROL DE SLIDERS -->
+    <script>
+        const ctx = document
+            .getElementById('softSkillsChart')
+            .getContext('2d');
+
+        const softSkillsChart = new Chart(ctx, {
+            type: 'radar',
+
+            data: {
+                labels: [
+                    'Liderazgo y Gestión',
+                    'Comunicación Eficiente',
+                    'Trabajo en Equipo',
+                    'Resolución de Problemas',
+                    'Organización y Logística',
+                    'Adaptabilidad'
+                ],
+
+                datasets: [{
+                    label: 'Alison Stringer Ríos',
+                    data: [95, 90, 95, 90, 88, 92],
+                    backgroundColor: 'rgba(79, 117, 232, 0.25)',
+                    borderColor: '#4f75e8',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#4f75e8',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 4
+                }]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: '#1e2d4a'
+                        },
+
+                        grid: {
+                            color: '#1e2d4a'
+                        },
+
+                        pointLabels: {
+                            color: '#94a3b8',
+
+                            font: {
+                                family: "'Inter', sans-serif",
+                                size: 11,
+                                weight: '600'
+                            }
+                        },
+
+                        ticks: {
+                            display: false,
+                            min: 0,
+                            max: 100,
+                            stepSize: 20
+                        },
+
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        function updateSkill(index, value) {
+            softSkillsChart.data.datasets[0].data[index] = Number(value);
+
+            softSkillsChart.update();
+
+            document.getElementById(`val-${index}`).innerText =
+                value + '%';
+        }
+    </script>
+
+</body>
+
+</html>
+```
