@@ -17,6 +17,7 @@
             --text-primary: #ffffff;   /* Texto principal */
             --text-secondary: #94a3b8; /* Texto secundario */
             --accent-blue: #4f75e8;    /* Azul brillante */
+            --accent-hover: #3b5ccc;   /* Azul para hover */
             --tag-bg: #1a2a47;         /* Fondo para etiquetas */
             --badge-bg: #1a2a47;       
             --badge-border: #2a3e66;   
@@ -250,7 +251,7 @@
             cursor: pointer;
         }
 
-        /* --- 4. LOGROS Y PROYECTOS DESTACADOS (SIN IMÁGENES) --- */
+        /* --- 4. LOGROS Y PROYECTOS DESTACADOS --- */
         .projects-grid {
             display: flex;
             flex-direction: column;
@@ -316,6 +317,69 @@
             font-size: 0.8rem;
         }
 
+        /* --- 5. REDES Y CONTACTO --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .contact-card {
+            background-color: rgba(11, 19, 41, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-blue);
+            background-color: var(--tag-bg);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background-color: var(--badge-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            overflow: hidden;
+        }
+
+        .contact-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .contact-value {
+            font-size: 0.92rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         /* Adaptación a dispositivos móviles */
         @media (max-width: 680px) {
             .profile-header {
@@ -328,6 +392,10 @@
             }
 
             .sliders-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -458,7 +526,7 @@
             </div>
         </section>
 
-        <!-- RUBRO 4: LOGROS Y PROYECTOS DESTACADOS (SIN IMÁGENES) -->
+        <!-- RUBRO 4: LOGROS Y PROYECTOS DESTACADOS -->
         <section class="card-section">
             <h2 class="section-title">Logros y Proyectos Destacados</h2>
 
@@ -514,6 +582,31 @@
                         <span class="project-tag">Intercambiadores</span>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- RUBRO 5: REDES Y CONTACTO -->
+        <section class="card-section">
+            <h2 class="section-title">Redes y Contacto</h2>
+
+            <div class="contact-grid">
+                <!-- Enlace de Correo Electrónico -->
+                <a href="mailto:A01737999@tec.mx" class="contact-card">
+                    <div class="contact-icon">✉</div>
+                    <div class="contact-info">
+                        <span class="contact-label">Correo Electrónico</span>
+                        <span class="contact-value">A01737999@tec.mx</span>
+                    </div>
+                </a>
+
+                <!-- Enlace de LinkedIn -->
+                <a href="https://www.linkedin.com/in/alison-stringer-rios292005" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon">in</div>
+                    <div class="contact-info">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">alison-stringer-rios292005</span>
+                    </div>
+                </a>
             </div>
         </section>
 
