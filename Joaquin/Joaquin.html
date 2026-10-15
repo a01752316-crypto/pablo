@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Joaquín Sandre Acevedo - Integrante</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0b1120',          /* Fondo azul oscuro profundo */
+                            card: '#131c31',        /* Tarjetas azul marino */
+                            cardHover: '#1a2642',
+                            accent: '#3b82f6',      /* Azul brillante primario */
+                            accentHover: '#2563eb',
+                            border: '#2e3d5c',      /* Bordes suaves */
+                            textMuted: '#94a3b8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js para el Gráfico de Radar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background-color: #0b1120;
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Efectos de resplandor para tarjetas */
+        .glow-card {
+            box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.08);
+            border: 1px solid #2e3d5c;
+            transition: all 0.3s ease;
+        }
+
+        .glow-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 0 30px -2px rgba(59, 130, 246, 0.25);
+        }
+
+        /* Barra de desplazamiento personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b1120;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2e3d5c;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- Header / Barra Superior con Botón de Retorno -->
+    <header class="w-full border-b border-brand-border/60 bg-brand-bg/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="index.html"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-brand-textMuted hover:text-brand-accent transition-colors py-2 px-3 rounded-xl hover:bg-brand-card">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Volver al equipo</span>
+            </a>
+
+            <div class="text-xs text-brand-textMuted font-medium hidden sm:block">
+                Perfil de Integrante · Ingeniería Mecánica
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal del Perfil Individual -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 space-y-12">
+
+        <!-- 1. ENCABEZADO / BIOGRAFÍA Y PRESENTACIÓN -->
+        <section id="biografia">
+            <div class="bg-brand-card rounded-3xl p-6 sm:p-10 border border-brand-border glow-card">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+
+                    <!-- Fotografía de Perfil Circular -->
+                    <div class="relative flex-shrink-0">
+                        <div
+                            class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-brand-accent/60 p-1 bg-brand-bg shadow-2xl relative">
+                            <!-- CAMBIA AQUÍ "mi_foto.jpg" por el nombre de tu archivo de imagen real -->
+                            <img src="foto.jpeg" alt="Joaquín Sandre Acevedo"
+                                class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div
+                            class="absolute bottom-2 right-2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5 border-2 border-brand-card">
+                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Activo
+                        </div>
+                    </div>
+
+                    <!-- Datos Personales y Biografía -->
+                    <div class="flex-1 text-center md:text-left space-y-3">
+                        <div>
+                            <span
+                                class="bg-brand-accent/15 text-brand-accent text-xs font-bold px-3 py-1 rounded-full border border-brand-accent/30 inline-block mb-2">
+                                Tec de Monterrey - Campus Puebla
+                            </span>
+                            <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Joaquín Sandre Acevedo
+                            </h1>
+                            <p class="text-brand-accent font-semibold text-base sm:text-lg mt-0.5">
+                                Estudiante de Ingeniería Mecánica (7mo Semestre)
+                            </p>
+                        </div>
+
+                        <p class="text-brand-textMuted text-sm sm:text-base leading-relaxed">
+                            Estudiante de Ingeniería Mecánica en el Tecnológico de Monterrey con una sólida pasión por
+                            la automatización industrial, el diseño CAD avanzado y el desarrollo de sistemas de
+                            diagnóstico. Me especializo en la optimización de procesos de manufactura y análisis
+                            estructural, combinando herramientas como SolidWorks y Ansys con tecnologías
+                            modernas para la resolución de problemas.
+                        </p>
+
+                        <!-- Intereses Profesionales -->
+                        <div class="pt-2">
+                            <p class="text-xs font-bold text-white uppercase tracking-wider mb-2">Intereses
+                                Profesionales:</p>
+                            <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Manufactura</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Modelado
+                                    CAD</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Desarrollo
+                                    de proyectos</span>
+                                <span
+                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Sistemas
+                                    de Diagnósticos</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. HABILIDADES TÉCNICAS -->
+        <section id="habilidades-tecnicas">
+            <div class="mb-5">
+                <h2 class="text-2xl font-extrabold text-white tracking-tight">Habilidades Técnicas</h2>
+                <p class="text-brand-textMuted text-sm">Herramientas de ingeniería, diseño y simulación que domino.</p>
+            </div>
+
+            <!-- Grilla de Insignias / Badges -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
+
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i class="fa-solid fa-cube text-3xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold text-white">SolidWorks</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Avanzado</span>
+                </div>
+
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-compass-drafting text-3xl text-red-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold text-white">AutoCAD</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Intermedio</span>
+                </div>
+
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i class="fa-solid fa-gears text-3xl text-amber-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold text-white">Ansys</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Simulación FEA</span>
+                </div>
+
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-network-wired text-3xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold text-white">HyperMesh</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Mallado Avanzado</span>
+                </div>
+
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-calculator text-3xl text-orange-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold text-white">MATLAB</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Cálculo numérico</span>
+                </div>
+
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-file-excel text-3xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold text-white">Office / Node-RED</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">IoT & Gestión</span>
+                </div>
+
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-gauge-high text-3xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold text-white">Adams View</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Simulación Dinámica</span>
+                </div>
+
+                <div
+                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
+                    <i
+                        class="fa-solid fa-industry text-3xl text-yellow-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold text-white">Manufactura CNC</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Maquinado y Soldadura</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. HABILIDADES BLANDAS (GRÁFICO DE RADAR) -->
+        <section id="habilidades-blandas">
+            <div class="bg-brand-card rounded-3xl p-6 sm:p-8 border border-brand-border glow-card">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                    <!-- Explicación y Sliders de Ajuste Rápido -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div>
+                            <span class="text-xs font-bold text-brand-accent uppercase tracking-wider">Evaluación
+                                Homogénea</span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Habilidades Blandas</h2>
+                        </div>
+
+                        <p class="text-brand-textMuted text-sm leading-relaxed">
+                            Métrica comparativa que evalúa el perfil interpersonal y operativo del integrante bajo los
+                            estándares definidos para todo el equipo.
+                        </p>
+
+                        <!-- Controles deslizantes para ajustar los niveles en la plantilla fácilmente -->
+                        <div class="bg-brand-bg/80 p-4 rounded-2xl border border-brand-border/80 space-y-3">
+                            <div class="flex items-center justify-between border-b border-brand-border pb-2">
+                                <span class="text-xs font-bold text-white">Ajustar Niveles</span>
+                                <span class="text-[10px] text-brand-accent">Personalizable</span>
+                            </div>
+
+                            <div class="space-y-2 text-xs">
+                                <div>
+                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
+                                        <span>Comunicación Efectiva</span>
+                                        <span id="val1" class="text-white font-semibold">95%</span>
+                                    </div>
+                                    <input type="range" id="skill1" min="20" max="100" value="95"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
+                                        <span>Trabajo en Equipo</span>
+                                        <span id="val2" class="text-white font-semibold">90%</span>
+                                    </div>
+                                    <input type="range" id="skill2" min="20" max="100" value="90"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
+                                        <span>Resolución de Problemas</span>
+                                        <span id="val3" class="text-white font-semibold">86%</span>
+                                    </div>
+                                    <input type="range" id="skill3" min="20" max="100" value="86"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
+                                        <span>Liderazgo y Autonomía</span>
+                                        <span id="val4" class="text-white font-semibold">75%</span>
+                                    </div>
+                                    <input type="range" id="skill4" min="20" max="100" value="75"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
+                                        <span>Adaptabilidad</span>
+                                        <span id="val5" class="text-white font-semibold">90%</span>
+                                    </div>
+                                    <input type="range" id="skill5" min="20" max="100" value="90"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
+                                        <span>Gestión del Tiempo</span>
+                                        <span id="val6" class="text-white font-semibold">70%</span>
+                                    </div>
+                                    <input type="range" id="skill6" min="20" max="100" value="70"
+                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contenedor del Canvas para el Gráfico -->
+                    <div
+                        class="lg:col-span-7 flex justify-center items-center p-3 sm:p-5 bg-brand-bg/60 rounded-2xl border border-brand-border/50">
+                        <div class="w-full max-w-md aspect-square relative">
+                            <canvas id="softSkillsChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. LOGROS Y PROYECTOS DESTACADOS -->
+        <section id="proyectos">
+            <div class="mb-5">
+                <h2 class="text-2xl font-extrabold text-white tracking-tight">Logros y Proyectos Destacados</h2>
+                <p class="text-brand-textMuted text-sm">Muestra de trabajos y contribuciones principales.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Proyecto 1 -->
+                <div
+                    class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden hover:border-brand-accent/60 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div
+                            class="h-48 w-full bg-brand-bg relative overflow-hidden flex items-center justify-center border-b border-brand-border">
+                            <div class="text-brand-accent font-bold text-lg px-4 text-center">Autoplastek - Sistema
+                                Karakuri</div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition">
+                                    Transportador Automatizado</h3>
+                                <span
+                                    class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-semibold">Completado</span>
+                            </div>
+                            <p class="text-brand-textMuted text-sm leading-relaxed mb-4">
+                                Diseño de un sistema de transporte automatizado mecanismo Karakuri. Reducción de tiempo
+                                de operación en 7-18 segundos por pieza con menor intervención manual y validación en
+                                Adams View.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">SolidWorks</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Adams
+                                    View</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Automatización</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 flex gap-3">
+                        <span class="text-xs text-brand-textMuted italic">Período: 08/2025 - 12/2025</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div
+                    class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden hover:border-brand-accent/60 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div
+                            class="h-48 w-full bg-brand-bg relative overflow-hidden flex items-center justify-center border-b border-brand-border">
+                            <div class="text-brand-accent font-bold text-lg px-4 text-center">Cruz Azul / Lubcen -
+                                Diagnóstico IoT</div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition">Horno
+                                    Rotativo Línea 2</h3>
+                                <span
+                                    class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-semibold">Completado</span>
+                            </div>
+                            <p class="text-brand-textMuted text-sm leading-relaxed mb-4">
+                                Diagnóstico y solución integral para falla en transmisión reductora. Diseño de
+                                arquitectura IoT sensorizando variables críticas e integrando Gateway IoT, Node-RED y
+                                dashboard en tiempo real.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Node-RED</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">IoT
+                                    Dashboard</span>
+                                <span
+                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Análisis
+                                    de Fallas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 flex gap-3">
+                        <span class="text-xs text-brand-textMuted italic">Período: 04/2026 - 06/2026</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. REDES Y CONTACTO -->
+        <section id="contacto">
+            <div
+                class="bg-gradient-to-r from-brand-card via-brand-cardHover to-brand-card rounded-3xl p-8 sm:p-10 border border-brand-border text-center glow-card">
+
+                <div class="max-w-xl mx-auto space-y-4">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Canales de Contacto</h2>
+                    <p class="text-brand-textMuted text-sm">
+                        Ponte en contacto conmigo para oportunidades profesionales y colaboraciones.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-3 pt-3">
+
+                        <a href="mailto:A01735093@tec.com"
+                            class="py-2.5 px-5 bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg shadow-blue-500/25">
+                            <i class="fa-solid fa-envelope text-base"></i> A01735093@tec.com
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/joaquinsanace" target="_blank" rel="noopener"
+                            class="py-2.5 px-5 bg-[#0a66c2] hover:bg-[#084e96] text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg">
+                            <i class="fa-brands fa-linkedin text-base"></i> LinkedIn/in/joaquinsanace
+                        </a>
+
+                        <div
+                            class="py-2.5 px-5 bg-brand-bg text-white font-semibold text-xs sm:text-sm rounded-xl border border-brand-border flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-base text-brand-accent"></i> +52 221 183 3130
+                        </div>
+
+                        <div
+                            class="py-2.5 px-5 bg-brand-bg text-white font-semibold text-xs sm:text-sm rounded-xl border border-brand-border flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-base text-brand-accent"></i> Puebla, México
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-brand-border/60 py-6 bg-brand-bg mt-12">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="text-xs text-brand-textMuted">
+                Perfil de Integrante · Proyecto Colaborativo 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- Lógica JavaScript para Gráfico de Radar Chart.js -->
+    <script>
+        let softSkillsChart;
+
+        function initChart() {
+            const ctx = document.getElementById('softSkillsChart').getContext('2d');
+
+            // Obtener valores de los sliders
+            const dataValues = [
+                document.getElementById('skill1').value,
+                document.getElementById('skill2').value,
+                document.getElementById('skill3').value,
+                document.getElementById('skill4').value,
+                document.getElementById('skill5').value,
+                document.getElementById('skill6').value
+            ];
+
+            softSkillsChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Comunicación Efectiva',
+                        'Trabajo en Equipo',
+                        'Resolución de Problemas',
+                        'Liderazgo y Autonomía',
+                        'Adaptabilidad',
+                        'Gestión del Tiempo'
+                    ],
+                    datasets: [{
+                        label: 'Nivel',
+                        data: dataValues,
+                        backgroundColor: 'rgba(59, 130, 246, 0.25)',
+                        borderColor: '#3b82f6',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#60a5fa',
+                        pointBorderColor: '#ffffff',
+                        pointHoverBackgroundColor: '#ffffff',
+                        pointHoverBorderColor: '#3b82f6',
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { color: '#2e3d5c' },
+                            grid: { color: '#2e3d5c' },
+                            pointLabels: {
+                                color: '#94a3b8',
+                                font: { family: 'Inter', size: 11, weight: '600' }
+                            },
+                            ticks: {
+                                backdropColor: 'transparent',
+                                color: '#64748b',
+                                display: false
+                            },
+                            min: 0,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // Función para actualizar en tiempo real el gráfico y sus indicadores numéricos
+        function updateChart() {
+            const val1 = document.getElementById('skill1').value;
+            const val2 = document.getElementById('skill2').value;
+            const val3 = document.getElementById('skill3').value;
+            const val4 = document.getElementById('skill4').value;
+            const val5 = document.getElementById('skill5').value;
+            const val6 = document.getElementById('skill6').value;
+
+            document.getElementById('val1').innerText = val1 + '%';
+            document.getElementById('val2').innerText = val2 + '%';
+            document.getElementById('val3').innerText = val3 + '%';
+            document.getElementById('val4').innerText = val4 + '%';
+            document.getElementById('val5').innerText = val5 + '%';
+            document.getElementById('val6').innerText = val6 + '%';
+
+            if (softSkillsChart) {
+                softSkillsChart.data.datasets[0].data = [val1, val2, val3, val4, val5, val6];
+                softSkillsChart.update();
+            }
+        }
+
+        window.onload = function () {
+            initChart();
+        };
+    </script>
+</body>
+
+</html>
