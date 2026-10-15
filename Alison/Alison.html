@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil - Alison Stringer Ríos</title>
     <!-- Importación de la fuente Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         /* Paleta de colores inspirada en la interfaz oscura */
         :root {
-            --bg-color: #0b1329;       /* Fondo principal azul oscuro */
-            --card-bg: #131f37;        /* Fondo de tarjeta */
-            --card-border: #1e2d4a;    /* Borde de tarjeta */
-            --text-primary: #ffffff;   /* Texto blanco */
-            --text-secondary: #94a3b8; /* Texto gris claro */
-            --accent-blue: #4f75e8;    /* Azul brillante */
-            --tag-bg: #1a2a47;         /* Fondo para etiquetas */
+            --bg-color: #0b1329;
+            /* Fondo principal azul oscuro */
+            --card-bg: #131f37;
+            /* Fondo de tarjeta */
+            --card-border: #1e2d4a;
+            /* Borde de tarjeta */
+            --text-primary: #ffffff;
+            /* Texto blanco */
+            --text-secondary: #94a3b8;
+            /* Texto gris claro */
+            --accent-blue: #4f75e8;
+            /* Azul brillante */
+            --tag-bg: #1a2a47;
+            /* Fondo para etiquetas */
         }
 
         * {
@@ -139,6 +147,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- TARJETA DE BIOGRAFÍA Y PRESENTACIÓN -->
@@ -153,10 +162,13 @@
         <div class="profile-info">
             <h1 class="profile-name">Alison Stringer Ríos</h1>
             <p class="profile-title">Estudiante de Ingeniería Mecánica</p>
-            
+
             <!-- Breve Trayectoria -->
             <p class="profile-bio">
-                Estudiante del Tecnológico de Monterrey con enfoque en desarrollo de ingeniería sustentable, simulación termodinámica y automatización industrial[cite: 3, 4]. He liderado proyectos con socios formadores como Cementos Cruz Azul (gemelos digitales), Grupo Modelo y Autoplastek[cite: 3]. Fundadora y Presidenta de ASME Campus Puebla y apasionada por la integración estudiantil y la música[cite: 4].
+                Estudiante del Tecnológico de Monterrey con enfoque en desarrollo de ingeniería sustentable, simulación
+                termodinámica y automatización industrial[cite: 3, 4]. He liderado proyectos con socios formadores como
+                Cementos Cruz Azul (gemelos digitales), Grupo Modelo y Autoplastek[cite: 3]. Fundadora y Presidenta de
+                ASME Campus Puebla y apasionada por la integración estudiantil y la música[cite: 4].
             </p>
 
             <!-- Intereses Profesionales -->
@@ -174,4 +186,202 @@
     </section>
 
 </body>
+
 </html>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades Técnicas - Alison Stringer Ríos</title>
+    <!-- Importación de la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0b1329;
+            /* Fondo principal azul oscuro */
+            --card-bg: #131f37;
+            /* Fondo de tarjetas */
+            --card-border: #1e2d4a;
+            /* Borde de tarjetas */
+            --text-primary: #ffffff;
+            /* Texto principal */
+            --text-secondary: #94a3b8;
+            /* Texto secundario */
+            --accent-blue: #4f75e8;
+            /* Azul brillante para acentos */
+            --badge-bg: #1a2a47;
+            /* Fondo de las insignias */
+            --badge-border: #2a3e66;
+            /* Borde de insignias */
+            --badge-hover: #23375c;
+            /* Hover para insignias */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Contenedor principal de la sección */
+        .skills-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 35px;
+            max-width: 850px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 22px;
+            background-color: var(--accent-blue);
+            border-radius: 2px;
+        }
+
+        /* Agrupación de categorías de habilidades */
+        .skill-group {
+            margin-bottom: 22px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .group-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        /* Rejilla de insignias (badges) */
+        .badges-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Estilo individual de badge */
+        .badge {
+            background-color: var(--badge-bg);
+            border: 1px solid var(--badge-border);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease-in-out;
+            cursor: default;
+        }
+
+        .badge:hover {
+            background-color: var(--badge-hover);
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Insignia destacada para certificaciones principales */
+        .badge.certified {
+            border-color: var(--accent-blue);
+            background: linear-gradient(135deg, rgba(79, 117, 232, 0.15) 0%, var(--badge-bg) 100%);
+        }
+
+        .badge-icon {
+            color: var(--accent-blue);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            .skills-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SECCIÓN DE HABILIDADES TÉCNICAS -->
+    <section class="skills-card">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+
+        <!-- CAD, CAE & Diseño de Ingeniería -->
+        <div class="skill-group">
+            <h3 class="group-title">Diseño, Simulación & Manufactura (CAD/CAE/CAM)</h3>
+            <div class="badges-grid">
+                <div class="badge certified">
+                    <span class="badge-icon">★</span> SOLIDWORKS (CSWA Simulation)
+                </div>
+                <div class="badge">Hypermesh (Altair)</div>
+                <div class="badge">Mastercam</div>
+                <div class="badge">Diseño de Mecanismos & Engranes</div>
+                <div class="badge">Análisis de Fatiga y Flexión</div>
+            </div>
+        </div>
+
+        <!-- Software de Cálculo y Programación -->
+        <div class="skill-group">
+            <h3 class="group-title">Software de Computación & Programación</h3>
+            <div class="badges-grid">
+                <div class="badge certified">
+                    <span class="badge-icon">⚡</span> MATLAB (Onramp)
+                </div>
+                <div class="badge">EES (Engineering Equation Solver)</div>
+                <div class="badge">Wolfram Language</div>
+            </div>
+        </div>
+
+        <!-- Termodinámica y Automatización -->
+        <div class="skill-group">
+            <h3 class="group-title">Ingeniería Aplicada & Automatización</h3>
+            <div class="badges-grid">
+                <div class="badge">Gemelos Digitales (Digital Twins)</div>
+                <div class="badge">Análisis Termodinámico & Transferencia de Calor</div>
+                <div class="badge">Bandas Transportadoras & Automatización</div>
+                <div class="badge">Corte por Plasma (3 DoF)</div>
+            </div>
+        </div>
+
+        <!-- Metodologías & Certificaciones -->
+        <div class="skill-group">
+            <h3 class="group-title">Metodologías & Certificaciones</h3>
+            <div class="badges-grid">
+                <div class="badge certified">
+                    <span class="badge-icon">✓</span> Six Sigma White Belt
+                </div>
+                <div class="badge">Map the System
