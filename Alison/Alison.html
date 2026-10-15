@@ -42,8 +42,8 @@
         /* CONTENEDOR PRINCIPAL: Apila todas las secciones verticalmente */
         .profile-container {
             display: flex;
-            flex-direction: column; /* Alinea cada bloque uno debajo del otro */
-            gap: 30px;              /* Espacio vertical uniforme entre secciones */
+            flex-direction: column;
+            gap: 30px;
             max-width: 850px;
             width: 100%;
         }
@@ -193,19 +193,61 @@
             color: var(--accent-blue);
         }
 
-        /* --- 3. HABILIDADES BLANDAS --- */
+        /* --- 3. HABILIDADES BLANDAS CON SLIDERS --- */
         .section-subtitle {
             font-size: 0.9rem;
             color: var(--text-secondary);
             margin-bottom: 20px;
         }
 
+        .radar-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
         .chart-container {
             position: relative;
-            max-width: 520px;
+            max-width: 480px;
             width: 100%;
-            margin: 0 auto;
-            height: 380px;
+            height: 350px;
+        }
+
+        .sliders-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px 25px;
+            background-color: rgba(11, 19, 41, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--card-border);
+        }
+
+        .slider-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slider-label span {
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+
+        .skill-slider {
+            width: 100%;
+            accent-color: var(--accent-blue);
+            cursor: pointer;
         }
 
         /* Adaptación a dispositivos móviles */
@@ -219,8 +261,12 @@
                 justify-content: center;
             }
 
+            .sliders-container {
+                grid-template-columns: 1fr;
+            }
+
             .chart-container {
-                height: 300px;
+                height: 280px;
             }
         }
     </style>
@@ -299,24 +345,56 @@
             </div>
         </section>
 
-        <!-- RUBRO 3: HABILIDADES BLANDAS -->
+        <!-- RUBRO 3: HABILIDADES BLANDAS CON SLIDERS INTERACTIVOS -->
         <section class="card-section">
             <h2 class="section-title">Habilidades Blandas</h2>
             <p class="section-subtitle">
-                Representación del nivel relativo en competencias interpersonales, de liderazgo y gestión de proyectos.
+                Ajusta los deslizadores para actualizar los niveles en tiempo real en el gráfico de radar.
             </p>
 
-            <div class="chart-container">
-                <canvas id="softSkillsChart"></canvas>
+            <div class="radar-layout">
+                <!-- Gráfico Chart.js -->
+                <div class="chart-container">
+                    <canvas id="softSkillsChart"></canvas>
+                </div>
+
+                <!-- Sliders para personalizar cada habilidad -->
+                <div class="sliders-container">
+                    <div class="slider-group">
+                        <div class="slider-label">Liderazgo y Gestión <span id="val-0">95%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="95" oninput="updateSkill(0, this.value)">
+                    </div>
+                    <div class="slider-group">
+                        <div class="slider-label">Comunicación Eficiente <span id="val-1">90%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="90" oninput="updateSkill(1, this.value)">
+                    </div>
+                    <div class="slider-group">
+                        <div class="slider-label">Trabajo en Equipo <span id="val-2">95%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="95" oninput="updateSkill(2, this.value)">
+                    </div>
+                    <div class="slider-group">
+                        <div class="slider-label">Resolución de Problemas <span id="val-3">90%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="90" oninput="updateSkill(3, this.value)">
+                    </div>
+                    <div class="slider-group">
+                        <div class="slider-label">Organización y Logística <span id="val-4">88%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="88" oninput="updateSkill(4, this.value)">
+                    </div>
+                    <div class="slider-group">
+                        <div class="slider-label">Adaptabilidad <span id="val-5">92%</span></div>
+                        <input type="range" class="skill-slider" min="0" max="100" value="92" oninput="updateSkill(5, this.value)">
+                    </div>
+                </div>
             </div>
         </section>
 
     </div>
 
-    <!-- SCRIPT DEL GRÁFICO DE RADAR -->
+    <!-- SCRIPT DEL GRÁFICO DE RADAR Y CONTROL DE SLIDERS -->
     <script>
         const ctx = document.getElementById('softSkillsChart').getContext('2d');
-        new Chart(ctx, {
+        
+        const softSkillsChart = new Chart(ctx, {
             type: 'radar',
             data: {
                 labels: [
@@ -357,6 +435,13 @@
                 }
             }
         });
+
+        // Función para actualizar en tiempo real el gráfico y el porcentaje
+        function updateSkill(index, value) {
+            softSkillsChart.data.datasets[0].data[index] = Number(value);
+            softSkillsChart.update();
+            document.getElementById(`val-${index}`).innerText = value + '%';
+        }
     </script>
 
 </body>
