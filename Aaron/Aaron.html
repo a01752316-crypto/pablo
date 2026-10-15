@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Gutiérrez | Perfil PABLO</title>
+
+    <!-- Tailwind CSS: diseño original de la plantilla -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0b1120',
+                            card: '#131c31',
+                            cardHover: '#1a2642',
+                            accent: '#3b82f6',
+                            accentHover: '#2563eb',
+                            border: '#2e3d5c',
+                            textMuted: '#94a3b8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Fuentes e iconos -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <!-- Gráfico de radar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS PERSONAL -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- BARRA SUPERIOR -->
+    <header class="w-full border-b border-brand-border/60 bg-brand-bg/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+
+            <a href="../../index.html"
+               class="inline-flex items-center gap-2 text-sm font-semibold text-brand-textMuted hover:text-brand-accent transition-colors py-2 px-3 rounded-xl hover:bg-brand-card">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Volver al equipo</span>
+            </a>
+
+            <div class="text-xs text-brand-textMuted font-medium hidden sm:block">
+                Perfil de Integrante
+            </div>
+
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 space-y-12">
+
+        <!-- ===================================== -->
+        <!-- 1. BIOGRAFÍA Y PRESENTACIÓN -->
+        <!-- ===================================== -->
+
+        <section id="biografia">
+            <div class="bg-brand-card rounded-3xl p-6 sm:p-10 border border-brand-border glow-card">
+
+                <div class="flex flex-col md:flex-row items-center gap-8">
+
+                    <!-- Fotografía -->
+                    <div class="relative flex-shrink-0">
+
+                        <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-brand-accent/60 p-1 bg-brand-bg shadow-2xl relative">
+                            <img
+                                src="img/perfil.jpeg"
+                                alt="Fotografía de Aaron Gutiérrez"
+                                class="w-full h-full object-cover rounded-full"
+                            >
+                        </div>
+
+                        <div class="absolute bottom-2 right-2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5 border-2 border-brand-card">
+                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                            Activo
+                        </div>
+
+                    </div>
+
+                    <!-- Información personal -->
+                    <div class="flex-1 text-center md:text-left space-y-3">
+
+                        <div>
+                            <span class="bg-brand-accent/15 text-brand-accent text-xs font-bold px-3 py-1 rounded-full border border-brand-accent/30 inline-block mb-2">
+                                Integrante 01
+                            </span>
+
+                            <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                                Aaron Gutiérrez
+                            </h1>
+
+                            <p class="text-brand-accent font-semibold text-base sm:text-lg mt-0.5">
+                                Estudiante de Ingeniería Mecatrónica
+                            </p>
+                        </div>
+
+                        <p class="text-brand-textMuted text-sm sm:text-base leading-relaxed">
+                            Soy estudiante de Ingeniería Mecatrónica en el
+                            Tecnológico de Monterrey, con interés en la
+                            automatización industrial, la electrónica,
+                            el diseño mecánico y los sistemas de control.
+                            Mi formación incluye proyectos relacionados
+                            con robótica, programación de PLC, diseño
+                            de circuitos y piezas, así como desarrollo de soluciones
+                            tecnológicas para procesos industriales.
+                        </p>
+
+                        <p class="text-brand-textMuted text-sm sm:text-base leading-relaxed">
+                            Mi objetivo profesional es participar en
+                            proyectos que integren distintas disciplinas
+                            de la ingeniería para mejorar la eficiencia,
+                            confiabilidad y productividad de los
+                            sistemas industriales.
+                        </p>
+
+                        <!-- Intereses profesionales -->
+                        <div class="pt-2">
+
+                            <p class="text-xs font-bold text-white uppercase tracking-wider mb-2">
+                                Intereses Profesionales:
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+
+                                <span class="interes">
+                                    Automatización Industrial
+                                </span>
+
+                                <span class="interes">
+                                    Sistemas de Control
+                                </span>
+
+                                <span class="interes">
+                                    Diseño Mecánico
+                                </span>
+
+                                <span class="interes">
+                                    Electrónica
+                                </span>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================== -->
+        <!-- 2. HABILIDADES TÉCNICAS -->
+        <!-- ===================================== -->
+
+        <section id="habilidades-tecnicas">
+
+            <div class="mb-5">
+                <h2 class="text-2xl font-extrabold text-white tracking-tight">
+                    Habilidades Técnicas
+                </h2>
+                <p class="text-brand-textMuted text-sm">
+                    Tecnologías, herramientas y áreas de conocimiento.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5">
+
+                <!-- Arduino -->
+                <div class="habilidad-card">
+                    <i class="fa-solid fa-microchip text-3xl text-cyan-400"></i>
+                    <span>Arduino</span>
+                </div>
+
+                <!-- PLC -->
+                <div class="habilidad-card">
+                    <i class="fa-solid fa-gears text-3xl text-blue-400"></i>
+                    <span>PLC</span>
+                </div>
+
+                <!-- Raspberry -->
+                <div class="habilidad-card">
+                    <i class="fa-brands fa-raspberry-pi text-3xl text-rose-400"></i>
+                    <span>Raspberry Pi</span>
+                </div>
+
+                <!-- Electrónica -->
+                <div class="habilidad-card">
+                    <i class="fa-solid fa-bolt text-3xl text-yellow-400"></i>
+                    <span>Electrónica</span>
+                </div>
+
+                <!-- SolidWorks -->
+                <div class="habilidad-card">
+                    <i class="fa-solid fa-cube text-3xl text-red-400"></i>
+                    <span>SolidWorks</span>
+                </div>
+
+                <!-- Fusion -->
+                <div class="habilidad-card">
+                    <i class="fa-solid fa-cubes text-3xl text-orange-400"></i>
+                    <span>Fusion 360</span>
+                </div>
+
+                <!-- TIA Portal -->
+                <div class="habilidad-card">
+                    <i class="fa-solid fa-industry text-3xl text-teal-400"></i>
+                    <span>TIA Portal</span>
+                </div>
+
+                <!-- Proteus -->
+                <div class="habilidad-card">
+                    <i class="fa-solid fa-wave-square text-3xl text-purple-400"></i>
+                    <span>Proteus</span>
+                </div>
+
+                <!-- KiCad -->
+                <div class="habilidad-card">
+                    <i class="fa-solid fa-diagram-project text-3xl text-green-400"></i>
+                    <span>KiCad</span>
+                </div>
+
+                <!-- Diseño mecánico -->
+                <div class="habilidad-card">
+                    <i class="fa-solid fa-compass-drafting text-3xl text-sky-400"></i>
+                    <span>Diseño Mecánico</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================== -->
+        <!-- 3. HABILIDADES BLANDAS -->
+        <!-- ===================================== -->
+
+        <section id="habilidades-blandas">
+
+            <div class="bg-brand-card rounded-3xl p-6 sm:p-10 border border-brand-border glow-card">
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                    <!-- Controles -->
+                    <div class="lg:col-span-5 space-y-6">
+
+                        <div>
+                            <span class="text-xs font-bold text-brand-accent uppercase tracking-wider">
+                                Evaluación Homogénea
+                            </span>
+
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+                                Habilidades Blandas
+                            </h2>
+                        </div>
+
+                        <p class="text-brand-textMuted text-sm leading-relaxed">
+                            Autoevaluación de competencias interpersonales
+                            y de trabajo. Puedes ajustar los valores para
+                            visualizar los cambios en el gráfico.
+                        </p>
+
+                        <div class="bg-brand-bg/80 p-4 rounded-2xl border border-brand-border/80 space-y-3">
+
+                            <div class="flex items-center justify-between border-b border-brand-border pb-2">
+                                <span class="text-xs font-bold text-white">
+                                    Ajustar Niveles
+                                </span>
+                                <span class="text-[10px] text-brand-accent">
+                                    Personalizable
+                                </span>
+                            </div>
+
+                            <!-- Comunicación -->
+                            <div class="control-habilidad">
+                                <div class="flex justify-between text-brand-textMuted mb-1">
+                                    <span>Comunicación Efectiva</span>
+                                    <span id="val1" class="text-white font-semibold">80%</span>
+                                </div>
+                                <input type="range" id="skill1" min="0" max="100"
+                                       step="10" value="80" oninput="updateChart()">
+                            </div>
+
+                            <!-- Trabajo en equipo -->
+                            <div class="control-habilidad">
+                                <div class="flex justify-between text-brand-textMuted mb-1">
+                                    <span>Trabajo en Equipo</span>
+                                    <span id="val2" class="text-white font-semibold">90%</span>
+                                </div>
+                                <input type="range" id="skill2" min="0" max="100"
+                                       step="10" value="90" oninput="updateChart()">
+                            </div>
+
+                            <!-- Resolución de problemas -->
+                            <div class="control-habilidad">
+                                <div class="flex justify-between text-brand-textMuted mb-1">
+                                    <span>Resolución de Problemas</span>
+                                    <span id="val3" class="text-white font-semibold">90%</span>
+                                </div>
+                                <input type="range" id="skill3" min="0" max="100"
+                                       step="10" value="90" oninput="updateChart()">
+                            </div>
+
+                            <!-- Liderazgo -->
+                            <div class="control-habilidad">
+                                <div class="flex justify-between text-brand-textMuted mb-1">
+                                    <span>Liderazgo y Autonomía</span>
+                                    <span id="val4" class="text-white font-semibold">80%</span>
+                                </div>
+                                <input type="range" id="skill4" min="0" max="100"
+                                       step="10" value="80" oninput="updateChart()">
+                            </div>
+
+                            <!-- Adaptabilidad -->
+                            <div class="control-habilidad">
+                                <div class="flex justify-between text-brand-textMuted mb-1">
+                                    <span>Adaptabilidad</span>
+                                    <span id="val5" class="text-white font-semibold">90%</span>
+                                </div>
+                                <input type="range" id="skill5" min="0" max="100"
+                                       step="10" value="90" oninput="updateChart()">
+                            </div>
+
+                            <!-- Organización -->
+                            <div class="control-habilidad">
+                                <div class="flex justify-between text-brand-textMuted mb-1">
+                                    <span>Organización</span>
+                                    <span id="val6" class="text-white font-semibold">80%</span>
+                                </div>
+                                <input type="range" id="skill6" min="0" max="100"
+                                       step="10" value="80" oninput="updateChart()">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Gráfico -->
+                    <div class="lg:col-span-7 flex justify-center items-center p-3 sm:p-5 bg-brand-bg/60 rounded-2xl border border-brand-border/50">
+
+                        <div class="w-full max-w-md aspect-square relative">
+                            <canvas id="softSkillsChart"></canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- 4. PROYECTOS DESTACADOS -->
+        <!-- ===================================== -->
+
+        <section id="proyectos">
+
+            <div class="mb-5">
+                <h2 class="text-2xl font-extrabold text-white tracking-tight">
+                    Logros y Proyectos Destacados
+                </h2>
+
+                <p class="text-brand-textMuted text-sm">
+                    Proyectos en los que he participado.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- PROYECTO 1: DASHBOARD -->
+                <article class="proyecto-card">
+
+                    <div class="h-48 w-full bg-brand-bg relative overflow-hidden">
+                        <img
+                            src="img/dashboard.jpg"
+                            alt="Dashboard de producción industrial"
+                            class="imagen-proyecto"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="titulo-proyecto">
+                            Dashboard de Producción Industrial
+                        </h3>
+
+                        <p class="descripcion-proyecto">
+                            Desarrollo de una solución para monitorear
+                            la producción por hora en líneas industriales,
+                            integrando señales de proceso mediante
+                            Raspberry Pi, Node-RED y PostgreSQL.
+                            El sistema permite registrar información
+                            y visualizar indicadores de producción.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tecnologia">Raspberry Pi</span>
+                            <span class="tecnologia">Node-RED</span>
+                            <span class="tecnologia">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- PROYECTO 2: AVIÓN -->
+                <article class="proyecto-card">
+
+                    <div class="h-48 w-full bg-brand-bg relative overflow-hidden">
+                        <img
+                            src="img/avion.jpeg"
+                            alt="Proyecto de avión"
+                            class="imagen-proyecto"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="titulo-proyecto">
+                            Proyecto de Avión
+                        </h3>
+
+                        <p class="descripcion-proyecto">
+                            Participación en un proyecto de avión,
+                            colaborando en las áreas de electrónica
+                            y diseño. Las actividades estuvieron
+                            relacionadas con el desarrollo de
+                            componentes y la integración de
+                            soluciones técnicas.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tecnologia">Electrónica</span>
+                            <span class="tecnologia">Diseño</span>
+                            <span class="tecnologia">Integración</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- PROYECTO 3: ASIENTOS -->
+                <article class="proyecto-card">
+
+                    <div class="h-48 w-full bg-brand-bg relative overflow-hidden">
+                        <img
+                            src="img/asientos.jpg"
+                            alt="Diseño de asientos"
+                            class="imagen-proyecto"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="titulo-proyecto">
+                            Diseño de Asientos
+                        </h3>
+
+                        <p class="descripcion-proyecto">
+                            Participación en actividades relacionadas
+                            con el diseño de asientos, aplicando
+                            conocimientos de diseño mecánico,
+                            modelado y desarrollo de componentes.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tecnologia">Diseño Mecánico</span>
+                            <span class="tecnologia">CAD</span>
+                            <span class="tecnologia">Modelado 3D</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- PROYECTO 4: AUTOMATIZACIÓN -->
+                <article class="proyecto-card">
+
+                    <div class="h-48 w-full bg-brand-bg relative overflow-hidden">
+                        <img
+                            src="img/automatizacion.jpeg"
+                            alt="Soluciones de automatización con PLC"
+                            class="imagen-proyecto"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="titulo-proyecto">
+                            Soluciones de Automatización con PLC
+                        </h3>
+
+                        <p class="descripcion-proyecto">
+                            Desarrollo de soluciones de automatización
+                            industrial mediante programación de PLC,
+                            implementación de lógica de control
+                            e integración de señales y dispositivos
+                            para distintas aplicaciones.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tecnologia">PLC</span>
+                            <span class="tecnologia">TIA Portal</span>
+                            <span class="tecnologia">Automatización</span>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ===================================== -->
+        <!-- 5. REDES Y CONTACTO -->
+        <!-- ===================================== -->
+
+        <section id="contacto">
+
+            <div class="bg-gradient-to-r from-brand-card via-brand-cardHover to-brand-card rounded-3xl p-8 sm:p-10 border border-brand-border text-center glow-card">
+
+                <div class="max-w-xl mx-auto space-y-4">
+
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+                        Canales de Contacto
+                    </h2>
+
+                    <p class="text-brand-textMuted text-sm">
+                        Encuéntrame en mis redes profesionales
+                        o envíame un mensaje directo.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-3 pt-3">
+
+                        <!-- CORREO -->
+                        <a
+                            href="mailto:a01752316@tec.mx"
+                            class="py-2.5 px-5 bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg shadow-blue-500/25"
+                        >
+                            <i class="fa-solid fa-envelope text-base"></i>
+                            Correo Electrónico
+                        </a>
+
+                        <!-- LINKEDIN -->
+                        <a
+                            href="https://www.linkedin.com/in/aarongutierrezh"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="py-2.5 px-5 bg-[#0a66c2] hover:bg-[#084e96] text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg"
+                        >
+                            <i class="fa-brands fa-linkedin text-base"></i>
+                            LinkedIn
+                        </a>
+
+                    </div>
+
+                    <div class="pt-4 text-sm text-brand-textMuted space-y-2">
+
+                        <p>
+                            <i class="fa-solid fa-envelope text-brand-accent mr-2"></i>
+                            <a href="mailto:a01752316@tec.mx" class="hover:text-brand-accent">
+                                a01752316@tec.mx
+                            </a>
+                        </p>
+
+                        <p>
+                            <i class="fa-brands fa-linkedin text-brand-accent mr-2"></i>
+                            <a
+                                href="https://www.linkedin.com/in/aarongutierrezh"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-brand-accent"
+                            >
+                                linkedin.com/in/aarongutierrezh
+                            </a>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ===================================== -->
+    <!-- PIE DE PÁGINA Y NAVEGACIÓN -->
+    <!-- ===================================== -->
+
+    <footer class="border-t border-brand-border/60 bg-brand-bg py-8">
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-5">
+
+                <p class="text-xs text-brand-textMuted">
+                    Aaron Gutiérrez · Proyecto Colaborativo PABLO 2026
+                </p>
+
+                <nav class="flex items-center gap-4 text-sm">
+
+                    <a href="../Mayari/Mayari.html"
+                       class="text-brand-textMuted hover:text-brand-accent transition">
+                        <i class="fa-solid fa-arrow-left mr-1"></i>
+                        Anterior
+                    </a>
+
+                    <a href="../../index.html"
+                       class="text-brand-accent hover:text-white transition font-semibold">
+                        Inicio
+                    </a>
+
+                    <a href="../Abel/Abel.html"
+                       class="text-brand-textMuted hover:text-brand-accent transition">
+                        Siguiente
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+
+                </nav>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- ===================================== -->
+    <!-- JAVASCRIPT: GRÁFICO DE RADAR -->
+    <!-- ===================================== -->
+
+    <script>
+        const ctx = document.getElementById('softSkillsChart');
+
+        const skillLabels = [
+            'Comunicación',
+            'Trabajo en Equipo',
+            'Resolución de Problemas',
+            'Liderazgo',
+            'Adaptabilidad',
+            'Organización'
+        ];
+
+        const initialValues = [80, 90, 90, 80, 90, 80];
+
+        const softSkillsChart = new Chart(ctx, {
+            type: 'radar',
+
+            data: {
+                labels: skillLabels,
+                datasets: [{
+                    label: 'Mis Habilidades',
+                    data: initialValues.map(value => value / 10),
+                    backgroundColor: 'rgba(59, 130, 246, 0.20)',
+                    borderColor: '#3b82f6',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#60a5fa',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                scales: {
+                    r: {
+                        min: 0,
+                        max: 10,
+
+                        ticks: {
+                            stepSize: 2,
+                            precision: 0,
+                            color: '#94a3b8',
+                            backdropColor: 'transparent'
+                        },
+
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.20)'
+                        },
+
+                        angleLines: {
+                            color: 'rgba(148, 163, 184, 0.20)'
+                        },
+
+                        pointLabels: {
+                            color: '#e2e8f0',
+                            font: {
+                                size: 11,
+                                family: 'Inter'
+                            }
+                        }
+                    }
+                },
+
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#e2e8f0'
+                        }
+                    },
+
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw + '/10';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        function updateChart() {
+            const values = [];
+
+            for (let i = 1; i <= 6; i++) {
+                const slider = document.getElementById('skill' + i);
+                const value = Number(slider.value);
+
+                document.getElementById('val' + i).textContent =
+                    value + '%';
+
+                values.push(value / 10);
+            }
+
+            softSkillsChart.data.datasets[0].data = values;
+            softSkillsChart.update();
+        }
+    </script>
+
+</body>
+</html>
