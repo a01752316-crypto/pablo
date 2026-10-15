@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Mayari - Portafolio</title>
-
+    <title>Perfil de Mayari Itzel Barrales Romero - Portafolio</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -33,130 +32,70 @@
     </script>
 
     <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Archivo de Estilos CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Chart.js para el Gráfico de Radar -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <style>
-        body {
-            background-color: #0b1120;
-            color: #f8fafc;
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Efectos de resplandor para tarjetas */
-        .glow-card {
-            box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.08);
-            border: 1px solid #2e3d5c;
-            transition: all 0.3s ease;
-        }
-
-        .glow-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 0 30px -2px rgba(59, 130, 246, 0.25);
-        }
-
-        /* Barra de desplazamiento personalizada */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0b1120;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #2e3d5c;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3b82f6;
-        }
-    </style>
 </head>
-
 <body class="min-h-screen flex flex-col justify-between antialiased">
 
     <!-- Header / Barra Superior con Botón de Retorno -->
     <header class="w-full border-b border-brand-border/60 bg-brand-bg/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <!-- Botón para volver al equipo general -->
-            <a href="../index.html"
-                class="inline-flex items-center gap-2 text-sm font-semibold text-brand-textMuted hover:text-brand-accent transition-colors py-2 px-3 rounded-xl hover:bg-brand-card">
+            <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-textMuted hover:text-brand-accent transition-colors py-2 px-3 rounded-xl hover:bg-brand-card">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Volver al equipo</span>
             </a>
 
             <div class="text-xs text-brand-textMuted font-medium hidden sm:block">
-                Perfil de Integrante
+                Perfil de Integrante · Ingeniería Química
             </div>
         </div>
     </header>
 
-    <!-- Contenido Principal del Perfil Individual -->
+    <!-- Contenido Principal -->
     <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 space-y-12">
 
-        <!-- 1. ENCABEZADO / BIOGRAFÍA Y PRESENTACIÓN -->
+        <!-- 1. INFORMACIÓN PERSONAL -->
         <section id="biografia">
             <div class="bg-brand-card rounded-3xl p-6 sm:p-10 border border-brand-border glow-card">
                 <div class="flex flex-col md:flex-row items-center gap-8">
-
-                    <!-- Fotografía de Perfil Circular con Borde Brillante -->
+                    
+                    <!-- Fotografía de Perfil -->
                     <div class="relative flex-shrink-0">
-                        <div
-                            class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-brand-accent/60 p-1 bg-brand-bg shadow-2xl relative">
-                            <!-- Ruta a tu imagen local -->
-                            <img src="imagen.jpeg" alt="Fotografía de Mayari"
-                                class="w-full h-full object-cover rounded-full">
+                        <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-brand-accent/60 p-1 bg-brand-bg shadow-2xl relative">
+                            <img src="imagen.jpeg" alt="Fotografía de Mayari Barrales" class="w-full h-full object-cover rounded-full">
                         </div>
-                        <div
-                            class="absolute bottom-2 right-2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5 border-2 border-brand-card">
-                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Activo
+                        <div class="absolute bottom-2 right-2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5 border-2 border-brand-card">
+                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Activa
                         </div>
                     </div>
 
-                    <!-- Datos Personales y Biografía -->
+                    <!-- Datos Personales -->
                     <div class="flex-1 text-center md:text-left space-y-3">
                         <div>
-                            <span
-                                class="bg-brand-accent/15 text-brand-accent text-xs font-bold px-3 py-1 rounded-full border border-brand-accent/30 inline-block mb-2">
-                                Integrante del Equipo
+                            <span class="bg-brand-accent/15 text-brand-accent text-xs font-bold px-3 py-1 rounded-full border border-brand-accent/30 inline-block mb-2">
+                                Séptimo Semestre · Tecnológico de Monterrey
                             </span>
-                            <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Mayari</h1>
+                            <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Mayari Itzel Barrales Romero</h1>
                             <p class="text-brand-accent font-semibold text-base sm:text-lg mt-0.5">
-                                Desarrollo de Sistemas & Análisis de Datos
+                                Estudiante de Ingeniería Química
                             </p>
                         </div>
-
+                        
                         <p class="text-brand-textMuted text-sm sm:text-base leading-relaxed">
-                            Estudiante enfocada en el desarrollo de soluciones tecnológicas, análisis de datos e
-                            integración de sistemas dentro del ámbito de la Industria 4.0. Apasionada por el aprendizaje
-                            continuo, la resolución analítica de problemas y el trabajo en equipo mediante metodologías
-                            colaborativas en Git.
+                            Soy estudiante de Ingeniería Química interesada en explorar cómo la tecnología y la ingeniería pueden utilizarse para desarrollar procesos más eficientes y sostenibles. También disfruto el arte, el diseño y la creación de contenido, porque considero que la creatividad es una parte importante de mi identidad y que mi vida profesional puede convivir con otros intereses.
                         </p>
 
-                        <!-- Intereses Profesionales -->
-                        <div class="pt-2">
-                            <p class="text-xs font-bold text-white uppercase tracking-wider mb-2">Intereses
-                                Profesionales:</p>
-                            <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-                                <span
-                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Industria
-                                    4.0</span>
-                                <span
-                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Análisis
-                                    de Datos</span>
-                                <span
-                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Desarrollo
-                                    Web</span>
-                                <span
-                                    class="bg-brand-bg text-brand-textMuted border border-brand-border text-xs px-3 py-1 rounded-lg font-medium">Dashboards
-                                    & Métricas</span>
-                            </div>
+                        <!-- Frase Personal -->
+                        <div class="pt-2 italic text-sm text-brand-accent font-medium">
+                            <i class="fa-solid fa-quote-left mr-2 opacity-50"></i>
+                            Para hacer algo especial, solo hay que creer que es especial.
+                            <i class="fa-solid fa-quote-right ml-2 opacity-50"></i>
                         </div>
                     </div>
 
@@ -164,152 +103,174 @@
             </div>
         </section>
 
-        <!-- 2. HABILIDADES TÉCNICAS -->
+        <!-- 2. ÁREAS DE INTERÉS -->
+        <section id="areas-interes">
+            <div class="mb-5">
+                <h2 class="text-2xl font-extrabold text-white tracking-tight">Áreas de Interés</h2>
+                <p class="text-brand-textMuted text-sm">Campos de estudio y exploración profesional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-brand-card border border-brand-border p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 bg-brand-accent/10 rounded-xl text-brand-accent text-xl">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-base">Industria 4.0</h3>
+                        <p class="text-brand-textMuted text-xs mt-1">Automatización, sensores, IoT y monitoreo de procesos industriales.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 bg-emerald-500/10 rounded-xl text-emerald-400 text-xl">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-base">Sustentabilidad</h3>
+                        <p class="text-brand-textMuted text-xs mt-1">Optimización de procesos químicos, aprovechamiento de recursos y reducción del impacto ambiental.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 bg-indigo-500/10 rounded-xl text-indigo-400 text-xl">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-base">Programación y Análisis de Datos</h3>
+                        <p class="text-brand-textMuted text-xs mt-1">Desarrollo de código, bases de datos y visualización de información.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-5 rounded-2xl flex items-start gap-4">
+                    <div class="p-3 bg-pink-500/10 rounded-xl text-pink-400 text-xl">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-base">Arte y Creatividad</h3>
+                        <p class="text-brand-textMuted text-xs mt-1">Diseño gráfico, ilustración, Canva y creación de contenido visual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HABILIDADES TÉCNICAS -->
         <section id="habilidades-tecnicas">
             <div class="mb-5">
                 <h2 class="text-2xl font-extrabold text-white tracking-tight">Habilidades Técnicas</h2>
-                <p class="text-brand-textMuted text-sm">Tecnologías, lenguajes y herramientas que domino.</p>
+                <p class="text-brand-textMuted text-sm">Herramientas y tecnologías en proceso continuo de aprendizaje.</p>
             </div>
 
-            <!-- Grilla de Insignias / Badges -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
-
-                <div
-                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i
-                        class="fa-brands fa-html5 text-3xl text-orange-500 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-sm font-semibold text-white">HTML5</span>
-                    <span class="text-[10px] text-brand-textMuted font-medium">Avanzado</span>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5">
+                
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-brands fa-html5 text-2xl text-orange-500"></i>
+                    <span class="text-sm font-semibold text-white">HTML</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Básico</span>
                 </div>
 
-                <div
-                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i
-                        class="fa-brands fa-css3-alt text-3xl text-blue-500 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-sm font-semibold text-white">CSS3 / Tailwind</span>
-                    <span class="text-[10px] text-brand-textMuted font-medium">Avanzado</span>
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-brands fa-css3-alt text-2xl text-blue-500"></i>
+                    <span class="text-sm font-semibold text-white">CSS</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Básico (en aprendizaje)</span>
                 </div>
 
-                <div
-                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i class="fa-brands fa-js text-3xl text-yellow-400 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-sm font-semibold text-white">JavaScript</span>
-                    <span class="text-[10px] text-brand-textMuted font-medium">Intermedio</span>
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-brands fa-python text-2xl text-yellow-400"></i>
+                    <span class="text-sm font-semibold text-white">Python</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Básico</span>
                 </div>
 
-                <div
-                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i
-                        class="fa-brands fa-git-alt text-3xl text-red-500 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-sm font-semibold text-white">Git / GitHub</span>
-                    <span class="text-[10px] text-brand-textMuted font-medium">Intermedio-Alto</span>
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-microchip text-2xl text-teal-400"></i>
+                    <span class="text-sm font-semibold text-white text-center">Arduino y ESP32</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Intermedio inicial</span>
                 </div>
 
-                <div
-                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i
-                        class="fa-solid fa-chart-pie text-3xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-sm font-semibold text-white">Análisis de Datos</span>
-                    <span class="text-[10px] text-brand-textMuted font-medium">Intermedio</span>
-                </div>
-
-                <div
-                    class="bg-brand-card hover:border-brand-accent border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition duration-200 group">
-                    <i
-                        class="fa-solid fa-database text-3xl text-indigo-400 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-sm font-semibold text-white">Bases de Datos</span>
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-network-wired text-2xl text-red-400"></i>
+                    <span class="text-sm font-semibold text-white text-center">Node-RED e IoT</span>
                     <span class="text-[10px] text-brand-textMuted font-medium">Básico-Intermedio</span>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-database text-2xl text-indigo-400"></i>
+                    <span class="text-sm font-semibold text-white text-center">SQL y PostgreSQL</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Básico</span>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-excel text-2xl text-emerald-500"></i>
+                    <span class="text-sm font-semibold text-white text-center">Excel & MS Office</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Intermedio</span>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-chart-column text-2xl text-cyan-400"></i>
+                    <span class="text-sm font-semibold text-white text-center">Análisis de datos & Dashboards</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Básico-Intermedio</span>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-brands fa-git-alt text-2xl text-red-500"></i>
+                    <span class="text-sm font-semibold text-white">Git y GitHub</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Básico</span>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-pen-nib text-2xl text-pink-400"></i>
+                    <span class="text-sm font-semibold text-white text-center">Canva y Diseño Visual</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Intermedio</span>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-4 rounded-2xl flex flex-col items-center justify-center gap-2 col-span-2 sm:col-span-1">
+                    <i class="fa-solid fa-file-lines text-2xl text-amber-400"></i>
+                    <span class="text-sm font-semibold text-white text-center">Redacción Académica</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium">Intermedio</span>
                 </div>
 
             </div>
         </section>
 
-        <!-- 3. HABILIDADES BLANDAS (GRÁFICO DE RADAR) -->
+        <!-- 4. HABILIDADES BLANDAS (GRÁFICO DE RADAR) -->
         <section id="habilidades-blandas">
             <div class="bg-brand-card rounded-3xl p-6 sm:p-8 border border-brand-border glow-card">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-
-                    <!-- Explicación y Sliders de Ajuste Rápido -->
+                    
                     <div class="lg:col-span-5 space-y-4">
                         <div>
-                            <span class="text-xs font-bold text-brand-accent uppercase tracking-wider">Evaluación
-                                Homogénea</span>
+                            <span class="text-xs font-bold text-brand-accent uppercase tracking-wider">Evaluación Homogénea</span>
                             <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Habilidades Blandas</h2>
                         </div>
-
+                        
                         <p class="text-brand-textMuted text-sm leading-relaxed">
-                            Métrica comparativa de habilidades blandas acordadas por todo el equipo para medir nuestras
-                            fortalezas interpersonales.
+                            Representación del perfil colaborativo y operativo basado en los criterios acordados por el equipo.
                         </p>
 
-                        <!-- Controles deslizantes -->
-                        <div class="bg-brand-bg/80 p-4 rounded-2xl border border-brand-border/80 space-y-3">
-                            <div class="flex items-center justify-between border-b border-brand-border pb-2">
-                                <span class="text-xs font-bold text-white">Niveles de Competencia</span>
-                                <span class="text-[10px] text-brand-accent">Ajustable</span>
+                        <!-- Indicadores Fijos -->
+                        <div class="bg-brand-bg/80 p-4 rounded-2xl border border-brand-border/80 space-y-2 text-xs">
+                            <div class="flex justify-between text-brand-textMuted">
+                                <span>Comunicación efectiva:</span> <span class="text-white font-semibold">70%</span>
                             </div>
-
-                            <div class="space-y-2 text-xs">
-                                <div>
-                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
-                                        <span>Comunicación Efectiva</span>
-                                        <span id="val1" class="text-white font-semibold">88%</span>
-                                    </div>
-                                    <input type="range" id="skill1" min="20" max="100" value="88"
-                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
-                                </div>
-
-                                <div>
-                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
-                                        <span>Trabajo en Equipo</span>
-                                        <span id="val2" class="text-white font-semibold">92%</span>
-                                    </div>
-                                    <input type="range" id="skill2" min="20" max="100" value="92"
-                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
-                                </div>
-
-                                <div>
-                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
-                                        <span>Resolución de Problemas</span>
-                                        <span id="val3" class="text-white font-semibold">85%</span>
-                                    </div>
-                                    <input type="range" id="skill3" min="20" max="100" value="85"
-                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
-                                </div>
-
-                                <div>
-                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
-                                        <span>Liderazgo y Autonomía</span>
-                                        <span id="val4" class="text-white font-semibold">80%</span>
-                                    </div>
-                                    <input type="range" id="skill4" min="20" max="100" value="80"
-                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
-                                </div>
-
-                                <div>
-                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
-                                        <span>Adaptabilidad</span>
-                                        <span id="val5" class="text-white font-semibold">90%</span>
-                                    </div>
-                                    <input type="range" id="skill5" min="20" max="100" value="90"
-                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
-                                </div>
-
-                                <div>
-                                    <div class="flex justify-between text-brand-textMuted mb-0.5">
-                                        <span>Gestión del Tiempo</span>
-                                        <span id="val6" class="text-white font-semibold">85%</span>
-                                    </div>
-                                    <input type="range" id="skill6" min="20" max="100" value="85"
-                                        class="w-full accent-blue-500 cursor-pointer" oninput="updateChart()">
-                                </div>
+                            <div class="flex justify-between text-brand-textMuted">
+                                <span>Trabajo en equipo:</span> <span class="text-white font-semibold">90%</span>
+                            </div>
+                            <div class="flex justify-between text-brand-textMuted">
+                                <span>Resolución de problemas:</span> <span class="text-white font-semibold">90%</span>
+                            </div>
+                            <div class="flex justify-between text-brand-textMuted">
+                                <span>Liderazgo y autonomía:</span> <span class="text-white font-semibold">80%</span>
+                            </div>
+                            <div class="flex justify-between text-brand-textMuted">
+                                <span>Adaptabilidad:</span> <span class="text-white font-semibold">95%</span>
+                            </div>
+                            <div class="flex justify-between text-brand-textMuted">
+                                <span>Gestión del tiempo:</span> <span class="text-white font-semibold">70%</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Contenedor del Canvas para el Gráfico -->
-                    <div
-                        class="lg:col-span-7 flex justify-center items-center p-3 sm:p-5 bg-brand-bg/60 rounded-2xl border border-brand-border/50">
+                    <!-- Canvas del Gráfico -->
+                    <div class="lg:col-span-7 flex justify-center items-center p-3 sm:p-5 bg-brand-bg/60 rounded-2xl border border-brand-border/50">
                         <div class="w-full max-w-md aspect-square relative">
                             <canvas id="softSkillsChart"></canvas>
                         </div>
@@ -319,133 +280,130 @@
             </div>
         </section>
 
-        <!-- 4. LOGROS Y PROYECTOS DESTACADOS -->
+        <!-- 5. PROYECTOS DESTACADOS -->
         <section id="proyectos">
             <div class="mb-5">
-                <h2 class="text-2xl font-extrabold text-white tracking-tight">Logros y Proyectos Destacados</h2>
-                <p class="text-brand-textMuted text-sm">Proyectos desarrollados durante la concentración e integración.
-                </p>
+                <h2 class="text-2xl font-extrabold text-white tracking-tight">Proyectos Destacados</h2>
+                <p class="text-brand-textMuted text-sm">Trabajos académicos y proyectos en desarrollo.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
+                
                 <!-- Proyecto 1 -->
-                <div
-                    class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden hover:border-brand-accent/60 transition duration-300 flex flex-col justify-between group">
+                <div class="bg-brand-card rounded-2xl border border-brand-border p-6 flex flex-col justify-between">
                     <div>
-                        <div class="h-48 w-full bg-brand-bg relative overflow-hidden flex items-center justify-center">
-                            <i class="fa-solid fa-diagram-project text-5xl text-brand-accent/40"></i>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent">
-                            </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white">Monitoreo y Protección de Mascotas</h3>
+                            <span class="text-[11px] bg-blue-500/10 text-blue-400 border border-blue-500/30 px-2.5 py-0.5 rounded-full font-semibold">Propuesta Académica</span>
                         </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition">Portal
-                                    Web Colaborativo</h3>
-                                <span
-                                    class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-semibold">Completado</span>
-                            </div>
-                            <p class="text-brand-textMuted text-sm leading-relaxed mb-4">
-                                Maquetación e integración del portal web central y perfil individual usando control de
-                                versiones distribuido en Git, ramas independientes y pull requests.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">HTML5/Tailwind</span>
-                                <span
-                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Git/GitHub</span>
-                                <span
-                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Chart.js</span>
-                            </div>
-                        </div>
+                        <p class="text-brand-textMuted text-xs leading-relaxed mb-4">
+                            Propuesta académica que utiliza Arduino, sensores ambientales y de detección, junto con Node-RED, para monitorear condiciones de una casa para mascotas y generar alertas.
+                        </p>
                     </div>
-
-                    <div class="p-6 pt-0 flex gap-3">
-                        <a href="../index.html"
-                            class="flex-1 py-2.5 px-3 bg-brand-accent hover:bg-brand-accentHover text-white text-xs font-semibold rounded-xl text-center transition flex items-center justify-center gap-2 shadow-md shadow-blue-500/20">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Portal
-                        </a>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-brand-border/60">
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Arduino</span>
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Sensores</span>
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">IoT</span>
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Node-RED</span>
                     </div>
                 </div>
 
                 <!-- Proyecto 2 -->
-                <div
-                    class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden hover:border-brand-accent/60 transition duration-300 flex flex-col justify-between group">
+                <div class="bg-brand-card rounded-2xl border border-brand-border p-6 flex flex-col justify-between">
                     <div>
-                        <div class="h-48 w-full bg-brand-bg relative overflow-hidden flex items-center justify-center">
-                            <i class="fa-solid fa-industry text-5xl text-brand-accent/40"></i>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent">
-                            </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white">Diseño Integral de Procesos Químicos</h3>
+                            <span class="text-[11px] bg-blue-500/10 text-blue-400 border border-blue-500/30 px-2.5 py-0.5 rounded-full font-semibold">Proyecto Académico</span>
                         </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition">
-                                    Análisis para Industria 4.0</h3>
-                                <span
-                                    class="text-xs bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded-full font-semibold">En
-                                    Proceso</span>
-                            </div>
-                            <p class="text-brand-textMuted text-sm leading-relaxed mb-4">
-                                Recolección y análisis de datos para soluciones enfocadas en digitalización, dashboards
-                                y monitoreo con nuestro socio formador.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Análisis
-                                    de Datos</span>
-                                <span
-                                    class="text-[11px] font-medium bg-brand-bg text-brand-textMuted px-2.5 py-1 rounded-md border border-brand-border">Dashboards</span>
-                            </div>
-                        </div>
+                        <p class="text-brand-textMuted text-xs leading-relaxed mb-4">
+                            Proyecto académico enfocado en el diseño de un proceso para producir molibdato de sodio. Incluye balances de materia y energía, análisis de operaciones unitarias, aprovechamiento térmico y consideraciones ambientales.
+                        </p>
                     </div>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-brand-border/60">
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Ingeniería Química</span>
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Diseño de Procesos</span>
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Sustentabilidad</span>
+                    </div>
+                </div>
 
-                    <div class="p-6 pt-0 flex gap-3">
-                        <a href="#"
-                            class="flex-1 py-2.5 px-3 bg-brand-accent hover:bg-brand-accentHover text-white text-xs font-semibold rounded-xl text-center transition flex items-center justify-center gap-2 shadow-md shadow-blue-500/20">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Detalles
-                        </a>
+                <!-- Proyecto 3 -->
+                <div class="bg-brand-card rounded-2xl border border-brand-border p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white">Integración Energética en Procesos</h3>
+                            <span class="text-[11px] bg-blue-500/10 text-blue-400 border border-blue-500/30 px-2.5 py-0.5 rounded-full font-semibold">Proyecto Académico</span>
+                        </div>
+                        <p class="text-brand-textMuted text-xs leading-relaxed mb-4">
+                            Análisis de la integración energética de un proceso industrial mediante el estudio de corrientes calientes y frías y el uso de análisis Pinch para proponer una red de intercambiadores de calor eficiente.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-brand-border/60">
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Industria 4.0</span>
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Análisis de Datos</span>
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Análisis Pinch</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4 (Social) -->
+                <div class="bg-brand-card rounded-2xl border border-brand-border p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white">Talleres STEM para Niñas</h3>
+                            <span class="text-[11px] bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded-full font-semibold">En Desarrollo y Planeación</span>
+                        </div>
+                        <p class="text-brand-textMuted text-xs leading-relaxed mb-4">
+                            Diseño de una propuesta de actividades prácticas para acercar la ciencia, la tecnología, la ingeniería y las matemáticas a niñas de primaria mediante experimentos accesibles y creativos.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-brand-border/60">
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Innovación Social</span>
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Divulgación Científica</span>
+                        <span class="text-[10px] bg-brand-bg text-brand-textMuted px-2 py-0.5 rounded border border-brand-border">Creatividad</span>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- 5. REDES Y CONTACTO -->
-        <section id="contacto">
-            <div
-                class="bg-gradient-to-r from-brand-card via-brand-cardHover to-brand-card rounded-3xl p-8 sm:p-10 border border-brand-border text-center glow-card">
+        <!-- 6. LOGROS Y RECONOCIMIENTOS -->
+        <section id="reconocimientos">
+            <div class="bg-brand-card rounded-3xl p-6 sm:p-8 border border-brand-border glow-card flex flex-col sm:flex-row items-center gap-6">
+                <div class="p-4 bg-amber-500/10 rounded-2xl text-amber-400 text-3xl">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div class="space-y-1 text-center sm:text-left">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Distinción Académica</span>
+                    <h3 class="text-xl font-bold text-white">Beca 100% Líderes del Mañana</h3>
+                    <p class="text-brand-textMuted text-xs leading-relaxed">
+                        Obtuve una beca del 100 % del programa Líderes del Mañana, un logro importante en mi trayectoria universitaria. Esta experiencia forma parte de mi camino académico y de mi interés por seguir desarrollándome como profesional y contribuir positivamente a mi entorno.
+                    </p>
+                </div>
+            </div>
+        </section>
 
+        <!-- 8. CONTACTO -->
+        <section id="contacto">
+            <div class="bg-brand-card rounded-3xl p-8 border border-brand-border text-center glow-card">
                 <div class="max-w-xl mx-auto space-y-4">
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Canales de Contacto</h2>
-                    <p class="text-brand-textMuted text-sm">
-                        Escríbeme o visítame en mis redes profesionales.
+                    <h2 class="text-2xl font-extrabold text-white">Contacto</h2>
+                    <p class="text-brand-textMuted text-xs">
+                        Canales para comunicación académica y profesional.
                     </p>
 
-                    <!-- Enlaces de Redes y Contacto -->
-                    <div class="flex flex-wrap items-center justify-center gap-3 pt-3">
-
-                        <a href="mailto:correo@ejemplo.com"
-                            class="py-2.5 px-5 bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg shadow-blue-500/25">
-                            <i class="fa-solid fa-envelope text-base"></i> Correo Electrónico
+                    <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                        <a href="mailto:A01738679@tec.mx" class="py-2.5 px-4 bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-xs rounded-xl transition flex items-center gap-2">
+                            <i class="fa-solid fa-envelope"></i> A01738679@tec.mx
                         </a>
 
-                        <a href="https://linkedin.com" target="_blank" rel="noopener"
-                            class="py-2.5 px-5 bg-[#0a66c2] hover:bg-[#084e96] text-white font-semibold text-xs sm:text-sm rounded-xl transition duration-200 flex items-center gap-2 shadow-lg">
-                            <i class="fa-brands fa-linkedin text-base"></i> LinkedIn
+                        <a href="https://www.linkedin.com/in/mayaribarrales" target="_blank" rel="noopener" class="py-2.5 px-4 bg-[#0a66c2] hover:bg-[#084e96] text-white font-semibold text-xs rounded-xl transition flex items-center gap-2">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
                         </a>
 
-                        <a href="https://github.com" target="_blank" rel="noopener"
-                            class="py-2.5 px-5 bg-brand-bg hover:bg-brand-border text-white font-semibold text-xs sm:text-sm rounded-xl border border-brand-border transition duration-200 flex items-center gap-2">
-                            <i class="fa-brands fa-github text-base"></i> GitHub
+                        <a href="https://github.com/Mayisan02" target="_blank" rel="noopener" class="py-2.5 px-4 bg-brand-bg hover:bg-brand-border text-white font-semibold text-xs rounded-xl border border-brand-border transition flex items-center gap-2">
+                            <i class="fa-brands fa-github"></i> GitHub
                         </a>
-
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -455,48 +413,35 @@
     <footer class="w-full border-t border-brand-border/60 py-6 bg-brand-bg mt-12">
         <div class="max-w-5xl mx-auto px-4 text-center">
             <p class="text-xs text-brand-textMuted">
-                Perfil de Mayari · Proyecto Colaborativo 2026
+                Mayari Itzel Barrales Romero · Portafolio de Perfil 2026
             </p>
         </div>
     </footer>
 
     <!-- Lógica JavaScript para Gráfico de Radar Chart.js -->
     <script>
-        let softSkillsChart;
-
-        function initChart() {
+        window.onload = function() {
             const ctx = document.getElementById('softSkillsChart').getContext('2d');
-
-            const dataValues = [
-                document.getElementById('skill1').value,
-                document.getElementById('skill2').value,
-                document.getElementById('skill3').value,
-                document.getElementById('skill4').value,
-                document.getElementById('skill5').value,
-                document.getElementById('skill6').value
-            ];
-
-            softSkillsChart = new Chart(ctx, {
+            
+            new Chart(ctx, {
                 type: 'radar',
                 data: {
                     labels: [
-                        'Comunicación Efectiva',
-                        'Trabajo en Equipo',
-                        'Resolución de Problemas',
-                        'Liderazgo y Autonomía',
-                        'Adaptabilidad',
-                        'Gestión del Tiempo'
+                        'Comunicación efectiva (70%)',
+                        'Trabajo en equipo (90%)',
+                        'Resolución de problemas (90%)',
+                        'Liderazgo y autonomía (80%)',
+                        'Adaptabilidad (95%)',
+                        'Gestión del tiempo (70%)'
                     ],
                     datasets: [{
                         label: 'Nivel',
-                        data: dataValues,
+                        data: [70, 90, 90, 80, 95, 70],
                         backgroundColor: 'rgba(59, 130, 246, 0.25)',
                         borderColor: '#3b82f6',
                         borderWidth: 2,
                         pointBackgroundColor: '#60a5fa',
                         pointBorderColor: '#ffffff',
-                        pointHoverBackgroundColor: '#ffffff',
-                        pointHoverBorderColor: '#3b82f6',
                         pointRadius: 4
                     }]
                 },
@@ -504,14 +449,7 @@
                     responsive: true,
                     maintainAspectRatio: true,
                     plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function (context) {
-                                    return context.label + ': ' + context.raw + '%';
-                                }
-                            }
-                        }
+                        legend: { display: false }
                     },
                     scales: {
                         r: {
@@ -519,46 +457,16 @@
                             grid: { color: '#2e3d5c' },
                             pointLabels: {
                                 color: '#94a3b8',
-                                font: { family: 'Inter', size: 11, weight: '600' }
+                                font: { family: 'Inter', size: 10, weight: '600' }
                             },
-                            ticks: {
-                                backdropColor: 'transparent',
-                                color: '#64748b',
-                                display: false
-                            },
+                            ticks: { display: false },
                             min: 0,
                             max: 100
                         }
                     }
                 }
             });
-        }
-
-        function updateChart() {
-            const val1 = document.getElementById('skill1').value;
-            const val2 = document.getElementById('skill2').value;
-            const val3 = document.getElementById('skill3').value;
-            const val4 = document.getElementById('skill4').value;
-            const val5 = document.getElementById('skill5').value;
-            const val6 = document.getElementById('skill6').value;
-
-            document.getElementById('val1').innerText = val1 + '%';
-            document.getElementById('val2').innerText = val2 + '%';
-            document.getElementById('val3').innerText = val3 + '%';
-            document.getElementById('val4').innerText = val4 + '%';
-            document.getElementById('val5').innerText = val5 + '%';
-            document.getElementById('val6').innerText = val6 + '%';
-
-            if (softSkillsChart) {
-                softSkillsChart.data.datasets[0].data = [val1, val2, val3, val4, val5, val6];
-                softSkillsChart.update();
-            }
-        }
-
-        window.onload = function () {
-            initChart();
         };
     </script>
 </body>
-
 </html>
