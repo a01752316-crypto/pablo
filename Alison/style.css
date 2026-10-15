@@ -1,11 +1,11 @@
-/* Variables de color de la paleta */
+/* Paleta de colores de la interfaz azul oscura */
 :root {
     --bg-color: #0b1329;       /* Fondo principal azul oscuro */
     --card-bg: #131f37;        /* Fondo de tarjetas */
     --card-border: #1e2d4a;    /* Borde de tarjetas */
-    --text-primary: #ffffff;   /* Texto principal */
-    --text-secondary: #94a3b8; /* Texto secundario */
-    --accent-blue: #4f75e8;    /* Azul brillante */
+    --text-primary: #ffffff;   /* Texto principal blanco */
+    --text-secondary: #94a3b8; /* Texto secundario gris */
+    --accent-blue: #4f75e8;    /* Azul brillante para acentos */
     --accent-hover: #3b5ccc;   /* Azul para hover */
     --tag-bg: #1a2a47;         /* Fondo para etiquetas */
     --badge-bg: #1a2a47;       
@@ -17,12 +17,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
+    background-color: var(--bg-color) !important;
+    color: var(--text-primary) !important;
     display: flex;
     justify-content: center;
     padding: 40px 20px;
@@ -48,7 +48,7 @@ body {
     width: 100%;
 }
 
-/* Títulos de las secciones con la barra azul distintiva */
+/* Títulos de las secciones con la barra azul */
 .section-title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -369,7 +369,7 @@ body {
     text-overflow: ellipsis;
 }
 
-/* Adaptación a dispositivos móviles */
+/* Responsivo */
 @media (max-width: 680px) {
     .profile-header {
         flex-direction: column;
